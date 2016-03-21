@@ -26,3 +26,11 @@ using namespace std;
 string Genie_Convenience::getBusData(string url){
 	return this.gCurl->get(url);
 }
+
+string Genie_Convenience::addKeyBusStopIdToURL(){
+	this.url->append("?key=");
+	this.url->append(this.key);
+	this.url->append("?BusRouteId="); // need change 
+	this.url->append(this.busStopId);
+	return this.url;
+};

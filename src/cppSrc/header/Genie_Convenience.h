@@ -16,11 +16,13 @@ class Genie_Convenience
 {
 private:
 	string key;
-	string busId;
+	string busStopId;
+	string url;
 	Libcurl_Wrapper* gCurl;
 	Genie_Convenience(){
 		key = ;
-		busId = ;
+		busStopId = ;
+		url = ;
 		gCurl = new Libcurl_Wrapper();
 		/*
 		*
@@ -28,11 +30,9 @@ private:
 		*	Edit by DongDongJu
 		*/
 	};
-	/*	...
-		if you want add on
-	*/
 	public:
 	string getBusData(string url);
+	string addKeyBusStopIdToURL();
 	/*	...
 		if you want add on
 	*/	
