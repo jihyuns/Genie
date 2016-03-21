@@ -10,7 +10,9 @@ namespace Genie_Convenience
 
 class Genie_Convenience
 {
-	private:
+private:
+	Genie_Convenience(){};
+	
 	/*	...
 		if you want add on
 	*/
