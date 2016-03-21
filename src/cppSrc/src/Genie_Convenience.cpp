@@ -1,6 +1,7 @@
+#include "../header/Genie_Convenience.h"
+#include "../header/Libcurl_Wrapper.h"
 #include <iostream>
 #include <cstring>
-#include "../header/Genie_Convenience.h"
 using namespace std;
 
 
@@ -14,3 +15,14 @@ using namespace std;
 	
 	}
 */
+
+
+/*
+*
+*	func get xml response for bus
+*
+*	Edit by DongDongJu
+*/
+string Genie_Convenience::getBusData(string url){
+	return this.gCurl->get(url);
+}
