@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\rmt_curl.7.47.1.0\build\native\rmt_curl.props" Condition="Exists('..\packages\rmt_curl.7.47.1.0\build\native\rmt_curl.props')" />
+  <Import Project="..\packages\rmt_libssh2.1.6.0.0\build\native\rmt_libssh2.props" Condition="Exists('..\packages\rmt_libssh2.1.6.0.0\build\native\rmt_libssh2.props')" />
+  <Import Project="..\packages\rmt_openssl.1.0.2.6\build\native\rmt_openssl.props" Condition="Exists('..\packages\rmt_openssl.1.0.2.6\build\native\rmt_openssl.props')" />
+  <Import Project="..\packages\rmt_zlib.1.2.8.5\build\native\rmt_zlib.props" Condition="Exists('..\packages\rmt_zlib.1.2.8.5\build\native\rmt_zlib.props')" />
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{80DC3403-3230-40A9-80E7-8386DC6F041D}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Genie</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="src\Genie_Capture.cpp" />
+    <ClCompile Include="src\Genie_Convenience.cpp" />
+    <ClCompile Include="src\Genie_Datamanagement.cpp" />
+    <ClCompile Include="src\Genie_Display.cpp" />
+    <ClCompile Include="src\Genie_Emotion.cpp" />
+    <ClCompile Include="src\Genie_Speech.cpp" />
+    <ClCompile Include="src\Genie_Userinterface.cpp" />
+    <ClCompile Include="src\Libcurl_Wrapper.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="header\Genie_Capture.h" />
+    <ClInclude Include="header\Genie_Convenience.h" />
+    <ClInclude Include="header\Genie_Datamanagement.h" />
+    <ClInclude Include="header\Genie_Display.h" />
+    <ClInclude Include="header\Genie_Emotion.h" />
+    <ClInclude Include="header\Genie_Singleton.h" />
+    <ClInclude Include="header\Genie_Speech.h" />
+    <ClInclude Include="header\Genie_Userinterface.h" />
+    <ClInclude Include="header\Libcurl_Wrapper.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\packages\rmt_zlib.1.2.8.5\build\native\rmt_zlib.targets" Condition="Exists('..\packages\rmt_zlib.1.2.8.5\build\native\rmt_zlib.targets')" />
+    <Import Project="..\packages\rmt_openssl.1.0.2.6\build\native\rmt_openssl.targets" Condition="Exists('..\packages\rmt_openssl.1.0.2.6\build\native\rmt_openssl.targets')" />
+    <Import Project="..\packages\rmt_libssh2.1.6.0.0\build\native\rmt_libssh2.targets" Condition="Exists('..\packages\rmt_libssh2.1.6.0.0\build\native\rmt_libssh2.targets')" />
+    <Import Project="..\packages\rmt_curl.7.47.1.0\build\native\rmt_curl.targets" Condition="Exists('..\packages\rmt_curl.7.47.1.0\build\native\rmt_curl.targets')" />
+  </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>이 프로젝트는 이 컴퓨터에 없는 NuGet 패키지를 참조합니다. 해당 패키지를 다운로드하려면 NuGet 패키지 복원을 사용하십시오. 자세한 내용은 http://go.microsoft.com/fwlink/?LinkID=322105를 참조하십시오. 누락된 파일은 {0}입니다.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\rmt_zlib.1.2.8.5\build\native\rmt_zlib.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\rmt_zlib.1.2.8.5\build\native\rmt_zlib.props'))" />
+    <Error Condition="!Exists('..\packages\rmt_zlib.1.2.8.5\build\native\rmt_zlib.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\rmt_zlib.1.2.8.5\build\native\rmt_zlib.targets'))" />
+    <Error Condition="!Exists('..\packages\rmt_openssl.1.0.2.6\build\native\rmt_openssl.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\rmt_openssl.1.0.2.6\build\native\rmt_openssl.props'))" />
+    <Error Condition="!Exists('..\packages\rmt_openssl.1.0.2.6\build\native\rmt_openssl.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\rmt_openssl.1.0.2.6\build\native\rmt_openssl.targets'))" />
+    <Error Condition="!Exists('..\packages\rmt_libssh2.1.6.0.0\build\native\rmt_libssh2.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\rmt_libssh2.1.6.0.0\build\native\rmt_libssh2.props'))" />
+    <Error Condition="!Exists('..\packages\rmt_libssh2.1.6.0.0\build\native\rmt_libssh2.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\rmt_libssh2.1.6.0.0\build\native\rmt_libssh2.targets'))" />
+    <Error Condition="!Exists('..\packages\rmt_curl.7.47.1.0\build\native\rmt_curl.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\rmt_curl.7.47.1.0\build\native\rmt_curl.props'))" />
+    <Error Condition="!Exists('..\packages\rmt_curl.7.47.1.0\build\native\rmt_curl.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\rmt_curl.7.47.1.0\build\native\rmt_curl.targets'))" />
+  </Target>
+</Project>

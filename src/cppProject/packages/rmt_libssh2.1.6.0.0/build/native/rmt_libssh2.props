@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" InitialTargets="rmt_libssh2_init_props_0">
+  <PropertyGroup Condition="'$(Needs-rmt_libssh2-Version)' == '' OR '$(Needs-rmt_libssh2-Version)' == '*Undefined*'">
+    <NugetMsBuildExtensionLoaded Condition="'$(NugetMsBuildExtensionLoaded)' == '' OR '$(NuGet-OverlayLoaded)' == 'false'">false</NugetMsBuildExtensionLoaded>
+    <NuGet-NativeExtensionPath Condition="'$(NuGet-NativeExtensionPath)' == '' OR '$(NuGet-NativeExtensionVersion)' =='' OR $(NuGet-NativeExtensionVersion) &lt; 562967165599744">$(MSBuildThisFileDirectory)\private</NuGet-NativeExtensionPath>
+    <Needs-rmt_libssh2 />
+    <Needs-rmt_libssh2-Version />
+  </PropertyGroup>
+  <Target Name="rmt_libssh2_init_props_0">
+    <PropertyGroup>
+      <Needs-rmt_libssh2-Version Condition="'$(Needs-rmt_libssh2)' == '' OR $(Needs-rmt_libssh2) &lt; 281500746514432 ">1.6.0.0</Needs-rmt_libssh2-Version>
+      <Needs-rmt_libssh2 Condition="'$(Needs-rmt_libssh2)' == '' OR $(Needs-rmt_libssh2) &lt; 281500746514432 ">281500746514432</Needs-rmt_libssh2>
+    </PropertyGroup>
+  </Target>
+</Project>

@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" InitialTargets="rmt_curl_init_targets_0;rmt_curl_init_targets_1;rmt_curl_init_targets_2;rmt_curl_ItemGroupInit_targets_3">
+  <PropertyGroup Label="Default initializers for properties">
+    <Linkages-rmt_curl Condition="'$(Linkages-rmt_curl)' == ''">dynamic</Linkages-rmt_curl>
+    <CallingConventions-rmt_curl Condition="'$(CallingConventions-rmt_curl)' == ''">cdecl</CallingConventions-rmt_curl>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)../..///build/native/include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="v140 and Win32 and Debug and dynamic" Condition="'$(PlatformToolset.ToLower())' == 'v140' And '$(Platform.ToLower())' == 'win32' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkages-rmt_curl.ToLower())' == 'dynamic'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../../build/native/lib/v140/Win32/Debug/dynamic/libcurl.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="v140 and Win32 and Release and dynamic" Condition="'$(PlatformToolset.ToLower())' == 'v140' And '$(Platform.ToLower())' == 'win32' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkages-rmt_curl.ToLower())' == 'dynamic'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../../build/native/lib/v140/Win32/Release/dynamic/libcurl.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="v140 and x64 and Release and dynamic" Condition="'$(PlatformToolset.ToLower())' == 'v140' And '$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkages-rmt_curl.ToLower())' == 'dynamic'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../../build/native/lib/v140/x64/Release/dynamic/libcurl.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Label="v140 and x64 and Debug and dynamic" Condition="'$(PlatformToolset.ToLower())' == 'v140' And '$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkages-rmt_curl.ToLower())' == 'dynamic'">
+    <Link>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../../build/native/lib/v140/x64/Debug/dynamic/libcurl.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <Target Name="rmt_curl_AfterBuild" AfterTargets="AfterBuild">
+    <Copy SkipUnchangedFiles="true" SourceFiles="@(CopyToOutput)" UseHardlinksIfPossible="true" DestinationFolder="$(TargetDir)">
+      <Output TaskParameter="DestinationFiles" PropertyName="DestinationFiles" />
+      <Output TaskParameter="DestinationFiles" ItemName="DestinationFiles" />
+      <Output TaskParameter="CopiedFiles" PropertyName="CopiedFiles" />
+      <Output TaskParameter="CopiedFiles" ItemName="CopiedFiles" />
+    </Copy>
+  </Target>
+  <Target Name="rmt_curl_BeforeLink" AfterTargets="BeforeLink">
+    <CheckRuntimeLibrary RuntimeLibrary="%(ClCompile.RuntimeLibrary)" ExpectedRuntimeLibrary="none" LibraryName="rmt_curl" />
+  </Target>
+  <Target Name="rmt_curl_BeforeLink_Debug_and_static" Label="Debug and static" Condition="( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkages-rmt_curl.ToLower())' == 'static'" AfterTargets="rmt_curl_BeforeLink">
+    <CheckRuntimeLibrary RuntimeLibrary="%(ClCompile.RuntimeLibrary)" ExpectedRuntimeLibrary="MultiThreadedDebug" LibraryName="rmt_curl" />
+  </Target>
+  <Target Name="rmt_curl_BeforeLink_Release_and_static" Label="Release and static" Condition="( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkages-rmt_curl.ToLower())' == 'static'" AfterTargets="rmt_curl_BeforeLink">
+    <CheckRuntimeLibrary RuntimeLibrary="%(ClCompile.RuntimeLibrary)" ExpectedRuntimeLibrary="MultiThreaded" LibraryName="rmt_curl" />
+  </Target>
+  <Target Name="rmt_curl_init_targets_1">
+    <StringContains Text="Linkages-dynamic" Library="rmt_curl" Value="dynamic" Condition="'$(Linkages-rmt_curl)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkages-rmt_curl" />
+    </StringContains>
+    <StringContains Text="Linkages-static" Library="rmt_curl" Value="static" Condition="'$(Linkages-rmt_curl)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkages-rmt_curl" />
+    </StringContains>
+    <StringContains Text="Linkages-ltcg" Library="rmt_curl" Value="ltcg" Condition="'$(Linkages-rmt_curl)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkages-rmt_curl" />
+    </StringContains>
+    <StringContains Text="Linkages-sxs" Library="rmt_curl" Value="sxs" Condition="'$(Linkages-rmt_curl)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkages-rmt_curl" />
+    </StringContains>
+    <StringContains Text="CallingConventions-cdecl" Library="rmt_curl" Value="cdecl" Condition="'$(CallingConventions-rmt_curl)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConventions-rmt_curl" />
+    </StringContains>
+    <StringContains Text="CallingConventions-stdcall" Library="rmt_curl" Value="stdcall" Condition="'$(CallingConventions-rmt_curl)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConventions-rmt_curl" />
+    </StringContains>
+    <StringContains Text="CallingConventions-fastcall" Library="rmt_curl" Value="fastcall" Condition="'$(CallingConventions-rmt_curl)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConventions-rmt_curl" />
+    </StringContains>
+    <StringContains Text="CallingConventions-thiscall" Library="rmt_curl" Value="thiscall" Condition="'$(CallingConventions-rmt_curl)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConventions-rmt_curl" />
+    </StringContains>
+    <StringContains Text="CallingConventions-clrcall" Library="rmt_curl" Value="clrcall" Condition="'$(CallingConventions-rmt_curl)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConventions-rmt_curl" />
+    </StringContains>
+    <StringContains Text="CallingConventions-vectorcall" Library="rmt_curl" Value="vectorcall" Condition="'$(CallingConventions-rmt_curl)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConventions-rmt_curl" />
+    </StringContains>
+  </Target>
+  <Target Name="rmt_curl_init_targets_2">
+    <SetEnv Condition="'$(PlatformToolset.ToLower())' == 'v140' And '$(Platform.ToLower())' == 'win32' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkages-rmt_curl.ToLower())' == 'dynamic'" Name="PATH" Prefix="true" Value="$(MSBuildThisFileDirectory)../../build/native/bin/v140/Win32/Debug/dynamic">
+      <Output TaskParameter="OutputEnvironmentVariable" PropertyName="PATH" />
+    </SetEnv>
+    <SetEnv Condition="'$(PlatformToolset.ToLower())' == 'v140' And '$(Platform.ToLower())' == 'win32' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkages-rmt_curl.ToLower())' == 'dynamic'" Name="PATH" Prefix="true" Value="$(MSBuildThisFileDirectory)../../build/native/bin/v140/Win32/Release/dynamic">
+      <Output TaskParameter="OutputEnvironmentVariable" PropertyName="PATH" />
+    </SetEnv>
+    <SetEnv Condition="'$(PlatformToolset.ToLower())' == 'v140' And '$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkages-rmt_curl.ToLower())' == 'dynamic'" Name="PATH" Prefix="true" Value="$(MSBuildThisFileDirectory)../../build/native/bin/v140/x64/Release/dynamic">
+      <Output TaskParameter="OutputEnvironmentVariable" PropertyName="PATH" />
+    </SetEnv>
+    <SetEnv Condition="'$(PlatformToolset.ToLower())' == 'v140' And '$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkages-rmt_curl.ToLower())' == 'dynamic'" Name="PATH" Prefix="true" Value="$(MSBuildThisFileDirectory)../../build/native/bin/v140/x64/Debug/dynamic">
+      <Output TaskParameter="OutputEnvironmentVariable" PropertyName="PATH" />
+    </SetEnv>
+  </Target>
+  <Target Name="rmt_curl_ItemGroupInit_targets_3">
+    <ItemGroup Label="v140 and Win32 and Debug and dynamic" Condition="'$(PlatformToolset.ToLower())' == 'v140' And '$(Platform.ToLower())' == 'win32' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkages-rmt_curl.ToLower())' == 'dynamic'">
+      <CopyToOutput Include="$(MSBuildThisFileDirectory)../../build/native/bin/v140/Win32/Debug/dynamic/libcurl.dll" />
+      <CopyToOutput Include="$(MSBuildThisFileDirectory)../../build/native/bin/v140/Win32/Debug/dynamic/libcurl.exp" />
+      <CopyToOutput Include="$(MSBuildThisFileDirectory)../../build/native/bin/v140/Win32/Debug/dynamic/libcurl.pdb" />
+      <None Include="$(MSBuildThisFileDirectory)../../build/native/bin/v140/Win32/Debug/dynamic/libcurl.dll">
+        <DeploymentContent>true</DeploymentContent>
+      </None>
+    </ItemGroup>
+    <ItemGroup Label="v140 and Win32 and Release and dynamic" Condition="'$(PlatformToolset.ToLower())' == 'v140' And '$(Platform.ToLower())' == 'win32' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkages-rmt_curl.ToLower())' == 'dynamic'">
+      <CopyToOutput Include="$(MSBuildThisFileDirectory)../../build/native/bin/v140/Win32/Release/dynamic/libcurl.dll" />
+      <CopyToOutput Include="$(MSBuildThisFileDirectory)../../build/native/bin/v140/Win32/Release/dynamic/libcurl.exp" />
+      <CopyToOutput Include="$(MSBuildThisFileDirectory)../../build/native/bin/v140/Win32/Release/dynamic/libcurl.pdb" />
+      <None Include="$(MSBuildThisFileDirectory)../../build/native/bin/v140/Win32/Release/dynamic/libcurl.dll">
+        <DeploymentContent>true</DeploymentContent>
+      </None>
+    </ItemGroup>
+    <ItemGroup Label="v140 and x64 and Release and dynamic" Condition="'$(PlatformToolset.ToLower())' == 'v140' And '$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkages-rmt_curl.ToLower())' == 'dynamic'">
+      <CopyToOutput Include="$(MSBuildThisFileDirectory)../../build/native/bin/v140/x64/Release/dynamic/libcurl.dll" />
+      <CopyToOutput Include="$(MSBuildThisFileDirectory)../../build/native/bin/v140/x64/Release/dynamic/libcurl.exp" />
+      <CopyToOutput Include="$(MSBuildThisFileDirectory)../../build/native/bin/v140/x64/Release/dynamic/libcurl.pdb" />
+      <None Include="$(MSBuildThisFileDirectory)../../build/native/bin/v140/x64/Release/dynamic/libcurl.dll">
+        <DeploymentContent>true</DeploymentContent>
+      </None>
+    </ItemGroup>
+    <ItemGroup Label="v140 and x64 and Debug and dynamic" Condition="'$(PlatformToolset.ToLower())' == 'v140' And '$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkages-rmt_curl.ToLower())' == 'dynamic'">
+      <CopyToOutput Include="$(MSBuildThisFileDirectory)../../build/native/bin/v140/x64/Debug/dynamic/libcurl.dll" />
+      <CopyToOutput Include="$(MSBuildThisFileDirectory)../../build/native/bin/v140/x64/Debug/dynamic/libcurl.exp" />
+      <CopyToOutput Include="$(MSBuildThisFileDirectory)../../build/native/bin/v140/x64/Debug/dynamic/libcurl.pdb" />
+      <None Include="$(MSBuildThisFileDirectory)../../build/native/bin/v140/x64/Debug/dynamic/libcurl.dll">
+        <DeploymentContent>true</DeploymentContent>
+      </None>
+    </ItemGroup>
+  </Target>
+  <ItemGroup>
+    <PropertyPageSchema Include="$(MSBuildThisFileDirectory)\default-propertiesui.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PropertyPageSchema Include="$(MSBuildThisFileDirectory)\rmt_curl-propertiesui-78bdd381-5cf4-49e3-ab48-ec814f0adbf9.xml" />
+  </ItemGroup>
+  <UsingTask TaskName="NuGetPackageOverlay" AssemblyFile="$(NuGet-NativeExtensionPath)\coapp.NuGetNativeMSBuildTasks.dll" Condition="'$(DesignTimeBuild)' != 'true' AND ('$(NugetMsBuildExtensionLoaded)' == '' OR '$(NugetMsBuildExtensionLoaded)' == 'false')" />
+  <UsingTask TaskName="CheckRuntimeLibrary" AssemblyFile="$(NuGet-NativeExtensionPath)\coapp.NuGetNativeMSBuildTasks.dll" Condition="'$(DesignTimeBuild)' != 'true' AND ('$(NugetMsBuildExtensionLoaded)' == '' OR '$(NugetMsBuildExtensionLoaded)' == 'false')" />
+  <UsingTask TaskName="StringContains" AssemblyFile="$(NuGet-NativeExtensionPath)\coapp.NuGetNativeMSBuildTasks.dll" Condition="'$(DesignTimeBuild)' != 'true' AND ('$(NugetMsBuildExtensionLoaded)' == '' OR '$(NugetMsBuildExtensionLoaded)' == 'false')" />
+  <Target Name="rmt_curl_init_targets_0">
+    <Copy SkipUnchangedFiles="true" SourceFiles="$(NuGet-NativeExtensionPath)\coapp.NuGetNativeMSBuildTasks.dll.orig" DestinationFiles="$(NuGet-NativeExtensionPath)\coapp.NuGetNativeMSBuildTasks.dll" />
+    <PropertyGroup>
+      <NugetMsBuildExtensionLoaded Condition="'$(NugetMsBuildExtensionLoaded)' == '' OR '$(NuGet-OverlayLoaded)' == 'false'">true</NugetMsBuildExtensionLoaded>
+    </PropertyGroup>
+  </Target>
+</Project>
