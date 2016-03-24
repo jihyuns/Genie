@@ -1,11 +1,4 @@
-﻿  Libcurl_Wrapper.cpp
-  Genie_Userinterface.cpp
-  Genie_Speech.cpp
-  Genie_Emotion.cpp
-  Genie_Display.cpp
-  Genie_Datamanagement.cpp
-  Genie_Convenience.cpp
-  Genie_Capture.cpp
+﻿  Genie_Speech.cpp
   main.cpp
   코드를 생성하고 있습니다...
-  Genie.vcxproj -> C:\Users\state\Desktop\Genie\Genie\x64\Debug\Genie.exe
+  Genie.vcxproj -> C:\Users\choo\Documents\GitHub\Genie\src\cppProject\x64\Debug\Genie.exe
