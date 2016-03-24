@@ -109,6 +109,24 @@ std::string Genie_Speech::tokenzierInResult(std::string source, std::string type
 	return temp.substr(0, second_tokenizer_index);
 }
 
+//http://www.devpia.com/MAEUL/Contents/Detail.aspx?BoardID=50&MAEULNo=20&no=697699&ref=697692
+std::string Genie_Speech::eraseSpecialCharter(std::string data) {
+	std::string result;
+	for (int i = 0; i < data.size(); i++) {
+		if (((data[i] & 0x80) == 0x80))
+			result += data[i];
+		else if (data[i] == ' ')
+			result += data[i];
+		else if (((data[i] >= 0x41) && (data[i] <= 0x5A)) || ((data[i] >= 0x61) && (data[i] <= 0x7A)))
+			result += data[i];
+		else if ((data[i] >= 0xA1) && (data[i + 1] >= 0xA1))
+			continue;
+		else															
+			continue;
+	}
+	return result;
+}
+
 void Genie_Speech::setUrl(const std::string _key) {
 	url += "http://sandbox.api.simsimi.com/request.p?key=";
 	url += _key;
@@ -130,7 +148,7 @@ std::string Genie_Speech::getResult(const std::string data) {
 	cout << "print result" << endl;
 	cout << result_code << endl;
 	if (result_code == "100") {// ok
-		return tokenzierInResult(string(result_data_ansi), "response");
+		return eraseSpecialCharter(tokenzierInResult(string(result_data_ansi), "response"));
 	}
 
 	return NULL;

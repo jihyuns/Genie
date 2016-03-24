@@ -21,6 +21,7 @@ class Genie_Speech
 		char* UTF8ToANSI(const char *pszCode);
 		char* ANSIToUTF8(const char *pszCode);
 		std::string tokenzierInResult(std::string source, std::string type);
+		std::string eraseSpecialCharter(std::string data);
 	public:
 	/*	...
 		if you want add on
