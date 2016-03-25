@@ -35,6 +35,9 @@ public:
         long sizeleft;
     };
 
+	// 03.24 by cho
+	char* getescape(char *source, const int len);
+
 private:
     unsigned int http_status;
 };

@@ -5,7 +5,10 @@
 #include <iterator>
 
 using namespace std; 
-Libcurl_Wrapper::Libcurl_Wrapper(){};
+Libcurl_Wrapper::Libcurl_Wrapper(){
+	//cho
+	curl = curl_easy_init();
+};
 Libcurl_Wrapper::~Libcurl_Wrapper(){};
 struct postData
 {
@@ -373,4 +376,9 @@ string Libcurl_Wrapper::post(string &url, string &data)
     }
 
     return readBuffer;
+}
+
+//03.24 by cho
+char* Libcurl_Wrapper::getescape(char *source, const int len) {
+	return curl_easy_escape(curl, source, len);
 }
