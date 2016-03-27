@@ -14,4 +14,7 @@ Kookimin University Capstone Design Project
   2. simsimi
     case vs2015 :
 	  
-	  -ÇÁ·ÎÁ§Æ® ¼Ó¼º - ±¸¼º ¼Ó¼º - ÀÏ¹Ý - ÇÁ·ÎÁ§Æ® ±âº»°ª - ¹®ÀÚ ÁýÇÕ - ¸ÖÆ¼¹ÙÀÌÆ® ¹®ÀÚ ÁýÇÕ »ç¿ëÀ¸·Î ¹Ù²Ù±â
+	  -í”„ë¡œì íŠ¸ ì†ì„± - êµ¬ì„± ì†ì„± - ì¼ë°˜ - í”„ë¡œì íŠ¸ ê¸°ë³¸ê°’ - ë¬¸ìž ì§‘í•© - ë©€í‹°ë°”ì´íŠ¸ ë¬¸ìž ì§‘í•© ì‚¬ìš©ìœ¼ë¡œ ë°”ê¾¸ê¸°
+
+  3. ue4  (Unreal Engine 4)
+    ref -> https://docs.unrealengine.com/latest/KOR/GettingStarted/Installation/index.html
