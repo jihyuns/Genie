@@ -47,6 +47,7 @@ public class MainActivity extends Activity {
         editTextAge=(EditText)findViewById(R.id.editAge);//editTextAge는 사용자의 나이를 받아온다
         editTextGender=(EditText)findViewById(R.id.editGender);//editTextGender는 사용자의 성별을 받아온다.
         editText2 = (EditText) findViewById(R.id.editText2);
+        Button myLocation = (Button) findViewById(R.id.locationAddress);//자신의 위치 가져올 버튼
 
 
         editText2.addTextChangedListener(new TextWatcher() {
@@ -82,6 +83,7 @@ public class MainActivity extends Activity {
                 //bluetoothTask.doSend(msgGender);
             }
         });
+
         Button resetBtn = (Button) findViewById(R.id.resetBtn);
         resetBtn.setOnClickListener(new OnClickListener() {
             @Override

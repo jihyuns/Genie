@@ -55,7 +55,8 @@
         android:layout_height="wrap_content"
         android:text="자신의 위치 가져오기"
         android:textSize="20dp"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:id="@+id/locationAddress"/>
 
 
 </LinearLayout>
