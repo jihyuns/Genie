@@ -47,6 +47,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/editText2" />
     <EditText
+        android:id="@+id/editLocation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="자신의 주소 좌표 :"/>

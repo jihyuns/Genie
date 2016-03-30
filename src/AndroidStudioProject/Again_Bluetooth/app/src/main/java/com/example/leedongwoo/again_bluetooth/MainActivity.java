@@ -5,6 +5,10 @@ import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.util.Set;
 
+import android.content.Context;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
@@ -15,6 +19,7 @@ import android.bluetooth.BluetoothDevice;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.text.Editable;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -33,6 +38,8 @@ public class MainActivity extends Activity {
     private EditText editTextAge;//editAge는 사용자의 나이
     private EditText editTextGender;//editTextGender는 사용자의 성별
     private EditText editText2;
+    private EditText editLocation;//위치를 editText에 나타내주기 위함
+    private Button myLocation;//위치를 받아오는 버튼
     private String errorMessage = "";
     private InputStream btIn;
     private OutputStream btOut;
@@ -47,8 +54,15 @@ public class MainActivity extends Activity {
         editTextAge=(EditText)findViewById(R.id.editAge);//editTextAge는 사용자의 나이를 받아온다
         editTextGender=(EditText)findViewById(R.id.editGender);//editTextGender는 사용자의 성별을 받아온다.
         editText2 = (EditText) findViewById(R.id.editText2);
-        Button myLocation = (Button) findViewById(R.id.locationAddress);//자신의 위치 가져올 버튼
+        editLocation = (EditText) findViewById(R.id.editLocation);// 사용자의 정보를 출력해준다
+        myLocation = (Button) findViewById(R.id.locationAddress);
 
+        myLocation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startLocationService();
+            }
+        });
 
         editText2.addTextChangedListener(new TextWatcher() {
             @Override
@@ -77,7 +91,7 @@ public class MainActivity extends Activity {
                 String msg = editTextName.getText().toString();
                 String msgAge = editTextAge.getText().toString();
                 String msgGender = editTextGender.getText().toString();
-                String newL = msg+"\n"+msgAge+"\n"+msgGender;
+                String newL = msg + "\n" + msgAge + "\n" + msgGender;
                 bluetoothTask.doSend(newL);
                 //bluetoothTask.doSend(msgAge);
                 //bluetoothTask.doSend(msgGender);
@@ -190,5 +204,48 @@ public class MainActivity extends Activity {
     }
     public void hideWaitDialog() {
         waitDialog.dismiss();
+    }
+
+    //GPS로 나의 정보 받아오기
+    public void startLocationService(){
+        LocationManager manager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+
+        GPSListener gpsListener = new GPSListener();
+        long minTime = 1000;
+        float minDistance = 30;
+
+            //GPS를 이용한 위치 요청
+            //manager.requestLocationUpdates(LocationManager.GPS_PROVIDER,minTime,minDistance,gpsListener);
+            manager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER,minTime,minDistance,gpsListener);
+
+            //Location lastLocation = manager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+
+        //manager.requestLocationUpdates(LocationManager.GPS_PROVIDER,minTime,minDistance,gpsListener);
+        Toast.makeText(getApplicationContext(), "위치를 받아오기 시작합니다.\n잠시만 기다려주세요.", Toast.LENGTH_SHORT).show();
+    }
+
+    private class GPSListener implements LocationListener {
+
+        public void onLocationChanged(Location location) {
+            //capture location data sent by current provider
+            Double latitude = location.getLatitude();
+            Double longitude = location.getLongitude();
+
+            String msg = "위도 : "+ latitude + "\n경도:"+ longitude;
+            Log.i("GPSLocationService", msg);
+            Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
+            editLocation.setText(msg);
+
+        }
+
+        public void onProviderDisabled(String provider) {
+        }
+
+        public void onProviderEnabled(String provider) {
+        }
+
+        public void onStatusChanged(String provider, int status, Bundle extras) {
+        }
+
     }
 }
