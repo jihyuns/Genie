@@ -1,5 +1,6 @@
 package com.example.leedongwoo.again_bluetooth;
 
+import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.PrintWriter;
@@ -18,6 +19,7 @@ import android.app.ProgressDialog;
 import android.bluetooth.BluetoothDevice;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.StrictMode;
 import android.text.Editable;
 import android.util.Log;
 import android.view.View;
@@ -26,6 +28,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.text.TextWatcher;
 import android.widget.Toast;
+
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLEncoder;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.lang.StringBuilder;
+import java.lang.CharSequence;
+import android.widget.TextView;
 
 public class MainActivity extends Activity {
     private final static int DEVICES_DIALOG = 1;
@@ -40,6 +52,7 @@ public class MainActivity extends Activity {
     private EditText editText2;
     private EditText editLocation;//위치를 editText에 나타내주기 위함
     private Button myLocation;//위치를 받아오는 버튼
+    private EditText busLocation;
     private String errorMessage = "";
     private InputStream btIn;
     private OutputStream btOut;
@@ -51,19 +64,28 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         editTextName = (EditText) findViewById(R.id.editName);//editTextName이 사용자의 이름을 받는다.
-        editTextAge=(EditText)findViewById(R.id.editAge);//editTextAge는 사용자의 나이를 받아온다
-        editTextGender=(EditText)findViewById(R.id.editGender);//editTextGender는 사용자의 성별을 받아온다.
+        editTextAge = (EditText) findViewById(R.id.editAge);//editTextAge는 사용자의 나이를 받아온다
+        editTextGender = (EditText) findViewById(R.id.editGender);//editTextGender는 사용자의 성별을 받아온다.
         editText2 = (EditText) findViewById(R.id.editText2);
         editLocation = (EditText) findViewById(R.id.editLocation);// 사용자의 정보를 출력해준다
-        myLocation = (Button) findViewById(R.id.locationAddress);
+        myLocation = (Button) findViewById(R.id.locationAddress);//자기 위치정보 받아오기 위도 경도
+        busLocation = (EditText) findViewById(R.id.busLocation);
 
-        myLocation.setOnClickListener(new View.OnClickListener() {
+        myLocation.setOnClickListener(new View.OnClickListener() {//버스정보 위치정보 받아오는 버튼
             @Override
             public void onClick(View view) {
-                startLocationService();
+                //ustartLocationService();
+                try {
+                    getBusInformation();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         });
 
+        //StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        //StrictMode.setThreadPolicy(policy);
+        StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().permitNetwork().build());
         editText2.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -141,6 +163,7 @@ public class MainActivity extends Activity {
         if (id == ERROR_DIALOG) return createErrorDialog();
         return null;
     }
+
     @SuppressWarnings("deprecation")
     @Override
     protected void onPrepareDialog(int id, Dialog dialog) {
@@ -158,7 +181,7 @@ public class MainActivity extends Activity {
         Set<BluetoothDevice> pairedDevices = bluetoothTask.getPairedDevices();
         final BluetoothDevice[] devices = pairedDevices.toArray(new BluetoothDevice[0]);
         String[] items = new String[devices.length];
-        for (int i=0;i<devices.length;i++) {
+        for (int i = 0; i < devices.length; i++) {
             items[i] = devices[i].getName();
         }
 
@@ -180,6 +203,7 @@ public class MainActivity extends Activity {
         this.errorMessage = msg;
         this.showDialog(ERROR_DIALOG);
     }
+
     public Dialog createErrorDialog() {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
         alertDialogBuilder.setTitle("Error");
@@ -202,23 +226,24 @@ public class MainActivity extends Activity {
         waitDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         waitDialog.show();
     }
+
     public void hideWaitDialog() {
         waitDialog.dismiss();
     }
 
     //GPS로 나의 정보 받아오기
-    public void startLocationService(){
+    public void startLocationService() {
         LocationManager manager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 
         GPSListener gpsListener = new GPSListener();
         long minTime = 1000;
         float minDistance = 30;
 
-            //GPS를 이용한 위치 요청
-            //manager.requestLocationUpdates(LocationManager.GPS_PROVIDER,minTime,minDistance,gpsListener);
-            manager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER,minTime,minDistance,gpsListener);
+        //GPS를 이용한 위치 요청
+        //manager.requestLocationUpdates(LocationManager.GPS_PROVIDER,minTime,minDistance,gpsListener);
+        manager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, minTime, minDistance, gpsListener);
 
-            //Location lastLocation = manager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+        //Location lastLocation = manager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
 
         //manager.requestLocationUpdates(LocationManager.GPS_PROVIDER,minTime,minDistance,gpsListener);
         Toast.makeText(getApplicationContext(), "위치를 받아오기 시작합니다.\n잠시만 기다려주세요.", Toast.LENGTH_SHORT).show();
@@ -231,7 +256,7 @@ public class MainActivity extends Activity {
             Double latitude = location.getLatitude();
             Double longitude = location.getLongitude();
 
-            String msg = "위도 : "+ latitude + "\n경도:"+ longitude;
+            String msg = "위도 : " + latitude + "\n경도:" + longitude;
             Log.i("GPSLocationService", msg);
             Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
             editLocation.setText(msg);
@@ -248,4 +273,47 @@ public class MainActivity extends Activity {
         }
 
     }
-}
+
+    //버스정보 받아오기
+    public void getBusInformation() throws IOException {
+
+            StringBuilder urlBuilder = new StringBuilder("http://ws.bus.go.kr/api/rest/stationinfo/getStationByPos");
+            urlBuilder.append("?" + URLEncoder.encode("ServiceKey", "UTF-8") + "=" + "wZJqvet7sRGoIz0NXp7XRzJtGN69oSsQ15DG0ZFD352NgAa%2Bbx7LMJg24Ly9ZXifmlh%2FYaFczztGz9CY9%2FHX6w%3D%3D");
+            urlBuilder.append("&" + URLEncoder.encode("tmX", "UTF-8") + "=" + URLEncoder.encode("126.9972045", "UTF-8")); /*기준위치 X(WGS84)*/
+            urlBuilder.append("&" + URLEncoder.encode("tmY", "UTF-8") + "=" + URLEncoder.encode("37.6105214", "UTF-8")); /*기준위치 Y(WGS84)*/
+            urlBuilder.append("&" + URLEncoder.encode("radius", "UTF-8") + "=" + URLEncoder.encode("300", "UTF-8")); /*검색반경(0~1500m)*/
+            urlBuilder.append("&" + URLEncoder.encode("numOfRows", "UTF-8") + "=" + URLEncoder.encode("5", "UTF-8")); /*검색건수*/
+            urlBuilder.append("&" + URLEncoder.encode("pageNo", "UTF-8") + "=" + URLEncoder.encode("1", "UTF-8")); /*페이지 번호*/
+            URL url = new URL(urlBuilder.toString());
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("GET");
+            conn.setRequestProperty("Content-type", "application/json");
+
+            //System.out.println("Response code : " + conn.getResponseCode());
+            BufferedReader rd;
+            if (conn.getResponseCode() >= 200 && conn.getResponseCode() <= 300) {
+                rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+            } else {
+                rd = new BufferedReader(new InputStreamReader(conn.getErrorStream()));
+            }
+
+            StringBuilder sb = new StringBuilder();
+            String line;
+
+            while ((line = rd.readLine()) != null) {
+                sb.append(line);
+                //rd.close();
+
+            }
+            conn.disconnect();
+            //System.out.println(sb.toString());
+            busLocation.setText(sb.toString());
+        }
+    }
+
+
+
+
+
+
+
