@@ -1,14 +1,22 @@
 #include <iostream>
 #include "header\Genie_Speech.h"
+
 int main(void)
 {
 	/*
-		sample code 
-		input - simsimi - tts
+	sample code
+	input - simsimi - tts
 	*/
+	//AIzaSyBB9IBGzHMyO4PJaRdAcFNZY5zaeRjEqbM
+
 	Genie_Speech a;
-	a.setUrl("a09e07c8-2351-4433-b812-9c8b03e7ddfc");
-	string b = a.getResult("¾È³ç");
+	//a.setUrl_stt("<key>");
+	string c = a.getResult_stt(3);
+
+	cout << c << endl;
+
+	//a.setUrl_simsimi("<key>");
+	string b = a.getResult_simsimi(c);
 
 	cout << "Result : " << b << endl;
 	a.textToSpeech(b);

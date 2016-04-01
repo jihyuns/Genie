@@ -1,4 +1,4 @@
-# Genie
+﻿# Genie
 Kookimin University Capstone Design Project
 
 
@@ -18,3 +18,13 @@ Kookimin University Capstone Design Project
 
   3. ue4  (Unreal Engine 4)
     ref -> https://docs.unrealengine.com/latest/KOR/GettingStarted/Installation/index.html
+
+  4. record
+    case vs2015:
+	  - 포함디렉토리에 lib\openal\include를 추가한다.
+ 	  - 링커 - 입력 - 추가종속성 에 lib\openal\OpenAL32.lib 를 추가한다.
+	  (파일을 디렉토리에 존재)
+
+  5. stt, rapidjaon
+    case vs2015:
+	  주어진 파일들을 프로젝트와 같은 위치에 놔두고 #include 를 통하여서 포함시킨다.

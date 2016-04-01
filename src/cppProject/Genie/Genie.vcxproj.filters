@@ -45,6 +45,18 @@
     <ClCompile Include="src\Libcurl_Wrapper.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="lib\record\aldlist.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\record\CWaves.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\record\Framework.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\record\LoadOAL.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\Genie_Capture.h">
