@@ -1,384 +1,429 @@
 #include "../header/Libcurl_Wrapper.h"
 
-#include <iostream>
-#include <map>
-#include <iterator>
-
-using namespace std; 
-Libcurl_Wrapper::Libcurl_Wrapper(){
+using namespace std;
+Libcurl_Wrapper::Libcurl_Wrapper() {
 	//cho
 	curl = curl_easy_init();
 };
-Libcurl_Wrapper::~Libcurl_Wrapper(){};
+Libcurl_Wrapper::~Libcurl_Wrapper() {};
 struct postData
 {
-    const char *readptr;
-    long sizeleft;
+	const char *readptr;
+	long sizeleft;
 };
 
 static size_t read_callback(void *ptr, size_t size, size_t nmemb, void *userp)
 {
-    struct postData *data_content = (struct postData *)userp;
-     
-    if(size*nmemb < 1)
-        return 0;
+	struct postData *data_content = (struct postData *)userp;
 
-    if(data_content->sizeleft)
-    {
-        *(char *)ptr = data_content->readptr[0]; /* copy one single byte */ 
-        data_content->readptr++;                 /* advance pointer */ 
-        data_content->sizeleft--;                /* less data left */ 
-        return 1;                        /* we return 1 byte at a time! */ 
-    }
+	if (size*nmemb < 1)
+		return 0;
 
-    return 0;                          /* no more data left to deliver */ 
+	if (data_content->sizeleft)
+	{
+		*(char *)ptr = data_content->readptr[0]; /* copy one single byte */
+		data_content->readptr++;                 /* advance pointer */
+		data_content->sizeleft--;                /* less data left */
+		return 1;                        /* we return 1 byte at a time! */
+	}
+
+	return 0;                          /* no more data left to deliver */
 }
 
 static size_t WriteCallback(void *contents, size_t size, size_t nmemb, void *userp)
 {
-    ((string*)userp)->append((char*)contents, size * nmemb);
-    return size * nmemb;
+	((string*)userp)->append((char*)contents, size * nmemb);
+	return size * nmemb;
 }
 
 string Libcurl_Wrapper::get(string &url)
-{   
-    // Clear out the HTTP status
-    http_status = 0;
+{
+	// Clear out the HTTP status
+	http_status = 0;
 
-    // Define our "string-i-fied" response variable
-    string readBuffer;
+	// Define our "string-i-fied" response variable
+	string readBuffer;
 
-    curl = curl_easy_init();
+	curl = curl_easy_init();
 
-    if(curl)
-    {
-        curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
-        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
-        curl_easy_setopt(curl, CURLOPT_WRITEDATA, &readBuffer);
-        res = curl_easy_perform(curl);
+	if (curl)
+	{
+		curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
+		curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
+		curl_easy_setopt(curl, CURLOPT_WRITEDATA, &readBuffer);
+		res = curl_easy_perform(curl);
 
-        unsigned int http_code = 0;
-        if(res != CURLE_OK)
-        {
-            fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
-            return 0;
-        }
-        // Get the response code 
-        curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &http_code);
-        http_status = http_code;
+		unsigned int http_code = 0;
+		if (res != CURLE_OK)
+		{
+			fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
+			return 0;
+		}
+		// Get the response code 
+		curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &http_code);
+		http_status = http_code;
 
-        // Assure it's an int by casting
-        if(int(http_status) == 400)
-            cout << "Response <" << http_status << "> thrown." << endl;
+		// Assure it's an int by casting
+		if (int(http_status) == 400)
+			cout << "Response <" << http_status << "> thrown." << endl;
 
-        curl_easy_cleanup(curl);
-    }
+		curl_easy_cleanup(curl);
+	}
 
-  return readBuffer;
+	return readBuffer;
 }
 
 
 string Libcurl_Wrapper::get(string &url, map<string, string> &params)
 {
-    // Clear out the HTTP status
-    http_status = 0;
+	// Clear out the HTTP status
+	http_status = 0;
 
-    // Define our "string-i-fied" response variable
-    string readBuffer;
-    string parameters;
+	// Define our "string-i-fied" response variable
+	string readBuffer;
+	string parameters;
 
-    curl = curl_easy_init();
+	curl = curl_easy_init();
 
-    // Iterate through parameters map and construct a string from it.
-    for(map<string, string>::iterator itr = params.begin(); itr != params.end(); ++itr) 
-        parameters.append(itr->first + "=" + itr->second + "&");
+	// Iterate through parameters map and construct a string from it.
+	for (map<string, string>::iterator itr = params.begin(); itr != params.end(); ++itr)
+		parameters.append(itr->first + "=" + itr->second + "&");
 
-    if(curl)
-    {
-        curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
-        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
-        curl_easy_setopt(curl, CURLOPT_WRITEDATA, &readBuffer);
-        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, parameters.c_str());
+	if (curl)
+	{
+		curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
+		curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
+		curl_easy_setopt(curl, CURLOPT_WRITEDATA, &readBuffer);
+		curl_easy_setopt(curl, CURLOPT_POSTFIELDS, parameters.c_str());
 
-        res = curl_easy_perform(curl);
+		res = curl_easy_perform(curl);
 
-        unsigned int http_code = 0;
-        if(res != CURLE_OK)
-        {
-            fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
-            return 0;
-        }
-        // Get the response code 
-        curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &http_code);
-        http_status = http_code;
+		unsigned int http_code = 0;
+		if (res != CURLE_OK)
+		{
+			fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
+			return 0;
+		}
+		// Get the response code 
+		curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &http_code);
+		http_status = http_code;
 
-        // Assure it's an int by casting
-        if(int(http_status) == 400)
-            cout << "Response <" << http_status << "> thrown." << endl;
+		// Assure it's an int by casting
+		if (int(http_status) == 400)
+			cout << "Response <" << http_status << "> thrown." << endl;
 
-        curl_easy_cleanup(curl);
-    }
+		curl_easy_cleanup(curl);
+	}
 
-  return readBuffer;
+	return readBuffer;
 }
 
 
 string Libcurl_Wrapper::get(string &url, map<int, string> &params)
 {
-    // Clear out the HTTP status
-    http_status = 0;
+	// Clear out the HTTP status
+	http_status = 0;
 
-    // Define our "string-i-fied" response variable
-    string readBuffer;
-    string parameters;
+	// Define our "string-i-fied" response variable
+	string readBuffer;
+	string parameters;
 
-    curl = curl_easy_init();
+	curl = curl_easy_init();
 
-    // Iterate through parameters map and construct a string from it.
-    for(map<int, string>::iterator itr = params.begin(); itr != params.end(); ++itr) 
-        parameters.append(to_string(itr->first) + "=" + itr->second + "&"); 
+	// Iterate through parameters map and construct a string from it.
+	for (map<int, string>::iterator itr = params.begin(); itr != params.end(); ++itr)
+		parameters.append(to_string(itr->first) + "=" + itr->second + "&");
 
-    if(curl)
-    {
-        curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
-        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
-        curl_easy_setopt(curl, CURLOPT_WRITEDATA, &readBuffer);
-        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, parameters.c_str());
-        
-        res = curl_easy_perform(curl);
+	if (curl)
+	{
+		curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
+		curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
+		curl_easy_setopt(curl, CURLOPT_WRITEDATA, &readBuffer);
+		curl_easy_setopt(curl, CURLOPT_POSTFIELDS, parameters.c_str());
 
-        unsigned int http_code = 0;
-        if(res != CURLE_OK)
-        {
-            fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
-            return 0;
-        }
-        // Get the response code 
-        curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &http_code);
-        http_status = http_code;
+		res = curl_easy_perform(curl);
 
-        // Assure it's an int by casting
-        if(int(http_status) == 400)
-            cout << "Response <" << http_status << "> thrown." << endl;
+		unsigned int http_code = 0;
+		if (res != CURLE_OK)
+		{
+			fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
+			return 0;
+		}
+		// Get the response code 
+		curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &http_code);
+		http_status = http_code;
 
-        curl_easy_cleanup(curl);
-    }
+		// Assure it's an int by casting
+		if (int(http_status) == 400)
+			cout << "Response <" << http_status << "> thrown." << endl;
 
-  return readBuffer;
+		curl_easy_cleanup(curl);
+	}
+
+	return readBuffer;
 }
 
 
 string Libcurl_Wrapper::get(string &url, map<string, int> &params)
 {
-    // Clear out the HTTP status
-    http_status = 0;
+	// Clear out the HTTP status
+	http_status = 0;
 
-    // Define our "string-i-fied" response variable
-    string readBuffer;
-    string parameters;
+	// Define our "string-i-fied" response variable
+	string readBuffer;
+	string parameters;
 
-    curl = curl_easy_init();
+	curl = curl_easy_init();
 
-    // Iterate through parameters map and construct a string from it.
-    for(map<string, int>::iterator itr = params.begin(); itr != params.end(); ++itr) 
-        parameters.append(itr->first + "=" + to_string(itr->second) + "&"); 
+	// Iterate through parameters map and construct a string from it.
+	for (map<string, int>::iterator itr = params.begin(); itr != params.end(); ++itr)
+		parameters.append(itr->first + "=" + to_string(itr->second) + "&");
 
-    if(curl)
-    {
-        curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
-        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
-        curl_easy_setopt(curl, CURLOPT_WRITEDATA, &readBuffer);
-        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, parameters.c_str());
-        
-        res = curl_easy_perform(curl);
+	if (curl)
+	{
+		curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
+		curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
+		curl_easy_setopt(curl, CURLOPT_WRITEDATA, &readBuffer);
+		curl_easy_setopt(curl, CURLOPT_POSTFIELDS, parameters.c_str());
 
-        unsigned int http_code = 0;
-        if(res != CURLE_OK)
-        {
-            fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
-            return 0;
-        }
-        // Get the response code 
-        curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &http_code);
-        http_status = http_code;
+		res = curl_easy_perform(curl);
 
-        // Assure it's an int by casting
-        if(int(http_status) == 400)
-            cout << "Response <" << http_status << "> thrown." << endl;
+		unsigned int http_code = 0;
+		if (res != CURLE_OK)
+		{
+			fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
+			return 0;
+		}
+		// Get the response code 
+		curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &http_code);
+		http_status = http_code;
 
-        curl_easy_cleanup(curl);
-    }
+		// Assure it's an int by casting
+		if (int(http_status) == 400)
+			cout << "Response <" << http_status << "> thrown." << endl;
 
-  return readBuffer;
+		curl_easy_cleanup(curl);
+	}
+
+	return readBuffer;
 }
 
 string Libcurl_Wrapper::get(string &url, map<int, int> &params)
 {
-    // Clear out the HTTP status
-    http_status = 0;
+	// Clear out the HTTP status
+	http_status = 0;
 
-    // Define our "string-i-fied" response variable
-    string readBuffer;
-    string parameters;
+	// Define our "string-i-fied" response variable
+	string readBuffer;
+	string parameters;
 
-    curl = curl_easy_init();
+	curl = curl_easy_init();
 
-    // Iterate through parameters map and construct a string from it.
-    for(map<int, int>::iterator itr = params.begin(); itr != params.end(); ++itr) 
-        parameters.append(to_string(itr->first) + "=" + to_string(itr->second) + "&"); 
+	// Iterate through parameters map and construct a string from it.
+	for (map<int, int>::iterator itr = params.begin(); itr != params.end(); ++itr)
+		parameters.append(to_string(itr->first) + "=" + to_string(itr->second) + "&");
 
-    if(curl)
-    {
-        curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
-        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
-        curl_easy_setopt(curl, CURLOPT_WRITEDATA, &readBuffer);
-        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, parameters.c_str());
-        
-        res = curl_easy_perform(curl);
+	if (curl)
+	{
+		curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
+		curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
+		curl_easy_setopt(curl, CURLOPT_WRITEDATA, &readBuffer);
+		curl_easy_setopt(curl, CURLOPT_POSTFIELDS, parameters.c_str());
 
-        unsigned int http_code = 0;
-        if(res != CURLE_OK)
-        {
-            fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
-            return 0;
-        }
-        // Get the response code 
-        curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &http_code);
-        http_status = http_code;
+		res = curl_easy_perform(curl);
 
-        // Assure it's an int by casting
-        if(int(http_status) == 400)
-            cout << "Response <" << http_status << "> thrown." << endl;
+		unsigned int http_code = 0;
+		if (res != CURLE_OK)
+		{
+			fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
+			return 0;
+		}
+		// Get the response code 
+		curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &http_code);
+		http_status = http_code;
 
-        curl_easy_cleanup(curl);
-    }
+		// Assure it's an int by casting
+		if (int(http_status) == 400)
+			cout << "Response <" << http_status << "> thrown." << endl;
 
-  return readBuffer;
+		curl_easy_cleanup(curl);
+	}
+
+	return readBuffer;
 }
 
 string Libcurl_Wrapper::post(string &url, map<string, string> &params)
-{   
-    curl = curl_easy_init();
+{
+	curl = curl_easy_init();
 
-    string parameters;
-    string readBuffer;
+	string parameters;
+	string readBuffer;
 
-    // Iterate through parameters map and construct a string from it.
-    for(map<string, string>::iterator itr = params.begin(); itr != params.end(); ++itr) 
-        parameters.append(itr->first + "=" + itr->second);
+	// Iterate through parameters map and construct a string from it.
+	for (map<string, string>::iterator itr = params.begin(); itr != params.end(); ++itr)
+		parameters.append(itr->first + "=" + itr->second);
 
-    cout << parameters << endl;
+	cout << parameters << endl;
 
-    if(curl)
-    {
-        curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
-        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
-        curl_easy_setopt(curl, CURLOPT_WRITEDATA, &readBuffer);
+	if (curl)
+	{
+		curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
+		curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
+		curl_easy_setopt(curl, CURLOPT_WRITEDATA, &readBuffer);
 
-        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, parameters.c_str());
-        
-        // Make the call
-        res = curl_easy_perform(curl);
+		curl_easy_setopt(curl, CURLOPT_POSTFIELDS, parameters.c_str());
 
-        if(res != CURLE_OK)
-        {
-            fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
-            return 0;
-        }
-        curl_easy_cleanup(curl);
-    }
+		// Make the call
+		res = curl_easy_perform(curl);
 
-    return readBuffer;
+		if (res != CURLE_OK)
+		{
+			fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
+			return 0;
+		}
+		curl_easy_cleanup(curl);
+	}
+
+	return readBuffer;
 }
 
 string Libcurl_Wrapper::post(string &url, map<string, string> &params, map<string, string> &headers_map)
-{   
-    curl = curl_easy_init();
+{
+	curl = curl_easy_init();
 
-    string parameters;
-    string headers_data;
+	string parameters;
+	string headers_data;
 
-    // This is how libcurl natively stores headers
-    struct curl_slist *headers = NULL;
+	// This is how libcurl natively stores headers
+	struct curl_slist *headers = NULL;
 
-    string readBuffer;
+	string readBuffer;
 
-    // Iterate through parameters map and construct a string from it.
-    for(map<string, string>::iterator itr = params.begin(); itr != params.end(); ++itr) 
-        parameters.append(itr->first + "=" + itr->second + "&");
+	// Iterate through parameters map and construct a string from it.
+	for (map<string, string>::iterator itr = params.begin(); itr != params.end(); ++itr)
+		parameters.append(itr->first + "=" + itr->second + "&");
 
-    // Iterate through headers map and construct the headers string from it.
-    for(map<string, string>::iterator itr = headers_map.begin(); itr != headers_map.end(); ++itr)
-        headers_data.append(itr->first + ": "+itr->second);
+	// Iterate through headers map and construct the headers string from it.
+	for (map<string, string>::iterator itr = headers_map.begin(); itr != headers_map.end(); ++itr)
+		headers_data.append(itr->first + ": " + itr->second);
 
-    if(curl)
-    {
-        // Construct our headers
-        headers = curl_slist_append(headers, headers_data.c_str());
+	if (curl)
+	{
+		// Construct our headers
+		headers = curl_slist_append(headers, headers_data.c_str());
 
-        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers); 
-        curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
-        
-        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
-        curl_easy_setopt(curl, CURLOPT_WRITEDATA, &readBuffer);
-        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, parameters.c_str());
-        
-        // Make the call
-        res = curl_easy_perform(curl);
+		curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
+		curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
 
-        if(res != CURLE_OK)
-        {
-            fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
-            return 0;
-        }
-        curl_slist_free_all(headers);
-        curl_easy_cleanup(curl);
-    }
+		curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
+		curl_easy_setopt(curl, CURLOPT_WRITEDATA, &readBuffer);
+		curl_easy_setopt(curl, CURLOPT_POSTFIELDS, parameters.c_str());
 
-    return readBuffer;
+		// Make the call
+		res = curl_easy_perform(curl);
+
+		if (res != CURLE_OK)
+		{
+			fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
+			return 0;
+		}
+		curl_slist_free_all(headers);
+		curl_easy_cleanup(curl);
+	}
+
+	return readBuffer;
 }
 
 string Libcurl_Wrapper::post(string &url, string &data)
-{   
-    const char * data_char_array = data.c_str(); // Convert to const char array
+{
+	const char * data_char_array = data.c_str(); // Convert to const char array
 
-    struct postData data_content;
+	struct postData data_content;
 
-    curl = curl_easy_init();
-     
-    data_content.readptr = data_char_array;
-    data_content.sizeleft = (long)strlen(data_char_array);   
+	curl = curl_easy_init();
 
-    string readBuffer;
+	data_content.readptr = data_char_array;
+	data_content.sizeleft = (long)strlen(data_char_array);
 
-    if(curl)
-    {
-        curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
-        curl_easy_setopt(curl, CURLOPT_POST, 1L);
-        curl_easy_setopt(curl, CURLOPT_READFUNCTION, read_callback);
-        curl_easy_setopt(curl, CURLOPT_READDATA, &data_content);
+	string readBuffer;
 
-        bool debug = true;
+	if (curl)
+	{
+		curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
+		curl_easy_setopt(curl, CURLOPT_POST, 1L);
+		curl_easy_setopt(curl, CURLOPT_READFUNCTION, read_callback);
+		curl_easy_setopt(curl, CURLOPT_READDATA, &data_content);
 
-        /* Allows us to view what's going on/debug if necessary */
-        if(debug)
-            curl_easy_setopt(curl, CURLOPT_VERBOSE, 1L);
-        
-        // Make the call
-        res = curl_easy_perform(curl);
+		bool debug = true;
 
-        if(res != CURLE_OK)
-        {
-            fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
-            return 0;
-        }
-        curl_easy_cleanup(curl);
-    }
+		/* Allows us to view what's going on/debug if necessary */
+		if (debug)
+			curl_easy_setopt(curl, CURLOPT_VERBOSE, 1L);
 
-    return readBuffer;
+		// Make the call
+		res = curl_easy_perform(curl);
+
+		if (res != CURLE_OK)
+		{
+			fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
+			return 0;
+		}
+		curl_easy_cleanup(curl);
+	}
+
+	return readBuffer;
 }
 
 //03.24 by cho
 char* Libcurl_Wrapper::getescape(char *source, const int len) {
 	return curl_easy_escape(curl, source, len);
+}
+
+//https://forum.processing.org/two/discussion/12339/how-to-use-curl-in-processing-post-get-set-headers-etc
+size_t read_wave_data(char *ptr, size_t size, size_t nmemb, void *userdata)
+{
+	std::ifstream* f = (std::ifstream*)userdata;
+	size_t n = size * nmemb;  f->read(ptr, n);
+	size_t result = f->gcount();  return result;
+}
+
+//04.01 by cho
+std::string Libcurl_Wrapper::get_stt(const std::string url, const std::string filename) {
+	string readBuffer;
+	curl = curl_easy_init();
+	if (curl) {
+		struct curl_slist *chunk = NULL;
+
+		std::ifstream fileStream(filename, std::ifstream::binary);
+		fileStream.seekg(0, fileStream.end);
+		int length = fileStream.tellg();
+		fileStream.seekg(0, fileStream.beg);
+
+		curl_easy_setopt(curl, CURLOPT_READFUNCTION, &read_wave_data);
+		curl_easy_setopt(curl, CURLOPT_POSTFIELDSIZE, length);
+		curl_easy_setopt(curl, CURLOPT_READDATA, &fileStream);
+
+		chunk = curl_slist_append(chunk, "Content-Type: audio/l16; rate=16000");
+		res = curl_easy_setopt(curl, CURLOPT_HTTPHEADER, chunk);
+		curl_easy_setopt(curl, CURLOPT_URL, "https://www.google.com/speech-api/v2/recognize?output=json&lang=ko-KR&key=AIzaSyBB9IBGzHMyO4PJaRdAcFNZY5zaeRjEqbM&client=chromium");
+		//curl_easy_setopt(curl, CURLOPT_VERBOSE, 1L);
+		curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, 0L);
+		curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
+		curl_easy_setopt(curl, CURLOPT_WRITEDATA, &readBuffer);
+		curl_easy_setopt(curl, CURLOPT_POST, 1L);
+		curl_easy_setopt(curl, CURLOPT_FAILONERROR, 1L);
+
+		res = curl_easy_perform(curl);
+
+		if (res != CURLE_OK)
+			fprintf(stderr, "curl_easy_perform() failed: %s\n",
+				curl_easy_strerror(res));
+
+		/* always cleanup */
+		curl_easy_cleanup(curl);
+
+		/* free the custom headers */
+		curl_slist_free_all(chunk);
+	}
+	return readBuffer;
 }
