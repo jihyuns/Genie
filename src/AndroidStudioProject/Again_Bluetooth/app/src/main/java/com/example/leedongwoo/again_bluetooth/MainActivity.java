@@ -4,6 +4,8 @@ import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.PrintWriter;
+import java.lang.reflect.GenericArrayType;
+import java.util.ArrayList;
 import java.util.Set;
 
 import android.content.Context;
@@ -20,15 +22,19 @@ import android.bluetooth.BluetoothDevice;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.StrictMode;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.internal.widget.AdapterViewCompat;
 import android.text.Editable;
 import android.util.Log;
+import android.util.Xml;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.text.TextWatcher;
 import android.widget.Toast;
-
+import android.widget.Spinner;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -37,9 +43,26 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.lang.StringBuilder;
 import java.lang.CharSequence;
+import org.w3c.dom.Document;
+import org.w3c.dom.NodeList;
+import org.w3c.dom.Node;
 import android.widget.TextView;
+import java.io.StringReader;
+import android.widget.ArrayAdapter;
+import org.xml.sax.InputSource;
+import android.widget.AdapterView.OnItemClickListener;
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserFactory;
 
-public class MainActivity extends Activity {
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathFactory;
+import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.ListView;
+
+public class MainActivity extends Activity /*implements OnItemSelectedListener*/{
     private final static int DEVICES_DIALOG = 1;
     private final static int ERROR_DIALOG = 2;
 
@@ -56,6 +79,11 @@ public class MainActivity extends Activity {
     private String errorMessage = "";
     private InputStream btIn;
     private OutputStream btOut;
+    public static String select_item = "";
+    ArrayList<String> arraylist;
+
+    ListView m_ListView;
+    ArrayAdapter<String> m_Adapter;
 
 
     @Override
@@ -67,44 +95,23 @@ public class MainActivity extends Activity {
         editTextAge = (EditText) findViewById(R.id.editAge);//editTextAge는 사용자의 나이를 받아온다
         editTextGender = (EditText) findViewById(R.id.editGender);//editTextGender는 사용자의 성별을 받아온다.
         editText2 = (EditText) findViewById(R.id.editText2);
-        editLocation = (EditText) findViewById(R.id.editLocation);// 사용자의 정보를 출력해준다
+        //editLocation = (EditText) findViewById(R.id.editLocation);// 사용자의 정보를 출력해준다
         myLocation = (Button) findViewById(R.id.locationAddress);//자기 위치정보 받아오기 위도 경도
-        busLocation = (EditText) findViewById(R.id.busLocation);
+        busLocation = (EditText) findViewById(R.id.editBus);
 
         myLocation.setOnClickListener(new View.OnClickListener() {//버스정보 위치정보 받아오는 버튼
             @Override
             public void onClick(View view) {
-                //ustartLocationService();
                 try {
-                    getBusInformation();
-                } catch (IOException e) {
+                    new Bus().getBusInformation();
+                }catch (Exception e){
                     e.printStackTrace();
                 }
             }
         });
 
-        //StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-        //StrictMode.setThreadPolicy(policy);
-        StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().permitNetwork().build());
-        editText2.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                /*if(editText2.getText().toString().equals("LEE")) {
-                    String newMsg="abc";
-                    bluetoothTask.doSend(newMsg);
-                }*/
-            }
-        });
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
 
         Button sendBtn = (Button) findViewById(R.id.sendBtn);
         sendBtn.setOnClickListener(new OnClickListener() {
@@ -113,10 +120,9 @@ public class MainActivity extends Activity {
                 String msg = editTextName.getText().toString();
                 String msgAge = editTextAge.getText().toString();
                 String msgGender = editTextGender.getText().toString();
+                String msgBus = busLocation.getText().toString();
                 String newL = msg + "\n" + msgAge + "\n" + msgGender;
-                bluetoothTask.doSend(newL);
-                //bluetoothTask.doSend(msgAge);
-                //bluetoothTask.doSend(msgGender);
+                bluetoothTask.doSend(newL+"\n"+msgBus);
             }
         });
 
@@ -274,17 +280,18 @@ public class MainActivity extends Activity {
 
     }
 
-    //버스정보 받아오기
-    public void getBusInformation() throws IOException {
-
+    private class Bus {
+        public void getBusInformation() throws Exception {
+            String temp[] = new String[9];
             StringBuilder urlBuilder = new StringBuilder("http://ws.bus.go.kr/api/rest/stationinfo/getStationByPos");
             urlBuilder.append("?" + URLEncoder.encode("ServiceKey", "UTF-8") + "=" + "wZJqvet7sRGoIz0NXp7XRzJtGN69oSsQ15DG0ZFD352NgAa%2Bbx7LMJg24Ly9ZXifmlh%2FYaFczztGz9CY9%2FHX6w%3D%3D");
             urlBuilder.append("&" + URLEncoder.encode("tmX", "UTF-8") + "=" + URLEncoder.encode("126.9972045", "UTF-8")); /*기준위치 X(WGS84)*/
             urlBuilder.append("&" + URLEncoder.encode("tmY", "UTF-8") + "=" + URLEncoder.encode("37.6105214", "UTF-8")); /*기준위치 Y(WGS84)*/
             urlBuilder.append("&" + URLEncoder.encode("radius", "UTF-8") + "=" + URLEncoder.encode("300", "UTF-8")); /*검색반경(0~1500m)*/
-            urlBuilder.append("&" + URLEncoder.encode("numOfRows", "UTF-8") + "=" + URLEncoder.encode("5", "UTF-8")); /*검색건수*/
+            urlBuilder.append("&" + URLEncoder.encode("numOfRows", "UTF-8") + "=" + URLEncoder.encode("3", "UTF-8")); /*검색건수*/
             urlBuilder.append("&" + URLEncoder.encode("pageNo", "UTF-8") + "=" + URLEncoder.encode("1", "UTF-8")); /*페이지 번호*/
             URL url = new URL(urlBuilder.toString());
+
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
             conn.setRequestProperty("Content-type", "application/json");
@@ -303,13 +310,61 @@ public class MainActivity extends Activity {
             while ((line = rd.readLine()) != null) {
                 sb.append(line);
                 //rd.close();
-
             }
+
             conn.disconnect();
-            //System.out.println(sb.toString());
-            busLocation.setText(sb.toString());
+            //busLocationNum1.setText(sb.toString());
+            String xml = sb.toString();
+            InputSource is = new InputSource(new StringReader(xml));
+            Document document = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(is);
+
+            XPath xpath = XPathFactory.newInstance().newXPath();
+
+            NodeList busId = (NodeList)xpath.evaluate("//itemList/arsId",document, XPathConstants.NODESET);
+            NodeList busName = (NodeList)xpath.evaluate("//itemList/stationNm",document,XPathConstants.NODESET);
+
+            temp[0]=(busId.item(0).getTextContent()+" - "+busName.item(0).getTextContent());
+            temp[1]=(busId.item(1).getTextContent()+" - "+busName.item(1).getTextContent());
+            temp[2]=(busId.item(2).getTextContent()+" - "+busName.item(2).getTextContent());
+            temp[3]=(busId.item(3).getTextContent()+" - "+busName.item(3).getTextContent());
+            temp[4]=(busId.item(4).getTextContent()+" - "+busName.item(4).getTextContent());
+            temp[5]=(busId.item(5).getTextContent()+" - "+busName.item(5).getTextContent());
+            temp[6]=(busId.item(6).getTextContent()+" - "+busName.item(6).getTextContent());
+            temp[7]=(busId.item(7).getTextContent()+" - "+busName.item(7).getTextContent());
+            temp[8]=(busId.item(8).getTextContent()+" - "+busName.item(8).getTextContent());
+
+            m_Adapter = new ArrayAdapter<String>(getApplicationContext(), R.layout.simpleitem);
+
+            // Xml에서 추가한 ListView 연결
+            m_ListView = (ListView) findViewById(R.id.busList);
+
+            // ListView에 어댑터 연결
+            m_ListView.setAdapter(m_Adapter);
+            m_ListView.setOnItemClickListener(onClickListItem);
+            m_Adapter.add(temp[0]);
+            m_Adapter.add(temp[1]);
+            m_Adapter.add(temp[2]);
+            m_Adapter.add(temp[3]);
+            m_Adapter.add(temp[4]);
+
         }
     }
+
+    private OnItemClickListener onClickListItem = new OnItemClickListener() {
+
+        @Override
+        public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+            // 이벤트 발생 시 해당 아이템 위치의 텍스트를 출력
+            Toast.makeText(getApplicationContext(), m_Adapter.getItem(arg2), Toast.LENGTH_SHORT).show();
+            busLocation.setText(m_Adapter.getItem(arg2));
+            //bluetoothTask.doSend(m_Adapter.getItem(arg2));
+        }
+    };
+
+
+
+}
+
 
 
 

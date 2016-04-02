@@ -23,6 +23,12 @@
         android:id="@+id/editGender"
         android:inputType="textCapWords"
         android:hint="성별을 입력하세요"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editBus"
+        android:inputType="textCapWords"
+        android:hint="정류장정보를 받아옵니다"/>
 
     <LinearLayout
         android:orientation="horizontal"
@@ -46,11 +52,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/editText2" />
-    <EditText
-        android:id="@+id/editLocation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="자신의 주소 좌표 :"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -58,10 +59,10 @@
         android:textSize="20dp"
         android:layout_gravity="center"
         android:id="@+id/locationAddress"/>
-    <EditText
+    <ListView
+        android:id="@+id/busList"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/busLocation"/>
+        android:layout_height="match_parent"></ListView>
 
 
 </LinearLayout>
