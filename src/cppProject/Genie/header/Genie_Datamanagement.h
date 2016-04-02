@@ -6,10 +6,17 @@ class Genie_Datamanagement
 	/*	...
 		if you want add on
 	*/
+		//by cho 04.02
+		int friendly;
 	public:
 	/*	...
 		if you want add on
 	*/	
+		//bycho 04.02
+		int getFriendly();
+		void setFriendly(const int num);
+		void upFriendly(const int num);
+		void downFriendly(const int num);
 };
 
 #endif
