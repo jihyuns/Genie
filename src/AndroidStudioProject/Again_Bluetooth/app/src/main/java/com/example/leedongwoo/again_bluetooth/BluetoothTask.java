@@ -21,11 +21,9 @@ import android.content.IntentFilter;
 public class BluetoothTask {
     private static final String TAG = "BluetoothTask";
 
-    /**
-     * UUIDはサーバと一致している必要がある。
-     * - 独自サービスのUUIDはツールで生成する。（ほぼ乱数）
-     * - 注：このまま使わないように。
-     */
+
+    /* UUID는 서버와 일치할 필요가 있다*/
+
     private static final UUID APP_UUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
 
     private MainActivity activity;
@@ -39,34 +37,28 @@ public class BluetoothTask {
         this.activity = activity;
     }
 
-    /**
-     * Bluetoothの初期化。
-     */
+    //블루투스의 초기화
     public void init() {
-        // BTアダプタ取得。取れなければBT未実装デバイス。
         bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         if (bluetoothAdapter == null) {
             activity.errorDialog("This device is not implement Bluetooth.");
             return;
         }
-        // BTが設定で有効になっているかチェック。
         if (!bluetoothAdapter.isEnabled()) {
             // TODO: ユーザに許可を求める処理。
             activity.errorDialog("This device is disabled Bluetooth.");
             return;
         }
     }
-    /**
-     * @return ペアリング済みのデバイス一覧を返す。デバイス選択ダイアログ用。
-     */
+
+    // 페어링 끝낸 데이터베이스 정보를 되돌린다. 디바이스 선택 다이얼로그용이다.
     public Set<BluetoothDevice> getPairedDevices() {
         return bluetoothAdapter.getBondedDevices();
     }
 
-    /**
-     * 非同期で指定されたデバイスの接続を開始する。
-     * - 選択ダイアログから選択されたデバイスを設定される。
-     * @param device 選択デバイス
+
+    /*비동기로 지정된 디바이스의 접속을 재개시한다.
+      선택 다이얼로그 부터 선택된 디바이스를 설정한다.
      */
     public void doConnect(BluetoothDevice device) {
         bluetoothDevice = device;
@@ -74,35 +66,31 @@ public class BluetoothTask {
             bluetoothSocket = bluetoothDevice.createRfcommSocketToServiceRecord(APP_UUID);
             new ConnectTask().execute();
         } catch (IOException e) {
-            Log.e(TAG,e.toString(),e);
+            Log.e(TAG, e.toString(), e);
             activity.errorDialog(e.toString());
         }
     }
 
-    /**
-     * 非同期でBluetoothの接続を閉じる。
-     */
+
+    //비동기로 블루투스의 접촉을 끝낸다.
     public void doClose() {
         new CloseTask().execute();
     }
 
-    /**
-     * 非同期でメッセージの送受信を行う。
-     * @param msg 送信メッセージ.
-     */
+    //비동기로 블루투스의 접촉을 닫는다.
     public void doSend(String msg) {
         new SendTask().execute(msg);
     }
 
-    /**
-     * Bluetoothと接続を開始する非同期タスク。
-     * - 時間がかかる場合があるのでProcessDialogを表示する。
-     * - 双方向のストリームを開くところまで。
+    /*
+    블루투스와 접촉을 개시하는 비동기 Task
+    시간이 걸리는 경우가 있기 때문에 process dialog를 표시한다
+    쌍방향이 스트림을 열때까지
      */
     private class ConnectTask extends AsyncTask<Void, Void, Object> {
         @Override
         protected void onPreExecute() {
-            activity.showWaitDialog("Connect Bluetooth Device.");
+            activity.showWaitDialog("블루투스 연결 중 입니다");
         }
 
         @Override
@@ -114,24 +102,26 @@ public class BluetoothTask {
             } catch (Throwable t) {
                 doClose();
                 return t;
+
             }
             return null;
         }
 
         @Override
         protected void onPostExecute(Object result) {
+
             if (result instanceof Throwable) {
-                Log.e(TAG,result.toString(),(Throwable)result);
+                Log.e(TAG, result.toString(), (Throwable) result);
                 activity.errorDialog(result.toString());
+
             } else {
                 activity.hideWaitDialog();
             }
         }
     }
 
-    /**
-     * Bluetoothと接続を終了する非同期タスク。
-     * - 不要かも知れないが念のため非同期にしている。
+    /*
+    블루투스의 접속을 종료하는 비동기 테스크
      */
     private class CloseTask extends AsyncTask<Void, Void, Object> {
         @Override
@@ -155,16 +145,15 @@ public class BluetoothTask {
         }
     }
 
-    /**
-     * サーバとメッセージの送受信を行う非同期タスク。
-     * - 英小文字の文字列を送ると英大文字で戻ってくる。
-     * - 戻ってきた文字列を下段のTextViewに反映する。
+    /*
+    서버와 메시지 송수신을 실행하는 비동기 테스크
      */
     private class SendTask extends AsyncTask<String, Void, Object> {
         @Override
         protected Object doInBackground(String... params) {
             try {
-                btOut.write(params[0].getBytes());
+                btOut.write(params[0].getBytes("UTF-8"));
+
                 btOut.flush();
 
                 byte[] buff = new byte[512];
@@ -185,7 +174,7 @@ public class BluetoothTask {
                 activity.errorDialog(result.toString());
             } else {
                 // 結果を画面に反映。
-                activity.doSetResultText(result.toString());
+                //activity.doSetResultText(result.toString());
             }
         }
     }

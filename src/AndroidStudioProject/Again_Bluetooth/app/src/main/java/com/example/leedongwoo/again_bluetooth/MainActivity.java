@@ -79,6 +79,8 @@ public class MainActivity extends Activity /*implements OnItemSelectedListener*/
     private String errorMessage = "";
     private InputStream btIn;
     private OutputStream btOut;
+    public double lat ;
+    public double longi ;
     public static String select_item = "";
     ArrayList<String> arraylist;
 
@@ -94,8 +96,6 @@ public class MainActivity extends Activity /*implements OnItemSelectedListener*/
         editTextName = (EditText) findViewById(R.id.editName);//editTextName이 사용자의 이름을 받는다.
         editTextAge = (EditText) findViewById(R.id.editAge);//editTextAge는 사용자의 나이를 받아온다
         editTextGender = (EditText) findViewById(R.id.editGender);//editTextGender는 사용자의 성별을 받아온다.
-        editText2 = (EditText) findViewById(R.id.editText2);
-        //editLocation = (EditText) findViewById(R.id.editLocation);// 사용자의 정보를 출력해준다
         myLocation = (Button) findViewById(R.id.locationAddress);//자기 위치정보 받아오기 위도 경도
         busLocation = (EditText) findViewById(R.id.editBus);
 
@@ -123,6 +123,7 @@ public class MainActivity extends Activity /*implements OnItemSelectedListener*/
                 String msgBus = busLocation.getText().toString();
                 String newL = msg + "\n" + msgAge + "\n" + msgGender;
                 bluetoothTask.doSend(newL+"\n"+msgBus);
+                Toast.makeText(getApplicationContext(),"전송완료 됐습니다.",Toast.LENGTH_LONG).show();
             }
         });
 
@@ -137,7 +138,7 @@ public class MainActivity extends Activity /*implements OnItemSelectedListener*/
 
     @SuppressWarnings("deprecation")
     @Override
-    protected void onResume() {
+    public void onResume() {
         super.onResume();
         // Bluetooth初期化
         bluetoothTask.init();
@@ -149,10 +150,6 @@ public class MainActivity extends Activity /*implements OnItemSelectedListener*/
     protected void onDestroy() {
         bluetoothTask.doClose();
         super.onDestroy();
-    }
-
-    public void doSetResultText(String text) {
-        editText2.setText(text);
     }
 
     protected void restart() {
@@ -206,7 +203,7 @@ public class MainActivity extends Activity /*implements OnItemSelectedListener*/
     @SuppressWarnings("deprecation")
     public void errorDialog(String msg) {
         if (this.isFinishing()) return;
-        this.errorMessage = msg;
+        this.errorMessage = "블루투스 연결에 실패했습니다";
         this.showDialog(ERROR_DIALOG);
     }
 
@@ -218,7 +215,8 @@ public class MainActivity extends Activity /*implements OnItemSelectedListener*/
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();
-                finish();
+                startActivity(new Intent(MainActivity.this, MainActivity.class));
+                //finish();
             }
         });
         return alertDialogBuilder.create();
@@ -237,35 +235,22 @@ public class MainActivity extends Activity /*implements OnItemSelectedListener*/
         waitDialog.dismiss();
     }
 
-    //GPS로 나의 정보 받아오기
+    //네트워크로 나의 정보 받아오기
     public void startLocationService() {
         LocationManager manager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 
         GPSListener gpsListener = new GPSListener();
         long minTime = 1000;
-        float minDistance = 30;
+        float minDistance = 0;
 
-        //GPS를 이용한 위치 요청
-        //manager.requestLocationUpdates(LocationManager.GPS_PROVIDER,minTime,minDistance,gpsListener);
         manager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, minTime, minDistance, gpsListener);
 
-        //Location lastLocation = manager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-
-        //manager.requestLocationUpdates(LocationManager.GPS_PROVIDER,minTime,minDistance,gpsListener);
         Toast.makeText(getApplicationContext(), "위치를 받아오기 시작합니다.\n잠시만 기다려주세요.", Toast.LENGTH_SHORT).show();
     }
 
     private class GPSListener implements LocationListener {
 
         public void onLocationChanged(Location location) {
-            //capture location data sent by current provider
-            Double latitude = location.getLatitude();
-            Double longitude = location.getLongitude();
-
-            String msg = "위도 : " + latitude + "\n경도:" + longitude;
-            Log.i("GPSLocationService", msg);
-            Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
-            editLocation.setText(msg);
 
         }
 
@@ -280,15 +265,23 @@ public class MainActivity extends Activity /*implements OnItemSelectedListener*/
 
     }
 
+    //버스정보 받아오는 클래스
     private class Bus {
         public void getBusInformation() throws Exception {
-            String temp[] = new String[9];
+            LocationManager location = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
+            String LocationProvider = LocationManager.NETWORK_PROVIDER;
+            Location lastKnown = location.getLastKnownLocation(LocationProvider);
+
+            double longitude = lastKnown.getLongitude();
+            double latitude = lastKnown.getLatitude();
+
             StringBuilder urlBuilder = new StringBuilder("http://ws.bus.go.kr/api/rest/stationinfo/getStationByPos");
             urlBuilder.append("?" + URLEncoder.encode("ServiceKey", "UTF-8") + "=" + "wZJqvet7sRGoIz0NXp7XRzJtGN69oSsQ15DG0ZFD352NgAa%2Bbx7LMJg24Ly9ZXifmlh%2FYaFczztGz9CY9%2FHX6w%3D%3D");
-            urlBuilder.append("&" + URLEncoder.encode("tmX", "UTF-8") + "=" + URLEncoder.encode("126.9972045", "UTF-8")); /*기준위치 X(WGS84)*/
-            urlBuilder.append("&" + URLEncoder.encode("tmY", "UTF-8") + "=" + URLEncoder.encode("37.6105214", "UTF-8")); /*기준위치 Y(WGS84)*/
+            //System.out.println(Double.toString(longitude)+" "+Double.toString(latitude));
+            urlBuilder.append("&" + URLEncoder.encode("tmX", "UTF-8") + "=" + URLEncoder.encode(Double.toString(longitude), "UTF-8")); /*기준위치 X(WGS84)*/
+            urlBuilder.append("&" + URLEncoder.encode("tmY", "UTF-8") + "=" + URLEncoder.encode(Double.toString(latitude), "UTF-8")); /*기준위치 Y(WGS84)*/
             urlBuilder.append("&" + URLEncoder.encode("radius", "UTF-8") + "=" + URLEncoder.encode("300", "UTF-8")); /*검색반경(0~1500m)*/
-            urlBuilder.append("&" + URLEncoder.encode("numOfRows", "UTF-8") + "=" + URLEncoder.encode("3", "UTF-8")); /*검색건수*/
+            urlBuilder.append("&" + URLEncoder.encode("numOfRows", "UTF-8") + "=" + URLEncoder.encode("999", "UTF-8")); /*검색건수*/
             urlBuilder.append("&" + URLEncoder.encode("pageNo", "UTF-8") + "=" + URLEncoder.encode("1", "UTF-8")); /*페이지 번호*/
             URL url = new URL(urlBuilder.toString());
 
@@ -296,7 +289,6 @@ public class MainActivity extends Activity /*implements OnItemSelectedListener*/
             conn.setRequestMethod("GET");
             conn.setRequestProperty("Content-type", "application/json");
 
-            //System.out.println("Response code : " + conn.getResponseCode());
             BufferedReader rd;
             if (conn.getResponseCode() >= 200 && conn.getResponseCode() <= 300) {
                 rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
@@ -309,11 +301,11 @@ public class MainActivity extends Activity /*implements OnItemSelectedListener*/
 
             while ((line = rd.readLine()) != null) {
                 sb.append(line);
-                //rd.close();
+
             }
 
             conn.disconnect();
-            //busLocationNum1.setText(sb.toString());
+
             String xml = sb.toString();
             InputSource is = new InputSource(new StringReader(xml));
             Document document = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(is);
@@ -323,15 +315,10 @@ public class MainActivity extends Activity /*implements OnItemSelectedListener*/
             NodeList busId = (NodeList)xpath.evaluate("//itemList/arsId",document, XPathConstants.NODESET);
             NodeList busName = (NodeList)xpath.evaluate("//itemList/stationNm",document,XPathConstants.NODESET);
 
-            temp[0]=(busId.item(0).getTextContent()+" - "+busName.item(0).getTextContent());
-            temp[1]=(busId.item(1).getTextContent()+" - "+busName.item(1).getTextContent());
-            temp[2]=(busId.item(2).getTextContent()+" - "+busName.item(2).getTextContent());
-            temp[3]=(busId.item(3).getTextContent()+" - "+busName.item(3).getTextContent());
-            temp[4]=(busId.item(4).getTextContent()+" - "+busName.item(4).getTextContent());
-            temp[5]=(busId.item(5).getTextContent()+" - "+busName.item(5).getTextContent());
-            temp[6]=(busId.item(6).getTextContent()+" - "+busName.item(6).getTextContent());
-            temp[7]=(busId.item(7).getTextContent()+" - "+busName.item(7).getTextContent());
-            temp[8]=(busId.item(8).getTextContent()+" - "+busName.item(8).getTextContent());
+            String [] str = new String[busId.getLength()];
+            for(int i=0; i< busId.getLength(); i++){
+                str[i]=(busId.item(i).getTextContent()+" - "+busName.item(i).getTextContent());
+            }
 
             m_Adapter = new ArrayAdapter<String>(getApplicationContext(), R.layout.simpleitem);
 
@@ -341,11 +328,10 @@ public class MainActivity extends Activity /*implements OnItemSelectedListener*/
             // ListView에 어댑터 연결
             m_ListView.setAdapter(m_Adapter);
             m_ListView.setOnItemClickListener(onClickListItem);
-            m_Adapter.add(temp[0]);
-            m_Adapter.add(temp[1]);
-            m_Adapter.add(temp[2]);
-            m_Adapter.add(temp[3]);
-            m_Adapter.add(temp[4]);
+
+            for(int j=0; j<busId.getLength(); j++){
+                m_Adapter.add(str[j]);
+            }
 
         }
     }
@@ -355,9 +341,8 @@ public class MainActivity extends Activity /*implements OnItemSelectedListener*/
         @Override
         public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
             // 이벤트 발생 시 해당 아이템 위치의 텍스트를 출력
-            Toast.makeText(getApplicationContext(), m_Adapter.getItem(arg2), Toast.LENGTH_SHORT).show();
             busLocation.setText(m_Adapter.getItem(arg2));
-            //bluetoothTask.doSend(m_Adapter.getItem(arg2));
+            m_ListView.setVisibility(View.GONE);
         }
     };
 
