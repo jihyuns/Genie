@@ -79,18 +79,32 @@ int* Genie_Emotion::getEmotionData()
 		throw std::runtime_error("getResult error!");
 }
 
-void Genie_Emotion::updateFrame()
+void Genie_Emotion::updateFrame(func fp)
 {
 	int i = 0;
 	pxcStatus sts = senseManager->AcquireFrame(true);
 	if (sts < PXC_STATUS_NO_ERROR) {
 		return;
 	}
-
-	updateFaceFrame();
+	(this->*fp)();
 	senseManager->ReleaseFrame();
 }
-
+void Genie_Emotion::updateFaceFrameFN()
+{
+	const PXCCapture::Sample *sample = senseManager->QuerySample();
+	if (sample) {
+		updateColorImage(sample->color);
+	}
+	PXCEmotion::EmotionData arrData[NUM_TOTAL_EMOTIONS];
+	emotionDet = senseManager->QueryEmotion();
+	if (emotionDet == 0) {
+		std::cout << "7\n" << std::endl;
+		return;
+	}
+	faceData->Update();
+	const int numFaces = faceData->QueryNumberOfDetectedFaces();
+	faceNum = numFaces;
+}
 void Genie_Emotion::updateFaceFrame(){
 	const PXCCapture::Sample *sample = senseManager->QuerySample();
 	if (sample) {
@@ -255,6 +269,18 @@ void Genie_Emotion::printNums() // for test
 		printf("%s %d\n",ExpressionLabels[i], numOfExpressions[i]);
 }
 
+int  Genie_Emotion::getFaceNum()
+{
+	int i = 0;
+	faceNum = 0;
+
+	for (i = 0; i <FRAME_FOR_CHECK_FACE_EXIST; i++){
+		if (faceNum != 0)
+			return 1;
+		updateFrame(&Genie_Emotion::updateFaceFrameFN);
+	}
+	return 0;
+}
 
 int* Genie_Emotion::getResult()
 {
