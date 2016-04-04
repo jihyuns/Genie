@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#19BDC4"
+    >
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editName"
+        android:inputType="textCapWords"
+        android:hint="이름을 입력하세요"
+        android:textColorHint="#FFF6EE"
+        android:textColor = "#FFF6EE"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editAge"
+        android:inputType="number"
+        android:hint="생 년 월 일을 입력하세요 (ex: 910101)"
+        android:textColorHint="#FFF6EE"
+        android:textColor = "#FFF6EE"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editGender"
+        android:inputType="textCapWords"
+        android:hint="성별을 입력하세요 (ex : 남자 or 여자)"
+        android:textColorHint="#FFF6EE"
+        android:textColor = "#FFF6EE"/>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/editBus"
+            android:inputType="textCapWords"
+            android:hint="정류장정보를 받아옵니다"
+            android:textColorHint="#FFF6EE"
+            android:textColor = "#FFF6EE"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="찾기"
+            android:textSize="20dp"
+            android:background="#18709C"
+            android:textColor="#FFF6EE"
+            android:layout_gravity="center"
+            android:id="@+id/locationAddress"/>
+    </LinearLayout>
+    <ListView
+        android:id="@+id/busList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></ListView>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="다 시 입 력"
+            android:background="#18709C"
+            android:textColor="#FFF6EE"
+            android:id="@+id/resetBtn"
+            android:layout_margin="5dp"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="보 내 기"
+            android:background="#18709C"
+            android:textColor="#FFF6EE"
+            android:id="@+id/sendBtn" />
+    </LinearLayout>
+
+
+</LinearLayout>
