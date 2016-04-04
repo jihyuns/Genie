@@ -10,36 +10,20 @@ import javax.bluetooth.ServiceRecord;
 import javax.microedition.io.Connector;
 import javax.microedition.io.StreamConnection;
 import javax.microedition.io.StreamConnectionNotifier;
-
-/**
- * 英大文字変換エコーバック Bluetooth サーバ。
- */
 public class RfcommServer {
-    /**
-     * UUIDは独自プロトコルのサービスの場合は固有に生成する。
-     * - 各種ツールで生成する。（ほぼ乱数）
-     * - 注：このまま使わないように。
-     */
     static final String serverUUID = "0000110100001000800000805F9B34FB";
 
     private StreamConnectionNotifier server = null;
 
     public RfcommServer() throws IOException {
-        // RFCOMMベースのサーバの開始。
-        // - btspp:は PRCOMM 用なのでベースプロトコルによって変わる。
         server = (StreamConnectionNotifier) Connector.open(
                 "btspp://localhost:" + serverUUID,
                 Connector.READ_WRITE, true
         );
-        // ローカルデバイスにサービスを登録。必須ではない。
         ServiceRecord record = LocalDevice.getLocalDevice().getRecord(server);
         LocalDevice.getLocalDevice().updateRecord(record);
     }
 
-    /**
-     * クライアントからの接続待ち。
-     * @return 接続されたたセッションを返す。
-     */
     public Session accept() throws IOException {
         log("Accept");
         StreamConnection channel = server.acceptAndOpen();
@@ -51,11 +35,6 @@ public class RfcommServer {
         if (server  != null) try {server.close();} catch (Exception e) {/*ignore*/}
     }
 
-    /**
-     * セッション。
-     * - 並列にセッションを晴れるかは試していない。
-     * - 基本的に Socket と同じ。
-     */
     static class Session implements Runnable {
         private StreamConnection channel = null;
         private InputStream btIn = null;
@@ -67,10 +46,6 @@ public class RfcommServer {
             this.btOut = channel.openOutputStream();
         }
 
-        /**
-         * 英小文字の受信データを英大文字にしてエコーバックする。
-         * - 入力が空なら終了。
-         */
         public void run() {
             try {
                 byte[] buff = new byte[512];
@@ -100,7 +75,6 @@ public class RfcommServer {
         }
     }
 
-    //------------------------------------------------------
     public static void main(String[] args) throws Exception {
     	
         RfcommServer server = new RfcommServer();
@@ -108,7 +82,6 @@ public class RfcommServer {
             Session session = server.accept();
             new Thread(session).start();
         }
-        //server.dispose();
     }
     private static void log(String msg) {
         System.out.println("["+(new Date()) + "] " + msg);
