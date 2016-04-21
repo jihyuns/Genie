@@ -26,3 +26,11 @@
 *.exe
 *.out
 *.app
+
+# add by Doona
+*.sln
+*.sdf
+Debug/
+Release/
+Project/*.vcproj
+[Bb]in/

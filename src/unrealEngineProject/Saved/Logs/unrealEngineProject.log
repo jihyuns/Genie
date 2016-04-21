@@ -1,0 +1,952 @@
+﻿[2016.04.21-09.47.22:995][  0]Log file open, 04/21/16 18:47:22
+[2016.04.21-09.47.22:995][  0]LogInit:Display: Running engine for game: unrealEngineProject
+[2016.04.21-09.47.22:995][  0]LogInit:Display: RandInit(1265758056) SRandInit(1265758056).
+[2016.04.21-09.47.22:995][  0]LogTaskGraph: Started task graph with 4 named threads and 7 total threads.
+[2016.04.21-09.47.22:995][  0]LogStats: Stats thread started
+[2016.04.21-09.47.22:995][  0]LogInit: Version: 4.8.3-2634408+++depot+UE4-Releases+4.8
+[2016.04.21-09.47.22:995][  0]LogInit: API Version: 2579680
+[2016.04.21-09.47.22:996][  0]LogInit: Compiled (64-bit): Jul 27 2015 16:24:33
+[2016.04.21-09.47.22:996][  0]LogInit: Compiled with Visual C++: 18.00.21005.01
+[2016.04.21-09.47.22:996][  0]LogInit: Build Configuration: Development
+[2016.04.21-09.47.22:996][  0]LogInit: Branch Name: ++depot+UE4-Releases+4.8
+[2016.04.21-09.47.22:996][  0]LogInit: Command line: -EpicPortal 
+[2016.04.21-09.47.22:996][  0]LogInit: Base directory: C:/Program Files (x86)/Epic Games/4.8/Engine/Binaries/Win64/
+[2016.04.21-09.47.22:996][  0]LogInit: Rocket: 1
+[2016.04.21-09.47.23:011][  0]LogInit: Using libcurl 7.41.0
+[2016.04.21-09.47.23:011][  0]LogInit:  - built for x86_64-pc-win32
+[2016.04.21-09.47.23:011][  0]LogInit:  - supports SSL with WinSSL
+[2016.04.21-09.47.23:011][  0]LogInit:  - other features:
+[2016.04.21-09.47.23:011][  0]LogInit:      CURL_VERSION_SSL
+[2016.04.21-09.47.23:011][  0]LogInit:      CURL_VERSION_IPV6
+[2016.04.21-09.47.23:011][  0]LogInit:      CURL_VERSION_ASYNCHDNS
+[2016.04.21-09.47.23:011][  0]LogInit:      CURL_VERSION_LARGEFILE
+[2016.04.21-09.47.23:011][  0]LogInit:      CURL_VERSION_IDN
+[2016.04.21-09.47.23:011][  0]LogInit:  CurlRequestOptions (configurable via config and command line):
+[2016.04.21-09.47.23:011][  0]LogInit:  - bVerifyPeer = true  - Libcurl will verify peer certificate
+[2016.04.21-09.47.23:011][  0]LogInit:  - bUseHttpProxy = false  - Libcurl will NOT use HTTP proxy
+[2016.04.21-09.47.23:011][  0]LogInit:  - bDontReuseConnections = false  - Libcurl will reuse connections
+[2016.04.21-09.47.23:011][  0]LogInit:  - CertBundlePath = nullptr  - Libcurl will use whatever was configured at build time.
+[2016.04.21-09.47.23:026][  0]LogOnline:Warning: No default platform service specified for OnlineSubsystem
+[2016.04.21-09.47.23:043][  0]LogInit: Presizing for 0 objects not considered by GC, pre-allocating 0 bytes.
+[2016.04.21-09.47.23:050][  0]LogInit: Object subsystem initialized
+[2016.04.21-09.47.23:053][  0]LogInit: Selected Device Profile: [Windows]
+[2016.04.21-09.47.23:053][  0]LogInit: Applying CVar settings loaded from the selected device profile: [Windows]
+[2016.04.21-09.47.23:065][  0]LogInit: Computer: DESKTOP-CG5GROG
+[2016.04.21-09.47.23:065][  0]LogInit: User: TheState
+[2016.04.21-09.47.23:065][  0]LogInit: CPU Page size=4096, Cores=4
+[2016.04.21-09.47.23:065][  0]LogInit: High frequency timer resolution =3.312787 MHz
+[2016.04.21-09.47.23:065][  0]LogMemory: Memory total: Physical=8.0GB (8GB approx)
+[2016.04.21-09.47.23:065][  0]LogMemory: Platform Memory Stats for Windows
+[2016.04.21-09.47.23:065][  0]LogMemory: Process Physical Memory: 49.92 MB used, 49.92 MB peak
+[2016.04.21-09.47.23:065][  0]LogMemory: Process Virtual Memory: 22.67 MB used, 22.70 MB peak
+[2016.04.21-09.47.23:065][  0]LogMemory: Physical Memory: 2981.24 MB used, 8156.15 MB total
+[2016.04.21-09.47.23:065][  0]LogMemory: Virtual Memory: 317.12 MB used, 134217728.00 MB total
+[2016.04.21-09.47.23:113][  0]LogTextLocalizationManager: The requested culture ('ko_KR') has no localization data; parent culture's ('ko') localization data will be used.
+[2016.04.21-09.47.23:172][  0]LogTextLocalizationManager:Warning: Loaded localization resources contain conflicting entries for (Namespace:ContentBrowser, Key:ImportAssetToolTip):
+Localization Resource: (C:/Program Files (x86)/Epic Games/4.8/Engine/Content/Localization/Editor/ko/Editor.locres) Source String Hash: (-630476809) Localized String: ({0} 에 임포트...)
+Localization Resource: (C:/Program Files (x86)/Epic Games/4.8/Engine/Content/Localization/Editor/ko/Editor.locres) Source String Hash: (1271782899) Localized String: (파일에서 이 폴더로 애셋을 임포트합니다.)
+[2016.04.21-09.47.23:410][  0]LogD3D11RHI: Found D3D11 adapter 0: NVIDIA GeForce GTX 650 (Feature Level 11_0)
+[2016.04.21-09.47.23:410][  0]LogD3D11RHI: Adapter has 970MB of dedicated video memory, 0MB of dedicated system memory, and 4078MB of shared system memory, 1 output[s]
+[2016.04.21-09.47.23:411][  0]LogD3D11RHI: Found D3D11 adapter 1: Microsoft Basic Render Driver (Feature Level 11_0)
+[2016.04.21-09.47.23:411][  0]LogD3D11RHI: Adapter has 0MB of dedicated video memory, 0MB of dedicated system memory, and 4078MB of shared system memory, 0 output[s]
+[2016.04.21-09.47.23:411][  0]LogD3D11RHI: Chosen D3D11 Adapter Id = 0
+[2016.04.21-09.47.23:414][  0]LogD3D11RHI: InitD3DDevice
+[2016.04.21-09.47.23:414][  0]LogD3D11RHI: !Direct3DDevice
+[2016.04.21-09.47.23:414][  0]LogRHI: Texture pool is 679 MB (70% of 970 MB)
+[2016.04.21-09.47.23:425][  0]LogD3D11RHI: Async texture creation enabled
+[2016.04.21-09.47.23:440][  0]LogShaderCompilers:Display: Using Local Shader Compiler.
+[2016.04.21-09.47.24:222][  0]LogTemp:Display: Loaded TP DesktopTargetPlatform
+[2016.04.21-09.47.24:240][  0]LogTemp:Display: Loaded TP WindowsClientTargetPlatform
+[2016.04.21-09.47.24:257][  0]LogTemp:Display: Loaded TP WindowsNoEditorTargetPlatform
+[2016.04.21-09.47.24:275][  0]LogTemp:Display: Loaded TP WindowsServerTargetPlatform
+[2016.04.21-09.47.24:294][  0]LogTemp:Display: Loaded TP WindowsTargetPlatform
+[2016.04.21-09.47.24:309][  0]LogTemp:Display: Loaded TP AndroidTargetPlatform
+[2016.04.21-09.47.24:323][  0]LogTemp:Display: Loaded TP Android_ASTCTargetPlatform
+[2016.04.21-09.47.24:339][  0]LogTemp:Display: Loaded TP Android_ATCTargetPlatform
+[2016.04.21-09.47.24:354][  0]LogTemp:Display: Loaded TP Android_DXTTargetPlatform
+[2016.04.21-09.47.24:369][  0]LogTemp:Display: Loaded TP Android_ETC1TargetPlatform
+[2016.04.21-09.47.24:384][  0]LogTemp:Display: Loaded TP Android_ETC2TargetPlatform
+[2016.04.21-09.47.24:398][  0]LogTemp:Display: Loaded TP Android_PVRTCTargetPlatform
+[2016.04.21-09.47.24:452][  0]LogTemp:Display: Loaded TP IOSTargetPlatform
+[2016.04.21-09.47.24:466][  0]LogTemp:Display: Loaded TP LinuxNoEditorTargetPlatform
+[2016.04.21-09.47.24:480][  0]LogTemp:Display: Loaded TP LinuxServerTargetPlatform
+[2016.04.21-09.47.24:496][  0]LogTemp:Display: Loaded TP LinuxTargetPlatform
+[2016.04.21-09.47.24:496][  0]LogTargetPlatformManager:Display: Building Assets For Windows
+[2016.04.21-09.47.24:747][  0]LogDerivedDataCache:Display: Max Cache Size: 512 MB
+[2016.04.21-09.47.25:106][  0]LogDerivedDataCache: Loaded boot cache 0.36s 53MB C:/Users/TheState/AppData/Local/UnrealEngine/4.8/DerivedDataCache/Boot.ddc.
+[2016.04.21-09.47.25:106][  0]LogDerivedDataCache:Display: Loaded Boot cache: C:/Users/TheState/AppData/Local/UnrealEngine/4.8/DerivedDataCache/Boot.ddc
+[2016.04.21-09.47.25:106][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  Pak pak cache file ../../../../../../Users/TheState/Desktop/Genie/src/unrealEngineProject/DerivedDataCache/DDC.ddp not found, will not use a pak cache.
+[2016.04.21-09.47.25:106][  0]LogDerivedDataCache: Unable to find inner node Pak for hierarchical cache Hierarchy.
+[2016.04.21-09.47.25:106][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  CompressedPak pak cache file ../../../../../../Users/TheState/Desktop/Genie/src/unrealEngineProject/DerivedDataCache/Compressed.ddp not found, will not use a pak cache.
+[2016.04.21-09.47.25:106][  0]LogDerivedDataCache: Unable to find inner node CompressedPak for hierarchical cache Hierarchy.
+[2016.04.21-09.47.25:263][  0]LogDerivedDataCache:Display: Pak cache opened for reading ../../../Engine/DerivedDataCache/Compressed.ddp.
+[2016.04.21-09.47.25:275][  0]LogDerivedDataCache: Using Local data cache path C:/Users/TheState/AppData/Local/UnrealEngine/Common/DerivedDataCache: Writable
+[2016.04.21-09.47.25:536][  0]LogInit: Selected Device Profile: [Windows]
+[2016.04.21-09.47.25:617][  0]ImportText (ComponentSweepMultiTests): Missing closing parenthesis: (RootShapeAsset="/Engine/BasicShapes/Cube.Cube",ShapeType="TriggerCapsule",HitResult=(Time=0.50,Location=(X=-100.000015,Y=0.0,Z=100.000015),ImpactPoint=(X=-50.0,Y=0.0,Z=50.0),Normal=(X=-1.0,Y=-0.0,Z=0.0),ImpactNormal=(X=0.0,Y=0.0,Z=1.0),TraceStart=(X=-200.0,Y=0.0,Z=200.0),TraceEnd=(X=0.0,Y=0.0,Z=0.0))
+[2016.04.21-09.47.25:617][  0]ImportText (LineTraceSingleByChannelTests): Missing closing parenthesis: (RootShapeAsset="/Engine/BasicShapes/Cube.Cube",HitResult=(Time=0.50,Location=(X=-100.000015,Y=0.0,Z=100.000015),ImpactPoint=(X=-50.0,Y=0.0,Z=50.0),Normal=(X=-1.0,Y=-0.0,Z=0.0),ImpactNormal=(X=0.0,Y=0.0,Z=1.0),TraceStart=(X=-200.0,Y=0.0,Z=200.0),TraceEnd=(X=0.0,Y=0.0,Z=0.0))
+[2016.04.21-09.47.25:648][  0]LogMeshUtilities: No automatic mesh reduction module available
+[2016.04.21-09.47.25:648][  0]LogMeshUtilities: No automatic mesh merging module available
+[2016.04.21-09.47.26:027][  0]LogInit: WinSock: version 1.1 (2.2), MaxSocks=32767, MaxUdp=65467
+[2016.04.21-09.47.33:732][  0]UdpMessaging: Initializing bridge on interface 0.0.0.0:0 to multicast group 230.0.0.1:6666.
+[2016.04.21-09.47.34:389][  0]SourceControl: 정보 소스 콘트롤이 꺼졌습니다.
+[2016.04.21-09.47.34:390][  0]SourceControl: 정보 소스 콘트롤이 꺼졌습니다.
+[2016.04.21-09.47.34:403][  0]SourceControl: 정보 소스 콘트롤이 꺼졌습니다.
+[2016.04.21-09.47.34:416][  0]SourceControl: 정보 소스 콘트롤이 꺼졌습니다.
+[2016.04.21-09.47.34:893][  0]LogObj: 26277 objects as part of root set at end of initial load.
+[2016.04.21-09.47.34:893][  0]LogUObjectAllocator: 5411104 out of 0 bytes used by permanent object pool.
+[2016.04.21-09.47.34:991][  0]LogEngine: Initializing Engine...
+[2016.04.21-09.47.34:993][  0]LogHMD: Can't find Oculus library dev build: is proper Runtime installed? Version: 0.6.0.0
+[2016.04.21-09.47.34:994][  0]LogHMD:Warning: SteamVR failed to initialize.  Error: 110
+[2016.04.21-09.47.35:163][  0]LogAIModule: Creating AISystem for world NewWorld
+[2016.04.21-09.47.35:167][  0]LogInit: XAudio2 using '디지털 오디오(S/PDIF)(High Definition Audio 장치)' : 2 channels at 44.1 kHz using 16 bits per sample (channel mask 0x3)
+[2016.04.21-09.47.35:180][  0]LogInit: FAudioDevice initialized.
+[2016.04.21-09.47.35:219][  0]LogDerivedDataCache: Saved boot cache 0.04s 53MB C:/Users/TheState/AppData/Local/UnrealEngine/4.8/DerivedDataCache/Boot.ddc.
+[2016.04.21-09.47.35:225][  0]LogInit: Texture streaming: Disabled
+[2016.04.21-09.47.35:255][  0]LogAnalytics: Creating configured Analytics provider AnalyticsET
+[2016.04.21-09.47.35:255][  0]LogAnalytics: [UEEditor.Rocket.Release] APIServer = http://et2.epicgames.com/ET2/. AppVersion = 4.8.3-2634408+++depot+UE4-Releases+4.8
+[2016.04.21-09.47.35:255][  0]LogAnalytics: [UEEditor.Rocket.Release] SetUserId 6699dfa843a377ae06dd1bb681eb3295|42e094618d374ae48b60eaacf8489ca6|baa9596c-b818-4765-acd2-33e596186b5b
+[2016.04.21-09.47.35:255][  0]LogAnalytics: [UEEditor.Rocket.Release] AnalyticsET::StartSession
+[2016.04.21-09.47.35:283][  0]LogInit: Transaction tracking system initialized
+[2016.04.21-09.47.35:442][  0]BlueprintLog: New page: 에디터 로드
+[2016.04.21-09.47.35:490][  0]LogAssetRegistry: FAssetRegistry took 0.0108 seconds to start up
+[2016.04.21-09.47.35:490][  0]LogDirectoryWatcher:Warning: Failed to begin reading directory changes for ../../../Engine/Plugins/Experimental/CharacterAI/Content/. Error: 0
+[2016.04.21-09.47.43:694][  0]LogConsoleManager:Warning: Console variable 'r.VSync' wasn't set ('GameSetting' has a lower priority than 'SystemSettingsIni')
+[2016.04.21-09.47.43:698][  0]LogConsoleResponse:Display: 
+[2016.04.21-09.47.43:803][  0]LogCook:Display: Done creating registry. It took  0.00s.
+[2016.04.21-09.47.44:113][  0]SourceControl: 정보 소스 콘트롤이 꺼졌습니다.
+[2016.04.21-09.47.44:113][  0]Cmd: MAP LOAD FILE="../../../Engine/Content/Maps/Templates/Template_Default.umap" TEMPLATE=1 SHOWPROGRESS=1 FEATURELEVEL=3
+[2016.04.21-09.47.44:114][  0]LightingResults: New page: 라이팅 빌드
+[2016.04.21-09.47.44:129][  0]MapCheck: New page: 맵 체크
+[2016.04.21-09.47.44:129][  0]LightingResults: New page: 라이팅 빌드
+[2016.04.21-09.47.44:138][  0]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000001A1A49A9300
+[2016.04.21-09.47.44:860][  0]LogAIModule: Creating AISystem for world Untitled_1
+[2016.04.21-09.47.44:866][  0]LogEditorServer: Finished looking for orphan Actors (0.000 secs)
+[2016.04.21-09.47.44:873][  0]Cmd: MAP CHECKDEP NOCLEARLOG
+[2016.04.21-09.47.44:913][  0]MapCheck: 정보 맵 체크 완료: 오류 0 회, 경고 0 회, 소요 시간 39.836ms.
+[2016.04.21-09.47.44:913][  0]LogFileHelpers: Loading map 'Template_Default' took 0.800
+[2016.04.21-09.47.45:095][  0]LogCollectionManager: Loaded 0 collections in 0.002399 seconds
+[2016.04.21-09.47.45:103][  0]LogContentBrowser: Native class hierarchy populated in 0.0078 seconds. Added 1793 classes and 303 folders.
+[2016.04.21-09.47.45:236][  0]LogContentBrowser: Native class hierarchy updated for 'WidgetCarousel' in 0.0016 seconds. Added 0 classes and 0 folders.
+[2016.04.21-09.47.45:374][  0]LogContentBrowser: Native class hierarchy updated for 'AddContentDialog' in 0.0041 seconds. Added 0 classes and 0 folders.
+[2016.04.21-09.47.45:403][  0]LogContentBrowser: Native class hierarchy updated for 'SceneOutliner' in 0.0017 seconds. Added 1 classes and 2 folders.
+[2016.04.21-09.47.45:439][  0]LogCrashTracker: Crashtracker disabled due to settings.
+[2016.04.21-09.47.45:440][  0]LogD3D11RHI: InitD3DDevice
+[2016.04.21-09.47.45:460][  0]LogWindowsTextInputMethodSystem:Display: IME system now activated using TSF (Microsoft 입력기).
+[2016.04.21-09.47.45:462][  0]LogD3D11RHI: InitD3DDevice
+[2016.04.21-09.47.45:495][  0]LogLoad: Full Startup: 24.67 seconds (BP compile: 0.20 seconds)
+[2016.04.21-09.47.45:711][  0]LogContentStreaming: Texture pool size is 0.000000MB
+[2016.04.21-09.47.45:730][  0]LogContentStreaming: Texture pool size now 1000 MB
+[2016.04.21-09.47.45:913][  0]LogRenderer: Reallocating scene render targets to support 1056x560 (Frame:2).
+[2016.04.21-09.47.51:966][374]LogAssetRegistry: Asset discovery search completed in 16.4874 seconds
+[2016.04.21-09.51.22:945][596]LogD3D11RHI: InitD3DDevice
+[2016.04.21-09.51.25:219][757]LogD3D11RHI: InitD3DDevice
+[2016.04.21-09.51.25:667][808]LogD3D11RHI: InitD3DDevice
+[2016.04.21-09.51.32:597][374]LogD3D11RHI: InitD3DDevice
+[2016.04.21-09.51.32:905][404]LogD3D11RHI: InitD3DDevice
+[2016.04.21-09.51.38:999][875]LogD3D11RHI: InitD3DDevice
+[2016.04.21-09.51.39:285][906]LogD3D11RHI: InitD3DDevice
+[2016.04.21-09.53.06:893][987]LogD3D11RHI: InitD3DDevice
+[2016.04.21-09.53.08:129][129]LogD3D11RHI: InitD3DDevice
+[2016.04.21-09.53.08:169][129]LogD3D11RHI: InitD3DDevice
+[2016.04.21-09.53.23:748][170]LogD3D11RHI: InitD3DDevice
+[2016.04.21-09.53.24:301][170]Running C:/Program Files (x86)/Epic Games/4.8/Engine/Binaries/DotNET/UnrealBuildTool.exe unrealEngineProject Win64 Development -editorrecompile "C:/Users/TheState/Desktop/Genie/src/unrealEngineProject/unrealEngineProject.uproject" -invalidatemakefilesonly -rocket
+[2016.04.21-09.53.24:603][170]Invalidating makefiles only in this run.
+[2016.04.21-09.53.24:717][170]LogD3D11RHI: InitD3DDevice
+[2016.04.21-09.53.24:718][170]Recompiling unrealEngineProject...
+[2016.04.21-09.53.24:718][170]Launching UnrealBuildTool... [C:/Program Files (x86)/Epic Games/4.8/Engine/Binaries/DotNET/UnrealBuildTool.exe unrealEngineProject -ModuleWithSuffix unrealEngineProject 2192 Win64 Development -editorrecompile -canskiplink "C:/Users/TheState/Desktop/Genie/src/unrealEngineProject/unrealEngineProject.uproject" -rocket  -rocket]
+[2016.04.21-09.53.48:728][170]CompilerResultsLog: New page: 컴파일 - 2016. 4. 22. 오전 3:53:48
+[2016.04.21-09.53.48:728][170]CompilerResultsLog: 정보 Compiling game modules for hot reload
+[2016.04.21-09.53.48:728][170]CompilerResultsLog: 정보 Parsing headers for unrealEngineProjectEditor
+[2016.04.21-09.53.48:728][170]CompilerResultsLog: 정보 Reflection code generated for unrealEngineProjectEditor
+[2016.04.21-09.53.48:729][170]CompilerResultsLog: 정보 Performing 3 actions (4 in parallel)
+[2016.04.21-09.53.48:729][170]CompilerResultsLog: 정보 LoadingFile.cpp
+[2016.04.21-09.53.48:729][170]CompilerResultsLog: 정보 unrealEngineProject.generated.cpp
+[2016.04.21-09.53.48:729][170]CompilerResultsLog: 정보 [3/3] Link UE4Editor-unrealEngineProject-2192.dll
+[2016.04.21-09.53.48:729][170]CompilerResultsLog: 정보    Creating library C:\Users\TheState\Desktop\Genie\src\unrealEngineProject\Intermediate/Build/Win64\UE4Editor\Development\UE4Editor-unrealEngineProject-2192.lib and object C:\Users\TheState\Desktop\Genie\src\unrealEngineProject\Intermediate/Build/Win64\UE4Editor\Development\UE4Editor-unrealEngineProject-2192.exp
+[2016.04.21-09.53.48:729][170]CompilerResultsLog: 정보 -------- End Detailed Actions Stats -----------------------------------------------------------
+[2016.04.21-09.53.48:729][170]CompilerResultsLog: 정보 Total build time: 23.81 seconds
+[2016.04.21-09.53.48:729][170]LogMainFrame: MainFrame: Module compiling took 24.015 seconds
+[2016.04.21-09.53.48:808][170]LogClass: Could not find existing class LoadingFile in package /Script/unrealEngineProject for HotReload, assuming new class
+[2016.04.21-09.53.48:814][170]LogContentBrowser: Native class hierarchy updated for 'unrealEngineProject' in 0.0016 seconds. Added 2 classes and 2 folders.
+[2016.04.21-09.53.48:815][170]Warning: HotReload successful (0 functions remapped  0 scriptstructs remapped)
+[2016.04.21-09.53.48:831][170]LogContentBrowser: Native class hierarchy populated in 0.0087 seconds. Added 1795 classes and 305 folders.
+[2016.04.21-09.53.48:832][170]Warning: HotReload operation took 24.1s.
+[2016.04.21-09.53.48:837][170]LogD3D11RHI: InitD3DDevice
+[2016.04.21-09.53.49:951][170]LogVSAccessor:Warning: Couldn't goto line number '0' in 'C:/Users/TheState/Desktop/Genie/src/unrealEngineProject/Source/unrealEngineProject/LoadingFile.h'
+[2016.04.21-09.53.50:029][170]LogVSAccessor:Warning: Couldn't goto line number '0' in 'C:/Users/TheState/Desktop/Genie/src/unrealEngineProject/Source/unrealEngineProject/LoadingFile.cpp'
+[2016.04.21-09.53.50:039][170]LogHotReload: New module detected: UE4Editor-unrealEngineProject-2192.dll
+[2016.04.21-09.53.50:064][171]LogHotReload: Starting Hot-Reload from IDE
+[2016.04.21-09.53.50:071][171]LogD3D11RHI: InitD3DDevice
+[2016.04.21-09.53.50:119][171]LogContentBrowser: Native class hierarchy updated for 'unrealEngineProject' in 0.0016 seconds. Added 2 classes and 2 folders.
+[2016.04.21-09.53.50:120][171]Warning: HotReload successful (0 functions remapped  0 scriptstructs remapped)
+[2016.04.21-09.53.50:149][171]LogContentBrowser: Native class hierarchy populated in 0.0085 seconds. Added 1795 classes and 305 folders.
+[2016.04.21-09.53.50:150][171]LogD3D11RHI: InitD3DDevice
+[2016.04.21-10.10.18:549][207]LogD3D11RHI: InitD3DDevice
+[2016.04.21-10.10.18:550][207]Recompiling unrealEngineProject...
+[2016.04.21-10.10.18:550][207]Launching UnrealBuildTool... [C:/Program Files (x86)/Epic Games/4.8/Engine/Binaries/DotNET/UnrealBuildTool.exe unrealEngineProject -ModuleWithSuffix unrealEngineProject 4779 Win64 Development -editorrecompile -canskiplink "C:/Users/TheState/Desktop/Genie/src/unrealEngineProject/unrealEngineProject.uproject" -rocket  -rocket]
+[2016.04.21-10.10.18:551][207]Warning: Starting HotReload took  0.0s.
+[2016.04.21-10.10.40:773][515]CompilerResultsLog: New page: 컴파일 - 2016. 4. 22. 오전 4:10:40
+[2016.04.21-10.10.40:774][515]CompilerResultsLog: 정보 Compiling game modules for hot reload
+[2016.04.21-10.10.40:774][515]CompilerResultsLog: 정보 Parsing headers for unrealEngineProjectEditor
+[2016.04.21-10.10.40:774][515]CompilerResultsLog: 정보 Reflection code generated for unrealEngineProjectEditor
+[2016.04.21-10.10.40:774][515]CompilerResultsLog: 정보 Performing 3 actions (4 in parallel)
+[2016.04.21-10.10.40:774][515]CompilerResultsLog: 정보 LoadingFile.cpp
+[2016.04.21-10.10.40:774][515]CompilerResultsLog: 정보 unrealEngineProject.generated.cpp
+[2016.04.21-10.10.40:774][515]CompilerResultsLog:Error: 오류 C:\Users\TheState\Desktop\Genie\src\unrealEngineProject\Source\unrealEngineProject\LoadingFile.cpp(43)  : warning C4996: 'UTextRenderComponent::SetText': Passing text as FString is deprecated, please use FText instead (likely via a LOCTEXT). Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+[2016.04.21-10.10.40:774][515]CompilerResultsLog: 정보         C:\Program Files (x86)\Epic Games\4.8\Engine\Source\Runtime\Engine\Classes\Components/TextRenderComponent.h(96) : see declaration of 'UTextRenderComponent::SetText'
+[2016.04.21-10.10.40:774][515]CompilerResultsLog: 정보 [3/3] Link UE4Editor-unrealEngineProject-4779.dll
+[2016.04.21-10.10.40:774][515]CompilerResultsLog: 정보    Creating library C:\Users\TheState\Desktop\Genie\src\unrealEngineProject\Intermediate/Build/Win64\UE4Editor\Development\UE4Editor-unrealEngineProject-4779.lib and object C:\Users\TheState\Desktop\Genie\src\unrealEngineProject\Intermediate/Build/Win64\UE4Editor\Development\UE4Editor-unrealEngineProject-4779.exp
+[2016.04.21-10.10.40:774][515]CompilerResultsLog: 정보 -------- End Detailed Actions Stats -----------------------------------------------------------
+[2016.04.21-10.10.40:774][515]CompilerResultsLog: 정보 Total build time: 22.04 seconds
+[2016.04.21-10.10.40:774][515]LogMainFrame: MainFrame: Module compiling took 22.227 seconds
+[2016.04.21-10.10.40:823][515]LogClass: Could not find existing class LoadingFile in package /Script/unrealEngineProject for HotReload, assuming new class
+[2016.04.21-10.10.40:828][515]LogHotReload: Re-instancing LoadingFile after hot-reload.
+[2016.04.21-10.10.40:848][515]LogContentBrowser: Native class hierarchy updated for 'unrealEngineProject' in 0.0016 seconds. Added 2 classes and 2 folders.
+[2016.04.21-10.10.40:849][515]Warning: HotReload successful (0 functions remapped  0 scriptstructs remapped)
+[2016.04.21-10.10.40:865][515]LogContentBrowser: Native class hierarchy populated in 0.0086 seconds. Added 1795 classes and 305 folders.
+[2016.04.21-10.11.38:838][854]LogD3D11RHI: InitD3DDevice
+[2016.04.21-10.11.38:996][872]LogEditor: Attempting to add actor of class 'LoadingFile' to level at -350.00,320.00,20.00
+[2016.04.21-10.11.43:139][174]LogEditor: Attempting to add actor of class 'LoadingFile' to level at 10.00,-340.00,20.00
+[2016.04.21-10.11.52:053][819]LogPlayLevel: PIE:  No blueprints needed recompiling
+[2016.04.21-10.11.52:054][819]PIE: New page: PIE 세션: Untitled_1 (2016. 4. 22. 오전 4:11:52)
+[2016.04.21-10.11.52:054][819]LogPlayLevel: Creating play world package: /Temp/UEDPIE_0_Untitled_1
+[2016.04.21-10.11.52:056][819]LogPlayLevel: PIE: StaticDuplicateObject took: (0.001779s)
+[2016.04.21-10.11.52:056][819]LogAIModule: Creating AISystem for world Untitled_1
+[2016.04.21-10.11.52:057][819]LogPlayLevel: PIE: World Init took: (0.001194s)
+[2016.04.21-10.11.52:057][819]LogPlayLevel: PIE: Created PIE world by copying editor world from /Temp/Untitled_1.Untitled_1 to /Temp/UEDPIE_0_Untitled_1.Untitled_1 (0.003161s)
+[2016.04.21-10.11.52:076][819]LogInit: XAudio2 using '디지털 오디오(S/PDIF)(High Definition Audio 장치)' : 2 channels at 44.1 kHz using 16 bits per sample (channel mask 0x3)
+[2016.04.21-10.11.52:081][819]LogInit: FAudioDevice initialized.
+[2016.04.21-10.11.52:161][819]LogWorld: Game class is 'GameMode'
+[2016.04.21-10.11.52:166][819]LogWorld: Bringing World /Temp/UEDPIE_0_Untitled_1.Untitled_1 up for play (max tick rate 0) at 2016.04.21-19.11.52
+[2016.04.21-10.11.52:166][819]LogActor:Warning: GameSession /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.GameSession_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-10.11.52:166][819]LogActor:Warning: GameNetworkManager /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.GameNetworkManager_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-10.11.52:166][819]LogWorld: Bringing up level for play took: 0.002549
+[2016.04.21-10.11.52:169][819]PIE: 정보 /Temp/UEDPIE_0_Untitled_1 에 대한 에디터에서 플레이 시작 시간: 0.442
+[2016.04.21-10.11.53:125][888]LogPackageName: SearchForPackageOnDisk took   0.073s to resolve Genie.umap
+[2016.04.21-10.11.53:201][889]LogPackageName: SearchForPackageOnDisk took   0.071s to resolve Genie.umap
+[2016.04.21-10.11.53:201][889]LogNet: Browse: /Engine/Maps/Entry
+[2016.04.21-10.11.53:201][889]LogNet:Warning: Travel Failure: [InvalidURL]: 잘못된 URL: /Engine/Maps/Entry
+[2016.04.21-10.11.53:201][889]LogNet:Warning: 트래블 실패: InvalidURL, 실패 이유: '잘못된 URL: /Engine/Maps/Entry'. PIE 종료.
+[2016.04.21-10.11.53:201][889]PIE:Warning: 경고 트래블 실패: InvalidURL, 실패 이유: '잘못된 URL: /Engine/Maps/Entry'. PIE 종료.
+[2016.04.21-10.11.53:201][889]LogNet:Warning: Travel Failure: [ClientTravelFailure]: 잘못된 URL: /Engine/Maps/Entry
+[2016.04.21-10.11.53:201][889]LogNet:Warning: 트래블 실패: ClientTravelFailure, 실패 이유: '잘못된 URL: /Engine/Maps/Entry'. PIE 종료.
+[2016.04.21-10.11.53:201][889]PIE:Warning: 경고 트래블 실패: ClientTravelFailure, 실패 이유: '잘못된 URL: /Engine/Maps/Entry'. PIE 종료.
+[2016.04.21-10.11.53:306][890]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000001A1A8258360
+[2016.04.21-10.12.04:582][253]LogD3D11RHI: InitD3DDevice
+[2016.04.21-10.12.04:583][253]Recompiling unrealEngineProject...
+[2016.04.21-10.12.04:583][253]Launching UnrealBuildTool... [C:/Program Files (x86)/Epic Games/4.8/Engine/Binaries/DotNET/UnrealBuildTool.exe unrealEngineProject -ModuleWithSuffix unrealEngineProject 7402 Win64 Development -editorrecompile -canskiplink "C:/Users/TheState/Desktop/Genie/src/unrealEngineProject/unrealEngineProject.uproject" -rocket  -rocket]
+[2016.04.21-10.12.04:585][253]Warning: Starting HotReload took  0.0s.
+[2016.04.21-10.12.08:491][530]CompilerResultsLog: New page: 컴파일 - 2016. 4. 22. 오전 4:12:08
+[2016.04.21-10.12.08:491][530]CompilerResultsLog: 정보 Compiling game modules for hot reload
+[2016.04.21-10.12.08:491][530]CompilerResultsLog: 정보 Target is up to date.
+[2016.04.21-10.12.08:491][530]LogMainFrame: MainFrame: Module compiling took 3.917 seconds
+[2016.04.21-10.12.09:895][630]LogPlayLevel: PIE:  No blueprints needed recompiling
+[2016.04.21-10.12.09:895][630]PIE: New page: PIE 세션: Untitled_1 (2016. 4. 22. 오전 4:12:09)
+[2016.04.21-10.12.09:897][630]LogPlayLevel: Creating play world package: /Temp/UEDPIE_0_Untitled_1
+[2016.04.21-10.12.09:899][630]LogPlayLevel: PIE: StaticDuplicateObject took: (0.001579s)
+[2016.04.21-10.12.09:900][630]LogAIModule: Creating AISystem for world Untitled_1
+[2016.04.21-10.12.09:900][630]LogPlayLevel: PIE: World Init took: (0.001305s)
+[2016.04.21-10.12.09:900][630]LogPlayLevel: PIE: Created PIE world by copying editor world from /Temp/Untitled_1.Untitled_1 to /Temp/UEDPIE_0_Untitled_1.Untitled_1 (0.003068s)
+[2016.04.21-10.12.09:918][630]LogInit: XAudio2 using '디지털 오디오(S/PDIF)(High Definition Audio 장치)' : 2 channels at 44.1 kHz using 16 bits per sample (channel mask 0x3)
+[2016.04.21-10.12.09:923][630]LogInit: FAudioDevice initialized.
+[2016.04.21-10.12.09:957][630]LogWorld: Game class is 'GameMode'
+[2016.04.21-10.12.09:960][630]LogWorld: Bringing World /Temp/UEDPIE_0_Untitled_1.Untitled_1 up for play (max tick rate 0) at 2016.04.21-19.12.09
+[2016.04.21-10.12.09:960][630]LogActor:Warning: GameSession /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.GameSession_1 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-10.12.09:961][630]LogActor:Warning: GameNetworkManager /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.GameNetworkManager_1 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-10.12.09:961][630]LogWorld: Bringing up level for play took: 0.002391
+[2016.04.21-10.12.09:963][630]PIE: 정보 /Temp/UEDPIE_0_Untitled_1 에 대한 에디터에서 플레이 시작 시간: 0.236
+[2016.04.21-10.12.10:963][702]LogPackageName: SearchForPackageOnDisk took   0.074s to resolve Genie.umap
+[2016.04.21-10.12.11:039][703]LogPackageName: SearchForPackageOnDisk took   0.072s to resolve Genie.umap
+[2016.04.21-10.12.11:039][703]LogNet: Browse: /Engine/Maps/Entry
+[2016.04.21-10.12.11:039][703]LogNet:Warning: Travel Failure: [InvalidURL]: 잘못된 URL: /Engine/Maps/Entry
+[2016.04.21-10.12.11:039][703]LogNet:Warning: 트래블 실패: InvalidURL, 실패 이유: '잘못된 URL: /Engine/Maps/Entry'. PIE 종료.
+[2016.04.21-10.12.11:039][703]PIE:Warning: 경고 트래블 실패: InvalidURL, 실패 이유: '잘못된 URL: /Engine/Maps/Entry'. PIE 종료.
+[2016.04.21-10.12.11:039][703]LogNet:Warning: Travel Failure: [ClientTravelFailure]: 잘못된 URL: /Engine/Maps/Entry
+[2016.04.21-10.12.11:040][703]LogNet:Warning: 트래블 실패: ClientTravelFailure, 실패 이유: '잘못된 URL: /Engine/Maps/Entry'. PIE 종료.
+[2016.04.21-10.12.11:040][703]PIE:Warning: 경고 트래블 실패: ClientTravelFailure, 실패 이유: '잘못된 URL: /Engine/Maps/Entry'. PIE 종료.
+[2016.04.21-10.12.11:112][704]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000001A1998F6CA0
+[2016.04.21-10.12.12:116][776]LogPlayLevel: PIE:  No blueprints needed recompiling
+[2016.04.21-10.12.12:116][776]PIE: New page: PIE 세션: Untitled_1 (2016. 4. 22. 오전 4:12:12)
+[2016.04.21-10.12.12:122][776]LogPlayLevel: Creating play world package: /Temp/UEDPIE_0_Untitled_1
+[2016.04.21-10.12.12:124][776]LogPlayLevel: PIE: StaticDuplicateObject took: (0.001480s)
+[2016.04.21-10.12.12:125][776]LogAIModule: Creating AISystem for world Untitled_1
+[2016.04.21-10.12.12:125][776]LogPlayLevel: PIE: World Init took: (0.001275s)
+[2016.04.21-10.12.12:125][776]LogPlayLevel: PIE: Created PIE world by copying editor world from /Temp/Untitled_1.Untitled_1 to /Temp/UEDPIE_0_Untitled_1.Untitled_1 (0.002928s)
+[2016.04.21-10.12.12:142][776]LogInit: XAudio2 using '디지털 오디오(S/PDIF)(High Definition Audio 장치)' : 2 channels at 44.1 kHz using 16 bits per sample (channel mask 0x3)
+[2016.04.21-10.12.12:146][776]LogInit: FAudioDevice initialized.
+[2016.04.21-10.12.12:181][776]LogWorld: Game class is 'GameMode'
+[2016.04.21-10.12.12:184][776]LogWorld: Bringing World /Temp/UEDPIE_0_Untitled_1.Untitled_1 up for play (max tick rate 0) at 2016.04.21-19.12.12
+[2016.04.21-10.12.12:184][776]LogActor:Warning: GameSession /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.GameSession_2 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-10.12.12:185][776]LogActor:Warning: GameNetworkManager /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.GameNetworkManager_2 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-10.12.12:185][776]LogWorld: Bringing up level for play took: 0.002388
+[2016.04.21-10.12.12:187][776]PIE: 정보 /Temp/UEDPIE_0_Untitled_1 에 대한 에디터에서 플레이 시작 시간: 0.46
+[2016.04.21-10.12.13:186][848]LogPackageName: SearchForPackageOnDisk took   0.072s to resolve Genie.umap
+[2016.04.21-10.12.13:262][849]LogPackageName: SearchForPackageOnDisk took   0.071s to resolve Genie.umap
+[2016.04.21-10.12.13:262][849]LogNet: Browse: /Engine/Maps/Entry
+[2016.04.21-10.12.13:262][849]LogNet:Warning: Travel Failure: [InvalidURL]: 잘못된 URL: /Engine/Maps/Entry
+[2016.04.21-10.12.13:262][849]LogNet:Warning: 트래블 실패: InvalidURL, 실패 이유: '잘못된 URL: /Engine/Maps/Entry'. PIE 종료.
+[2016.04.21-10.12.13:262][849]PIE:Warning: 경고 트래블 실패: InvalidURL, 실패 이유: '잘못된 URL: /Engine/Maps/Entry'. PIE 종료.
+[2016.04.21-10.12.13:262][849]LogNet:Warning: Travel Failure: [ClientTravelFailure]: 잘못된 URL: /Engine/Maps/Entry
+[2016.04.21-10.12.13:262][849]LogNet:Warning: 트래블 실패: ClientTravelFailure, 실패 이유: '잘못된 URL: /Engine/Maps/Entry'. PIE 종료.
+[2016.04.21-10.12.13:262][849]PIE:Warning: 경고 트래블 실패: ClientTravelFailure, 실패 이유: '잘못된 URL: /Engine/Maps/Entry'. PIE 종료.
+[2016.04.21-10.12.13:334][850]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000001A1A825A660
+[2016.04.21-10.12.30:120][ 22]LogD3D11RHI: InitD3DDevice
+[2016.04.21-10.12.39:120][ 49]LogD3D11RHI: InitD3DDevice
+[2016.04.21-10.12.39:275][ 49]LogSavePackage: Save=24.806606ms
+[2016.04.21-10.12.39:275][ 49]LogSavePackage: Moving '../../../../../../Users/TheState/Desktop/Genie/src/unrealEngineProject/Saved/Untitled_1_Auto1CCAE06F8496D0F9E0A97BC9B83BAA871.tmp' to '../../../../../../Users/TheState/Desktop/Genie/src/unrealEngineProject/Saved/Autosaves/Temp/Untitled_1_Auto1.umap'
+[2016.04.21-10.12.39:280][ 49]LogFileHelpers: Editor autosave (incl. sublevels) for '/Temp/Untitled_1' took 0.050
+[2016.04.21-10.12.39:280][ 49]LogFileHelpers: Editor autosave (incl. sublevels) for all levels took 0.050
+[2016.04.21-10.12.59:854][202]LogD3D11RHI: InitD3DDevice
+[2016.04.21-10.12.59:855][202]Recompiling unrealEngineProject...
+[2016.04.21-10.12.59:855][202]Launching UnrealBuildTool... [C:/Program Files (x86)/Epic Games/4.8/Engine/Binaries/DotNET/UnrealBuildTool.exe unrealEngineProject -ModuleWithSuffix unrealEngineProject 4747 Win64 Development -editorrecompile -canskiplink "C:/Users/TheState/Desktop/Genie/src/unrealEngineProject/unrealEngineProject.uproject" -rocket  -rocket]
+[2016.04.21-10.12.59:856][202]Warning: Starting HotReload took  0.0s.
+[2016.04.21-10.13.25:390][ 22]CompilerResultsLog: New page: 컴파일 - 2016. 4. 22. 오전 4:13:25
+[2016.04.21-10.13.25:390][ 22]CompilerResultsLog: 정보 Compiling game modules for hot reload
+[2016.04.21-10.13.25:390][ 22]CompilerResultsLog: 정보 Parsing headers for unrealEngineProjectEditor
+[2016.04.21-10.13.25:390][ 22]CompilerResultsLog: 정보 Reflection code generated for unrealEngineProjectEditor
+[2016.04.21-10.13.25:390][ 22]CompilerResultsLog: 정보 Performing 2 actions (4 in parallel)
+[2016.04.21-10.13.25:390][ 22]CompilerResultsLog: 정보 LoadingFile.cpp
+[2016.04.21-10.13.25:390][ 22]CompilerResultsLog:Error: 오류 C:\Users\TheState\Desktop\Genie\src\unrealEngineProject\Source\unrealEngineProject\LoadingFile.cpp(43)  : warning C4996: 'UTextRenderComponent::SetText': Passing text as FString is deprecated, please use FText instead (likely via a LOCTEXT). Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+[2016.04.21-10.13.25:390][ 22]CompilerResultsLog: 정보         C:\Program Files (x86)\Epic Games\4.8\Engine\Source\Runtime\Engine\Classes\Components/TextRenderComponent.h(96) : see declaration of 'UTextRenderComponent::SetText'
+[2016.04.21-10.13.25:390][ 22]CompilerResultsLog: 정보 [2/2] Link UE4Editor-unrealEngineProject-4747.dll
+[2016.04.21-10.13.25:390][ 22]CompilerResultsLog: 정보    Creating library C:\Users\TheState\Desktop\Genie\src\unrealEngineProject\Intermediate/Build/Win64\UE4Editor\Development\UE4Editor-unrealEngineProject-4747.lib and object C:\Users\TheState\Desktop\Genie\src\unrealEngineProject\Intermediate/Build/Win64\UE4Editor\Development\UE4Editor-unrealEngineProject-4747.exp
+[2016.04.21-10.13.25:390][ 22]CompilerResultsLog: 정보 -------- End Detailed Actions Stats -----------------------------------------------------------
+[2016.04.21-10.13.25:390][ 22]CompilerResultsLog: 정보 Total build time: 25.39 seconds
+[2016.04.21-10.13.25:390][ 22]LogMainFrame: MainFrame: Module compiling took 25.538 seconds
+[2016.04.21-10.13.25:429][ 22]LogContentBrowser: Native class hierarchy updated for 'unrealEngineProject' in 0.0016 seconds. Added 2 classes and 2 folders.
+[2016.04.21-10.13.25:430][ 22]Warning: HotReload successful (0 functions remapped  0 scriptstructs remapped)
+[2016.04.21-10.13.25:446][ 22]LogContentBrowser: Native class hierarchy populated in 0.0087 seconds. Added 1795 classes and 305 folders.
+[2016.04.21-10.13.29:864][339]LogPlayLevel: PIE:  No blueprints needed recompiling
+[2016.04.21-10.13.29:864][339]PIE: New page: PIE 세션: Untitled_1 (2016. 4. 22. 오전 4:13:29)
+[2016.04.21-10.13.29:867][339]LogPlayLevel: Creating play world package: /Temp/UEDPIE_0_Untitled_1
+[2016.04.21-10.13.29:869][339]LogPlayLevel: PIE: StaticDuplicateObject took: (0.001720s)
+[2016.04.21-10.13.29:870][339]LogAIModule: Creating AISystem for world Untitled_1
+[2016.04.21-10.13.29:870][339]LogPlayLevel: PIE: World Init took: (0.001411s)
+[2016.04.21-10.13.29:870][339]LogPlayLevel: PIE: Created PIE world by copying editor world from /Temp/Untitled_1.Untitled_1 to /Temp/UEDPIE_0_Untitled_1.Untitled_1 (0.003378s)
+[2016.04.21-10.13.29:887][339]LogInit: XAudio2 using '디지털 오디오(S/PDIF)(High Definition Audio 장치)' : 2 channels at 44.1 kHz using 16 bits per sample (channel mask 0x3)
+[2016.04.21-10.13.29:893][339]LogInit: FAudioDevice initialized.
+[2016.04.21-10.13.29:923][339]LogWorld: Game class is 'GameMode'
+[2016.04.21-10.13.29:926][339]LogWorld: Bringing World /Temp/UEDPIE_0_Untitled_1.Untitled_1 up for play (max tick rate 0) at 2016.04.21-19.13.29
+[2016.04.21-10.13.29:927][339]LogActor:Warning: GameSession /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.GameSession_3 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-10.13.29:927][339]LogActor:Warning: GameNetworkManager /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.GameNetworkManager_3 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-10.13.29:927][339]LogWorld: Bringing up level for play took: 0.002376
+[2016.04.21-10.13.29:929][339]PIE: 정보 /Temp/UEDPIE_0_Untitled_1 에 대한 에디터에서 플레이 시작 시간: 0.202
+[2016.04.21-10.13.30:936][412]LogPackageName: SearchForPackageOnDisk took   0.073s to resolve Genie.umap
+[2016.04.21-10.13.31:010][413]LogPackageName: SearchForPackageOnDisk took   0.069s to resolve Genie.umap
+[2016.04.21-10.13.31:010][413]LogNet: Browse: /Engine/Maps/Entry
+[2016.04.21-10.13.31:010][413]LogNet:Warning: Travel Failure: [InvalidURL]: 잘못된 URL: /Engine/Maps/Entry
+[2016.04.21-10.13.31:010][413]LogNet:Warning: 트래블 실패: InvalidURL, 실패 이유: '잘못된 URL: /Engine/Maps/Entry'. PIE 종료.
+[2016.04.21-10.13.31:010][413]PIE:Warning: 경고 트래블 실패: InvalidURL, 실패 이유: '잘못된 URL: /Engine/Maps/Entry'. PIE 종료.
+[2016.04.21-10.13.31:010][413]LogNet:Warning: Travel Failure: [ClientTravelFailure]: 잘못된 URL: /Engine/Maps/Entry
+[2016.04.21-10.13.31:010][413]LogNet:Warning: 트래블 실패: ClientTravelFailure, 실패 이유: '잘못된 URL: /Engine/Maps/Entry'. PIE 종료.
+[2016.04.21-10.13.31:010][413]PIE:Warning: 경고 트래블 실패: ClientTravelFailure, 실패 이유: '잘못된 URL: /Engine/Maps/Entry'. PIE 종료.
+[2016.04.21-10.13.31:057][413]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000001A198E56160
+[2016.04.21-10.13.32:163][491]LogPlayLevel: PIE:  No blueprints needed recompiling
+[2016.04.21-10.13.32:163][491]PIE: New page: PIE 세션: Untitled_1 (2016. 4. 22. 오전 4:13:32)
+[2016.04.21-10.13.32:170][491]LogPlayLevel: Creating play world package: /Temp/UEDPIE_0_Untitled_1
+[2016.04.21-10.13.32:171][491]LogPlayLevel: PIE: StaticDuplicateObject took: (0.001448s)
+[2016.04.21-10.13.32:172][491]LogAIModule: Creating AISystem for world Untitled_1
+[2016.04.21-10.13.32:172][491]LogPlayLevel: PIE: World Init took: (0.001082s)
+[2016.04.21-10.13.32:172][491]LogPlayLevel: PIE: Created PIE world by copying editor world from /Temp/Untitled_1.Untitled_1 to /Temp/UEDPIE_0_Untitled_1.Untitled_1 (0.002715s)
+[2016.04.21-10.13.32:189][491]LogInit: XAudio2 using '디지털 오디오(S/PDIF)(High Definition Audio 장치)' : 2 channels at 44.1 kHz using 16 bits per sample (channel mask 0x3)
+[2016.04.21-10.13.32:194][491]LogInit: FAudioDevice initialized.
+[2016.04.21-10.13.32:227][491]LogWorld: Game class is 'GameMode'
+[2016.04.21-10.13.32:230][491]LogWorld: Bringing World /Temp/UEDPIE_0_Untitled_1.Untitled_1 up for play (max tick rate 0) at 2016.04.21-19.13.32
+[2016.04.21-10.13.32:230][491]LogActor:Warning: GameSession /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.GameSession_4 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-10.13.32:231][491]LogActor:Warning: GameNetworkManager /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.GameNetworkManager_4 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-10.13.32:231][491]LogWorld: Bringing up level for play took: 0.002461
+[2016.04.21-10.13.32:233][491]PIE: 정보 /Temp/UEDPIE_0_Untitled_1 에 대한 에디터에서 플레이 시작 시간: 0.506
+[2016.04.21-10.13.33:234][564]LogPackageName: SearchForPackageOnDisk took   0.072s to resolve Genie.umap
+[2016.04.21-10.13.33:310][565]LogPackageName: SearchForPackageOnDisk took   0.071s to resolve Genie.umap
+[2016.04.21-10.13.33:310][565]LogNet: Browse: /Engine/Maps/Entry
+[2016.04.21-10.13.33:310][565]LogNet:Warning: Travel Failure: [InvalidURL]: 잘못된 URL: /Engine/Maps/Entry
+[2016.04.21-10.13.33:310][565]LogNet:Warning: 트래블 실패: InvalidURL, 실패 이유: '잘못된 URL: /Engine/Maps/Entry'. PIE 종료.
+[2016.04.21-10.13.33:310][565]PIE:Warning: 경고 트래블 실패: InvalidURL, 실패 이유: '잘못된 URL: /Engine/Maps/Entry'. PIE 종료.
+[2016.04.21-10.13.33:310][565]LogNet:Warning: Travel Failure: [ClientTravelFailure]: 잘못된 URL: /Engine/Maps/Entry
+[2016.04.21-10.13.33:310][565]LogNet:Warning: 트래블 실패: ClientTravelFailure, 실패 이유: '잘못된 URL: /Engine/Maps/Entry'. PIE 종료.
+[2016.04.21-10.13.33:310][565]PIE:Warning: 경고 트래블 실패: ClientTravelFailure, 실패 이유: '잘못된 URL: /Engine/Maps/Entry'. PIE 종료.
+[2016.04.21-10.13.33:383][566]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000001A1B64C8FE0
+[2016.04.21-10.13.34:021][612]LogPlayLevel: PIE:  No blueprints needed recompiling
+[2016.04.21-10.13.34:021][612]PIE: New page: PIE 세션: Untitled_1 (2016. 4. 22. 오전 4:13:34)
+[2016.04.21-10.13.34:023][612]LogPlayLevel: Creating play world package: /Temp/UEDPIE_0_Untitled_1
+[2016.04.21-10.13.34:025][612]LogPlayLevel: PIE: StaticDuplicateObject took: (0.001496s)
+[2016.04.21-10.13.34:026][612]LogAIModule: Creating AISystem for world Untitled_1
+[2016.04.21-10.13.34:026][612]LogPlayLevel: PIE: World Init took: (0.001147s)
+[2016.04.21-10.13.34:026][612]LogPlayLevel: PIE: Created PIE world by copying editor world from /Temp/Untitled_1.Untitled_1 to /Temp/UEDPIE_0_Untitled_1.Untitled_1 (0.002818s)
+[2016.04.21-10.13.34:043][612]LogInit: XAudio2 using '디지털 오디오(S/PDIF)(High Definition Audio 장치)' : 2 channels at 44.1 kHz using 16 bits per sample (channel mask 0x3)
+[2016.04.21-10.13.34:048][612]LogInit: FAudioDevice initialized.
+[2016.04.21-10.13.34:085][612]LogWorld: Game class is 'GameMode'
+[2016.04.21-10.13.34:089][612]LogWorld: Bringing World /Temp/UEDPIE_0_Untitled_1.Untitled_1 up for play (max tick rate 0) at 2016.04.21-19.13.34
+[2016.04.21-10.13.34:089][612]LogActor:Warning: GameSession /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.GameSession_5 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-10.13.34:089][612]LogActor:Warning: GameNetworkManager /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.GameNetworkManager_5 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-10.13.34:090][612]LogWorld: Bringing up level for play took: 0.002555
+[2016.04.21-10.13.34:092][612]PIE: 정보 /Temp/UEDPIE_0_Untitled_1 에 대한 에디터에서 플레이 시작 시간: 0.365
+[2016.04.21-10.13.35:088][684]LogPackageName: SearchForPackageOnDisk took   0.072s to resolve Genie.umap
+[2016.04.21-10.13.35:165][685]LogPackageName: SearchForPackageOnDisk took   0.072s to resolve Genie.umap
+[2016.04.21-10.13.35:165][685]LogNet: Browse: /Engine/Maps/Entry
+[2016.04.21-10.13.35:165][685]LogNet:Warning: Travel Failure: [InvalidURL]: 잘못된 URL: /Engine/Maps/Entry
+[2016.04.21-10.13.35:165][685]LogNet:Warning: 트래블 실패: InvalidURL, 실패 이유: '잘못된 URL: /Engine/Maps/Entry'. PIE 종료.
+[2016.04.21-10.13.35:165][685]PIE:Warning: 경고 트래블 실패: InvalidURL, 실패 이유: '잘못된 URL: /Engine/Maps/Entry'. PIE 종료.
+[2016.04.21-10.13.35:165][685]LogNet:Warning: Travel Failure: [ClientTravelFailure]: 잘못된 URL: /Engine/Maps/Entry
+[2016.04.21-10.13.35:165][685]LogNet:Warning: 트래블 실패: ClientTravelFailure, 실패 이유: '잘못된 URL: /Engine/Maps/Entry'. PIE 종료.
+[2016.04.21-10.13.35:165][685]PIE:Warning: 경고 트래블 실패: ClientTravelFailure, 실패 이유: '잘못된 URL: /Engine/Maps/Entry'. PIE 종료.
+[2016.04.21-10.13.35:235][686]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000001A1B63EB420
+[2016.04.21-10.14.05:433][985]LogD3D11RHI: InitD3DDevice
+[2016.04.21-10.14.05:434][985]Recompiling unrealEngineProject...
+[2016.04.21-10.14.05:434][985]Launching UnrealBuildTool... [C:/Program Files (x86)/Epic Games/4.8/Engine/Binaries/DotNET/UnrealBuildTool.exe unrealEngineProject -ModuleWithSuffix unrealEngineProject 2121 Win64 Development -editorrecompile -canskiplink "C:/Users/TheState/Desktop/Genie/src/unrealEngineProject/unrealEngineProject.uproject" -rocket  -rocket]
+[2016.04.21-10.14.05:436][985]Warning: Starting HotReload took  0.0s.
+[2016.04.21-10.14.30:852][799]CompilerResultsLog: New page: 컴파일 - 2016. 4. 22. 오전 4:14:30
+[2016.04.21-10.14.30:854][799]CompilerResultsLog: 정보 Compiling game modules for hot reload
+[2016.04.21-10.14.30:854][799]CompilerResultsLog: 정보 Parsing headers for unrealEngineProjectEditor
+[2016.04.21-10.14.30:854][799]CompilerResultsLog: 정보 Reflection code generated for unrealEngineProjectEditor
+[2016.04.21-10.14.30:854][799]CompilerResultsLog: 정보 Performing 2 actions (4 in parallel)
+[2016.04.21-10.14.30:854][799]CompilerResultsLog: 정보 LoadingFile.cpp
+[2016.04.21-10.14.30:854][799]CompilerResultsLog:Error: 오류 C:\Users\TheState\Desktop\Genie\src\unrealEngineProject\Source\unrealEngineProject\LoadingFile.cpp(43)  : warning C4996: 'UTextRenderComponent::SetText': Passing text as FString is deprecated, please use FText instead (likely via a LOCTEXT). Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+[2016.04.21-10.14.30:854][799]CompilerResultsLog: 정보         C:\Program Files (x86)\Epic Games\4.8\Engine\Source\Runtime\Engine\Classes\Components/TextRenderComponent.h(96) : see declaration of 'UTextRenderComponent::SetText'
+[2016.04.21-10.14.30:854][799]CompilerResultsLog: 정보 [2/2] Link UE4Editor-unrealEngineProject-2121.dll
+[2016.04.21-10.14.30:854][799]CompilerResultsLog: 정보    Creating library C:\Users\TheState\Desktop\Genie\src\unrealEngineProject\Intermediate/Build/Win64\UE4Editor\Development\UE4Editor-unrealEngineProject-2121.lib and object C:\Users\TheState\Desktop\Genie\src\unrealEngineProject\Intermediate/Build/Win64\UE4Editor\Development\UE4Editor-unrealEngineProject-2121.exp
+[2016.04.21-10.14.30:854][799]CompilerResultsLog: 정보 -------- End Detailed Actions Stats -----------------------------------------------------------
+[2016.04.21-10.14.30:854][799]CompilerResultsLog: 정보 Total build time: 25.28 seconds
+[2016.04.21-10.14.30:854][799]LogMainFrame: MainFrame: Module compiling took 25.429 seconds
+[2016.04.21-10.14.30:903][799]LogContentBrowser: Native class hierarchy updated for 'unrealEngineProject' in 0.0017 seconds. Added 2 classes and 2 folders.
+[2016.04.21-10.14.30:904][799]Warning: HotReload successful (0 functions remapped  0 scriptstructs remapped)
+[2016.04.21-10.14.30:922][799]LogContentBrowser: Native class hierarchy populated in 0.0089 seconds. Added 1795 classes and 305 folders.
+[2016.04.21-10.14.33:279][968]LogPlayLevel: PIE:  No blueprints needed recompiling
+[2016.04.21-10.14.33:279][968]PIE: New page: PIE 세션: Untitled_1 (2016. 4. 22. 오전 4:14:33)
+[2016.04.21-10.14.33:282][968]LogPlayLevel: Creating play world package: /Temp/UEDPIE_0_Untitled_1
+[2016.04.21-10.14.33:284][968]LogPlayLevel: PIE: StaticDuplicateObject took: (0.001692s)
+[2016.04.21-10.14.33:284][968]LogAIModule: Creating AISystem for world Untitled_1
+[2016.04.21-10.14.33:285][968]LogPlayLevel: PIE: World Init took: (0.001137s)
+[2016.04.21-10.14.33:285][968]LogPlayLevel: PIE: Created PIE world by copying editor world from /Temp/Untitled_1.Untitled_1 to /Temp/UEDPIE_0_Untitled_1.Untitled_1 (0.003015s)
+[2016.04.21-10.14.33:302][968]LogInit: XAudio2 using '디지털 오디오(S/PDIF)(High Definition Audio 장치)' : 2 channels at 44.1 kHz using 16 bits per sample (channel mask 0x3)
+[2016.04.21-10.14.33:307][968]LogInit: FAudioDevice initialized.
+[2016.04.21-10.14.33:337][968]LogWorld: Game class is 'GameMode'
+[2016.04.21-10.14.33:340][968]LogWorld: Bringing World /Temp/UEDPIE_0_Untitled_1.Untitled_1 up for play (max tick rate 0) at 2016.04.21-19.14.33
+[2016.04.21-10.14.33:340][968]LogActor:Warning: GameSession /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.GameSession_6 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-10.14.33:341][968]LogActor:Warning: GameNetworkManager /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.GameNetworkManager_6 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-10.14.33:341][968]LogWorld: Bringing up level for play took: 0.002405
+[2016.04.21-10.14.33:343][968]PIE: 정보 /Temp/UEDPIE_0_Untitled_1 에 대한 에디터에서 플레이 시작 시간: -0.384
+[2016.04.21-10.14.46:370][ 49]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000001A19998CCC0
+[2016.04.21-10.15.50:316][407]LogD3D11RHI: InitD3DDevice
+[2016.04.21-10.15.50:317][407]Recompiling unrealEngineProject...
+[2016.04.21-10.15.50:317][407]Launching UnrealBuildTool... [C:/Program Files (x86)/Epic Games/4.8/Engine/Binaries/DotNET/UnrealBuildTool.exe unrealEngineProject -ModuleWithSuffix unrealEngineProject 136 Win64 Development -editorrecompile -canskiplink "C:/Users/TheState/Desktop/Genie/src/unrealEngineProject/unrealEngineProject.uproject" -rocket  -rocket]
+[2016.04.21-10.15.50:318][407]Warning: Starting HotReload took  0.0s.
+[2016.04.21-10.16.14:257][111]CompilerResultsLog: New page: 컴파일 - 2016. 4. 22. 오전 4:16:14
+[2016.04.21-10.16.14:257][111]CompilerResultsLog: 정보 Compiling game modules for hot reload
+[2016.04.21-10.16.14:257][111]CompilerResultsLog: 정보 Parsing headers for unrealEngineProjectEditor
+[2016.04.21-10.16.14:257][111]CompilerResultsLog: 정보 Reflection code generated for unrealEngineProjectEditor
+[2016.04.21-10.16.14:257][111]CompilerResultsLog: 정보 Performing 3 actions (4 in parallel)
+[2016.04.21-10.16.14:257][111]CompilerResultsLog: 정보 unrealEngineProject.generated.cpp
+[2016.04.21-10.16.14:257][111]CompilerResultsLog: 정보 LoadingFile.cpp
+[2016.04.21-10.16.14:257][111]CompilerResultsLog:Error: 오류 C:\Users\TheState\Desktop\Genie\src\unrealEngineProject\Source\unrealEngineProject\LoadingFile.cpp(43)  : warning C4996: 'UTextRenderComponent::SetText': Passing text as FString is deprecated, please use FText instead (likely via a LOCTEXT). Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+[2016.04.21-10.16.14:257][111]CompilerResultsLog: 정보         C:\Program Files (x86)\Epic Games\4.8\Engine\Source\Runtime\Engine\Classes\Components/TextRenderComponent.h(96) : see declaration of 'UTextRenderComponent::SetText'
+[2016.04.21-10.16.14:257][111]CompilerResultsLog: 정보 [3/3] Link UE4Editor-unrealEngineProject-136.dll
+[2016.04.21-10.16.14:257][111]CompilerResultsLog: 정보    Creating library C:\Users\TheState\Desktop\Genie\src\unrealEngineProject\Intermediate/Build/Win64\UE4Editor\Development\UE4Editor-unrealEngineProject-136.lib and object C:\Users\TheState\Desktop\Genie\src\unrealEngineProject\Intermediate/Build/Win64\UE4Editor\Development\UE4Editor-unrealEngineProject-136.exp
+[2016.04.21-10.16.14:257][111]CompilerResultsLog: 정보 -------- End Detailed Actions Stats -----------------------------------------------------------
+[2016.04.21-10.16.14:257][111]CompilerResultsLog: 정보 Total build time: 23.81 seconds
+[2016.04.21-10.16.14:257][111]LogMainFrame: MainFrame: Module compiling took 23.942 seconds
+[2016.04.21-10.16.14:297][111]LogContentBrowser: Native class hierarchy updated for 'unrealEngineProject' in 0.0016 seconds. Added 2 classes and 2 folders.
+[2016.04.21-10.16.14:298][111]Warning: HotReload successful (0 functions remapped  0 scriptstructs remapped)
+[2016.04.21-10.16.14:317][111]LogContentBrowser: Native class hierarchy populated in 0.0089 seconds. Added 1795 classes and 305 folders.
+[2016.04.21-10.16.16:366][264]LogPlayLevel: PIE:  No blueprints needed recompiling
+[2016.04.21-10.16.16:366][264]PIE: New page: PIE 세션: Untitled_1 (2016. 4. 22. 오전 4:16:16)
+[2016.04.21-10.16.16:366][264]LogPlayLevel: Creating play world package: /Temp/UEDPIE_0_Untitled_1
+[2016.04.21-10.16.16:368][264]LogPlayLevel: PIE: StaticDuplicateObject took: (0.001647s)
+[2016.04.21-10.16.16:369][264]LogAIModule: Creating AISystem for world Untitled_1
+[2016.04.21-10.16.16:369][264]LogPlayLevel: PIE: World Init took: (0.001175s)
+[2016.04.21-10.16.16:369][264]LogPlayLevel: PIE: Created PIE world by copying editor world from /Temp/Untitled_1.Untitled_1 to /Temp/UEDPIE_0_Untitled_1.Untitled_1 (0.003007s)
+[2016.04.21-10.16.16:386][264]LogInit: XAudio2 using '디지털 오디오(S/PDIF)(High Definition Audio 장치)' : 2 channels at 44.1 kHz using 16 bits per sample (channel mask 0x3)
+[2016.04.21-10.16.16:391][264]LogInit: FAudioDevice initialized.
+[2016.04.21-10.16.16:422][264]LogWorld: Game class is 'GameMode'
+[2016.04.21-10.16.16:426][264]LogWorld: Bringing World /Temp/UEDPIE_0_Untitled_1.Untitled_1 up for play (max tick rate 0) at 2016.04.21-19.16.16
+[2016.04.21-10.16.16:426][264]LogActor:Warning: GameSession /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.GameSession_7 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-10.16.16:426][264]LogActor:Warning: GameNetworkManager /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.GameNetworkManager_7 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-10.16.16:426][264]LogWorld: Bringing up level for play took: 0.002453
+[2016.04.21-10.16.16:428][264]PIE: 정보 /Temp/UEDPIE_0_Untitled_1 에 대한 에디터에서 플레이 시작 시간: 0.701
+[2016.04.21-10.16.17:436][337]LogPackageName: SearchForPackageOnDisk took   0.072s to resolve Genie.umap
+[2016.04.21-10.16.17:511][338]LogPackageName: SearchForPackageOnDisk took   0.070s to resolve Genie.umap
+[2016.04.21-10.16.17:511][338]LogNet: Browse: /Engine/Maps/Entry
+[2016.04.21-10.16.17:511][338]LogNet:Warning: Travel Failure: [InvalidURL]: 잘못된 URL: /Engine/Maps/Entry
+[2016.04.21-10.16.17:511][338]LogNet:Warning: 트래블 실패: InvalidURL, 실패 이유: '잘못된 URL: /Engine/Maps/Entry'. PIE 종료.
+[2016.04.21-10.16.17:511][338]PIE:Warning: 경고 트래블 실패: InvalidURL, 실패 이유: '잘못된 URL: /Engine/Maps/Entry'. PIE 종료.
+[2016.04.21-10.16.17:511][338]LogNet:Warning: Travel Failure: [ClientTravelFailure]: 잘못된 URL: /Engine/Maps/Entry
+[2016.04.21-10.16.17:511][338]LogNet:Warning: 트래블 실패: ClientTravelFailure, 실패 이유: '잘못된 URL: /Engine/Maps/Entry'. PIE 종료.
+[2016.04.21-10.16.17:511][338]PIE:Warning: 경고 트래블 실패: ClientTravelFailure, 실패 이유: '잘못된 URL: /Engine/Maps/Entry'. PIE 종료.
+[2016.04.21-10.16.17:557][338]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000001A19BB271A0
+[2016.04.21-10.16.20:746][564]LogD3D11RHI: InitD3DDevice
+[2016.04.21-10.16.27:215][ 30]LogD3D11RHI: InitD3DDevice
+[2016.04.21-10.16.30:749][284]LogD3D11RHI: InitD3DDevice
+[2016.04.21-10.16.37:711][788]LogD3D11RHI: InitD3DDevice
+[2016.04.21-10.16.39:469][912]LogD3D11RHI: InitD3DDevice
+[2016.04.21-10.16.39:489][912]LogD3D11RHI: InitD3DDevice
+[2016.04.21-10.16.47:620][912]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Map/Loading" FILE="../../../../../../Users/TheState/Desktop/Genie/src/unrealEngineProject/Content/Map/Loading.umap" SILENT=true AUTOSAVING=false KEEPDIRTY=false
+[2016.04.21-10.16.47:666][912]LogSavePackage: Save=23.809559ms
+[2016.04.21-10.16.47:667][912]LogSavePackage: Moving '../../../../../../Users/TheState/Desktop/Genie/src/unrealEngineProject/Saved/Loading8B3B8E3841D4750BBBAA35860A1589D9.tmp' to '../../../../../../Users/TheState/Desktop/Genie/src/unrealEngineProject/Content/Map/Loading.umap'
+[2016.04.21-10.16.47:691][912]LogFileHelpers: Saving map 'Loading' took 0.686
+[2016.04.21-10.16.50:818][140]LogD3D11RHI: InitD3DDevice
+[2016.04.21-10.16.51:234][169]LogD3D11RHI: InitD3DDevice
+[2016.04.21-10.17.01:578][833]LogD3D11RHI: InitD3DDevice
+[2016.04.21-10.17.01:579][833]Recompiling unrealEngineProject...
+[2016.04.21-10.17.01:579][833]Launching UnrealBuildTool... [C:/Program Files (x86)/Epic Games/4.8/Engine/Binaries/DotNET/UnrealBuildTool.exe unrealEngineProject -ModuleWithSuffix unrealEngineProject 97 Win64 Development -editorrecompile -canskiplink "C:/Users/TheState/Desktop/Genie/src/unrealEngineProject/unrealEngineProject.uproject" -rocket  -rocket]
+[2016.04.21-10.17.01:580][833]Warning: Starting HotReload took  0.0s.
+[2016.04.21-10.17.05:483][110]CompilerResultsLog: New page: 컴파일 - 2016. 4. 22. 오전 4:17:05
+[2016.04.21-10.17.05:483][110]CompilerResultsLog: 정보 Compiling game modules for hot reload
+[2016.04.21-10.17.05:483][110]CompilerResultsLog: 정보 Target is up to date.
+[2016.04.21-10.17.05:483][110]LogMainFrame: MainFrame: Module compiling took 3.914 seconds
+[2016.04.21-10.17.08:280][309]LogPlayLevel: PIE:  No blueprints needed recompiling
+[2016.04.21-10.17.08:281][309]PIE: New page: PIE 세션: Loading (2016. 4. 22. 오전 4:17:08)
+[2016.04.21-10.17.08:283][309]LogPlayLevel: Creating play world package: /Game/Map/UEDPIE_0_Loading
+[2016.04.21-10.17.08:285][309]LogPlayLevel: PIE: StaticDuplicateObject took: (0.001454s)
+[2016.04.21-10.17.08:285][309]LogAIModule: Creating AISystem for world Loading
+[2016.04.21-10.17.08:286][309]LogPlayLevel: PIE: World Init took: (0.001176s)
+[2016.04.21-10.17.08:286][309]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Map/Loading.Loading to /Game/Map/UEDPIE_0_Loading.Loading (0.002810s)
+[2016.04.21-10.17.08:302][309]LogInit: XAudio2 using '디지털 오디오(S/PDIF)(High Definition Audio 장치)' : 2 channels at 44.1 kHz using 16 bits per sample (channel mask 0x3)
+[2016.04.21-10.17.08:307][309]LogInit: FAudioDevice initialized.
+[2016.04.21-10.17.08:340][309]LogWorld: Game class is 'GameMode'
+[2016.04.21-10.17.08:343][309]LogWorld: Bringing World /Game/Map/UEDPIE_0_Loading.Loading up for play (max tick rate 0) at 2016.04.21-19.17.08
+[2016.04.21-10.17.08:343][309]LogActor:Warning: GameSession /Game/Map/UEDPIE_0_Loading.Loading:PersistentLevel.GameSession_8 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-10.17.08:344][309]LogActor:Warning: GameNetworkManager /Game/Map/UEDPIE_0_Loading.Loading:PersistentLevel.GameNetworkManager_8 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-10.17.08:344][309]LogWorld: Bringing up level for play took: 0.002403
+[2016.04.21-10.17.08:346][309]PIE: 정보 /Game/Map/UEDPIE_0_Loading 에 대한 에디터에서 플레이 시작 시간: 0.619
+[2016.04.21-10.17.09:346][381]LogPackageName: SearchForPackageOnDisk took   0.074s to resolve Genie.umap
+[2016.04.21-10.17.09:424][382]LogPackageName: SearchForPackageOnDisk took   0.073s to resolve Genie.umap
+[2016.04.21-10.17.09:424][382]LogNet: Browse: /Engine/Maps/Entry
+[2016.04.21-10.17.09:424][382]LogNet:Warning: Travel Failure: [InvalidURL]: 잘못된 URL: /Engine/Maps/Entry
+[2016.04.21-10.17.09:424][382]LogNet:Warning: 트래블 실패: InvalidURL, 실패 이유: '잘못된 URL: /Engine/Maps/Entry'. PIE 종료.
+[2016.04.21-10.17.09:424][382]PIE:Warning: 경고 트래블 실패: InvalidURL, 실패 이유: '잘못된 URL: /Engine/Maps/Entry'. PIE 종료.
+[2016.04.21-10.17.09:424][382]LogNet:Warning: Travel Failure: [ClientTravelFailure]: 잘못된 URL: /Engine/Maps/Entry
+[2016.04.21-10.17.09:424][382]LogNet:Warning: 트래블 실패: ClientTravelFailure, 실패 이유: '잘못된 URL: /Engine/Maps/Entry'. PIE 종료.
+[2016.04.21-10.17.09:424][382]PIE:Warning: 경고 트래블 실패: ClientTravelFailure, 실패 이유: '잘못된 URL: /Engine/Maps/Entry'. PIE 종료.
+[2016.04.21-10.17.09:493][383]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000001A1B2E29A80
+[2016.04.21-10.17.18:507][931]LogD3D11RHI: InitD3DDevice
+[2016.04.21-10.17.18:539][931]LogD3D11RHI: InitD3DDevice
+[2016.04.21-10.17.22:325][931]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Map/Genie" FILE="../../../../../../Users/TheState/Desktop/Genie/src/unrealEngineProject/Content/Map/Genie.umap" SILENT=true AUTOSAVING=false KEEPDIRTY=false
+[2016.04.21-10.17.22:347][931]LogSavePackage: Save=8.043680ms
+[2016.04.21-10.17.22:347][931]LogSavePackage: Moving '../../../../../../Users/TheState/Desktop/Genie/src/unrealEngineProject/Saved/Genie66A2FB394F925337EE644088C5C7ABFB.tmp' to '../../../../../../Users/TheState/Desktop/Genie/src/unrealEngineProject/Content/Map/Genie.umap'
+[2016.04.21-10.17.22:349][931]LogFileHelpers: Saving map 'Genie' took 0.066
+[2016.04.21-10.17.22:360][931]Cmd: MAP LOAD FILE="../../../../../../Users/TheState/Desktop/Genie/src/unrealEngineProject/Content/Map/Genie.umap" TEMPLATE=0 SHOWPROGRESS=1 FEATURELEVEL=3
+[2016.04.21-10.17.22:360][931]LightingResults: New page: 라이팅 빌드
+[2016.04.21-10.17.22:510][931]LoadErrors: New page: 맵 로드중: Genie.umap
+[2016.04.21-10.17.22:511][931]MapCheck: New page: 맵 체크
+[2016.04.21-10.17.22:511][931]LightingResults: New page: 라이팅 빌드
+[2016.04.21-10.17.22:519][931]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000001A19998E2A0
+[2016.04.21-10.17.22:548][931]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000001A1B656F380
+[2016.04.21-10.17.22:559][931]LogAIModule: Creating AISystem for world Genie
+[2016.04.21-10.17.22:560][931]LogEditorServer: Finished looking for orphan Actors (0.000 secs)
+[2016.04.21-10.17.22:615][931]Cmd: MAP CHECKDEP NOCLEARLOG
+[2016.04.21-10.17.22:655][931]MapCheck: 정보 맵 체크 완료: 오류 0 회, 경고 0 회, 소요 시간 39.106ms.
+[2016.04.21-10.17.22:655][931]LogFileHelpers: Loading map 'Genie' took 0.306
+[2016.04.21-10.17.25:663][172]LogD3D11RHI: InitD3DDevice
+[2016.04.21-10.17.25:702][172]LogAIModule: Creating AISystem for world Loading
+[2016.04.21-10.17.25:723][172]Cmd: MAP LOAD FILE="../../../../../../Users/TheState/Desktop/Genie/src/unrealEngineProject/Content/Map/Loading.umap" TEMPLATE=0 SHOWPROGRESS=1 FEATURELEVEL=3
+[2016.04.21-10.17.25:723][172]LightingResults: New page: 라이팅 빌드
+[2016.04.21-10.17.25:740][172]LoadErrors: New page: 맵 로드중: Loading.umap
+[2016.04.21-10.17.25:740][172]MapCheck: New page: 맵 체크
+[2016.04.21-10.17.25:740][172]LightingResults: New page: 라이팅 빌드
+[2016.04.21-10.17.25:748][172]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000001A1B64CB1A0
+[2016.04.21-10.17.25:792][172]LogAIModule: Creating AISystem for world Loading
+[2016.04.21-10.17.25:794][172]LogEditorServer: Finished looking for orphan Actors (0.000 secs)
+[2016.04.21-10.17.25:815][172]Cmd: MAP CHECKDEP NOCLEARLOG
+[2016.04.21-10.17.25:857][172]MapCheck: 정보 맵 체크 완료: 오류 0 회, 경고 0 회, 소요 시간 41.945ms.
+[2016.04.21-10.17.25:857][172]LogFileHelpers: Loading map 'Loading' took 0.136
+[2016.04.21-10.17.27:658][300]LogPlayLevel: PIE:  No blueprints needed recompiling
+[2016.04.21-10.17.27:658][300]PIE: New page: PIE 세션: Loading (2016. 4. 22. 오전 4:17:27)
+[2016.04.21-10.17.27:664][300]LogPlayLevel: Creating play world package: /Game/Map/UEDPIE_0_Loading
+[2016.04.21-10.17.27:666][300]LogPlayLevel: PIE: StaticDuplicateObject took: (0.001431s)
+[2016.04.21-10.17.27:666][300]LogAIModule: Creating AISystem for world Loading
+[2016.04.21-10.17.27:667][300]LogPlayLevel: PIE: World Init took: (0.000981s)
+[2016.04.21-10.17.27:667][300]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Map/Loading.Loading to /Game/Map/UEDPIE_0_Loading.Loading (0.002588s)
+[2016.04.21-10.17.27:682][300]LogInit: XAudio2 using '디지털 오디오(S/PDIF)(High Definition Audio 장치)' : 2 channels at 44.1 kHz using 16 bits per sample (channel mask 0x3)
+[2016.04.21-10.17.27:687][300]LogInit: FAudioDevice initialized.
+[2016.04.21-10.17.27:726][300]LogWorld: Game class is 'GameMode'
+[2016.04.21-10.17.27:730][300]LogWorld: Bringing World /Game/Map/UEDPIE_0_Loading.Loading up for play (max tick rate 0) at 2016.04.21-19.17.27
+[2016.04.21-10.17.27:730][300]LogActor:Warning: GameSession /Game/Map/UEDPIE_0_Loading.Loading:PersistentLevel.GameSession_9 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-10.17.27:730][300]LogActor:Warning: GameNetworkManager /Game/Map/UEDPIE_0_Loading.Loading:PersistentLevel.GameNetworkManager_9 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-10.17.27:731][300]LogWorld: Bringing up level for play took: 0.002367
+[2016.04.21-10.17.27:733][300]PIE: 정보 /Game/Map/UEDPIE_0_Loading 에 대한 에디터에서 플레이 시작 시간: 0.006
+[2016.04.21-10.17.28:726][372]LogPackageName: SearchForPackageOnDisk took   0.071s to resolve Genie.umap
+[2016.04.21-10.17.28:800][373]LogPackageName: SearchForPackageOnDisk took   0.069s to resolve Genie.umap
+[2016.04.21-10.17.28:800][373]LogNet: Browse: /Game/Map/Genie
+[2016.04.21-10.17.28:807][373]LogLoad: LoadMap: /Game/Map/Genie
+[2016.04.21-10.17.28:828][373]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000001A1B64C9120
+[2016.04.21-10.17.28:837][373]Cmd: MEM
+[2016.04.21-10.17.28:851][373]LogMemory: Platform Memory Stats for Windows
+[2016.04.21-10.17.28:851][373]LogMemory: Process Physical Memory: 401.54 MB used, 532.29 MB peak
+[2016.04.21-10.17.28:851][373]LogMemory: Process Virtual Memory: 867.37 MB used, 964.31 MB peak
+[2016.04.21-10.17.28:851][373]LogMemory: Physical Memory: 3860.82 MB used, 8156.15 MB total
+[2016.04.21-10.17.28:851][373]LogMemory: Virtual Memory: 1654.18 MB used, 134217728.00 MB total
+[2016.04.21-10.17.28:851][373]LogMemory: 
+[2016.04.21-10.17.28:851][373]Allocator Stats for TBB: (not implemented)
+[2016.04.21-10.17.28:874][373]LogAIModule: Creating AISystem for world Genie
+[2016.04.21-10.17.28:875][373]LogWorld: Game class is 'GameMode'
+[2016.04.21-10.17.28:877][373]LogWorld: Bringing World /Game/Map/UEDPIE_0_Genie.Genie up for play (max tick rate 0) at 2016.04.21-19.17.28
+[2016.04.21-10.17.28:877][373]LogActor:Warning: GameSession /Game/Map/UEDPIE_0_Genie.Genie:PersistentLevel.GameSession_10 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-10.17.28:878][373]LogActor:Warning: GameNetworkManager /Game/Map/UEDPIE_0_Genie.Genie:PersistentLevel.GameNetworkManager_10 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-10.17.28:878][373]LogWorld: Bringing up level for play took: 0.000892
+[2016.04.21-10.17.28:887][373]LogGameMode: Warning - PATHS NOT DEFINED or NO PLAYERSTART with positive rating
+[2016.04.21-10.17.30:007][490]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000001A1B2C10CC0
+[2016.04.21-10.17.47:344][224]LogD3D11RHI: InitD3DDevice
+[2016.04.21-10.17.47:345][224]Recompiling unrealEngineProject...
+[2016.04.21-10.17.47:345][224]Launching UnrealBuildTool... [C:/Program Files (x86)/Epic Games/4.8/Engine/Binaries/DotNET/UnrealBuildTool.exe unrealEngineProject -ModuleWithSuffix unrealEngineProject 1904 Win64 Development -editorrecompile -canskiplink "C:/Users/TheState/Desktop/Genie/src/unrealEngineProject/unrealEngineProject.uproject" -rocket  -rocket]
+[2016.04.21-10.17.47:346][224]Warning: Starting HotReload took  0.0s.
+[2016.04.21-10.17.50:978][486]CompilerResultsLog: New page: 컴파일 - 2016. 4. 22. 오전 4:17:50
+[2016.04.21-10.17.50:978][486]CompilerResultsLog: 정보 Compiling game modules for hot reload
+[2016.04.21-10.17.50:980][486]CompilerResultsLog: 정보 Target is up to date.
+[2016.04.21-10.17.50:980][486]LogMainFrame: MainFrame: Module compiling took 3.636 seconds
+[2016.04.21-10.17.52:284][583]LogPlayLevel: PIE:  No blueprints needed recompiling
+[2016.04.21-10.17.52:284][583]PIE: New page: PIE 세션: Loading (2016. 4. 22. 오전 4:17:52)
+[2016.04.21-10.17.52:284][583]LogPlayLevel: Creating play world package: /Game/Map/UEDPIE_0_Loading
+[2016.04.21-10.17.52:286][583]LogPlayLevel: PIE: StaticDuplicateObject took: (0.001568s)
+[2016.04.21-10.17.52:287][583]LogAIModule: Creating AISystem for world Loading
+[2016.04.21-10.17.52:287][583]LogPlayLevel: PIE: World Init took: (0.001213s)
+[2016.04.21-10.17.52:287][583]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Map/Loading.Loading to /Game/Map/UEDPIE_0_Loading.Loading (0.002972s)
+[2016.04.21-10.17.52:304][583]LogInit: XAudio2 using '디지털 오디오(S/PDIF)(High Definition Audio 장치)' : 2 channels at 44.1 kHz using 16 bits per sample (channel mask 0x3)
+[2016.04.21-10.17.52:309][583]LogInit: FAudioDevice initialized.
+[2016.04.21-10.17.52:342][583]LogWorld: Game class is 'GameMode'
+[2016.04.21-10.17.52:345][583]LogWorld: Bringing World /Game/Map/UEDPIE_0_Loading.Loading up for play (max tick rate 0) at 2016.04.21-19.17.52
+[2016.04.21-10.17.52:346][583]LogActor:Warning: GameSession /Game/Map/UEDPIE_0_Loading.Loading:PersistentLevel.GameSession_11 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-10.17.52:346][583]LogActor:Warning: GameNetworkManager /Game/Map/UEDPIE_0_Loading.Loading:PersistentLevel.GameNetworkManager_11 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-10.17.52:346][583]LogWorld: Bringing up level for play took: 0.002433
+[2016.04.21-10.17.52:348][583]PIE: 정보 /Game/Map/UEDPIE_0_Loading 에 대한 에디터에서 플레이 시작 시간: 0.621
+[2016.04.21-10.18.09:494][ 10]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000001A1A43D8180
+[2016.04.21-10.18.17:454][588]LogEditorActor: Deleted Actor: AtmosphericFog
+[2016.04.21-10.18.17:469][588]LogEditorActor: Deleted 1 Actors (0.017 secs)
+[2016.04.21-10.18.24:370][133]LogPlayLevel: PIE:  No blueprints needed recompiling
+[2016.04.21-10.18.24:370][133]PIE: New page: PIE 세션: Loading (2016. 4. 22. 오전 4:18:24)
+[2016.04.21-10.18.24:370][133]LogPlayLevel: Creating play world package: /Game/Map/UEDPIE_0_Loading
+[2016.04.21-10.18.24:372][133]LogPlayLevel: PIE: StaticDuplicateObject took: (0.001152s)
+[2016.04.21-10.18.24:372][133]LogAIModule: Creating AISystem for world Loading
+[2016.04.21-10.18.24:373][133]LogPlayLevel: PIE: World Init took: (0.000982s)
+[2016.04.21-10.18.24:373][133]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Map/Loading.Loading to /Game/Map/UEDPIE_0_Loading.Loading (0.002297s)
+[2016.04.21-10.18.24:390][133]LogInit: XAudio2 using '디지털 오디오(S/PDIF)(High Definition Audio 장치)' : 2 channels at 44.1 kHz using 16 bits per sample (channel mask 0x3)
+[2016.04.21-10.18.24:394][133]LogInit: FAudioDevice initialized.
+[2016.04.21-10.18.24:430][133]LogWorld: Game class is 'GameMode'
+[2016.04.21-10.18.24:434][133]LogWorld: Bringing World /Game/Map/UEDPIE_0_Loading.Loading up for play (max tick rate 0) at 2016.04.21-19.18.24
+[2016.04.21-10.18.24:434][133]LogActor:Warning: GameSession /Game/Map/UEDPIE_0_Loading.Loading:PersistentLevel.GameSession_12 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-10.18.24:434][133]LogActor:Warning: GameNetworkManager /Game/Map/UEDPIE_0_Loading.Loading:PersistentLevel.GameNetworkManager_12 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-10.18.24:434][133]LogWorld: Bringing up level for play took: 0.002232
+[2016.04.21-10.18.24:436][133]PIE: 정보 /Game/Map/UEDPIE_0_Loading 에 대한 에디터에서 플레이 시작 시간: 0.709
+[2016.04.21-10.18.29:273][565]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000001A1B2C13240
+[2016.04.21-10.18.32:922][853]LogEditorActor: Deleted Actor: BP_Sky_Sphere_C
+[2016.04.21-10.18.32:948][853]LogEditorActor: Deleted 1 Actors (0.026 secs)
+[2016.04.21-10.18.38:494][312]LogEditorActor: Deleted Actor: StaticMeshActor
+[2016.04.21-10.18.38:520][312]LogEditorActor: Deleted 1 Actors (0.026 secs)
+[2016.04.21-10.18.40:999][528]LogPlayLevel: PIE:  No blueprints needed recompiling
+[2016.04.21-10.18.40:999][528]PIE: New page: PIE 세션: Loading (2016. 4. 22. 오전 4:18:40)
+[2016.04.21-10.18.40:999][528]LogPlayLevel: Creating play world package: /Game/Map/UEDPIE_0_Loading
+[2016.04.21-10.18.41:001][528]LogPlayLevel: PIE: StaticDuplicateObject took: (0.000869s)
+[2016.04.21-10.18.41:001][528]LogAIModule: Creating AISystem for world Loading
+[2016.04.21-10.18.41:002][528]LogPlayLevel: PIE: World Init took: (0.000962s)
+[2016.04.21-10.18.41:002][528]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Map/Loading.Loading to /Game/Map/UEDPIE_0_Loading.Loading (0.001987s)
+[2016.04.21-10.18.41:018][528]LogInit: XAudio2 using '디지털 오디오(S/PDIF)(High Definition Audio 장치)' : 2 channels at 44.1 kHz using 16 bits per sample (channel mask 0x3)
+[2016.04.21-10.18.41:022][528]LogInit: FAudioDevice initialized.
+[2016.04.21-10.18.41:056][528]LogWorld: Game class is 'GameMode'
+[2016.04.21-10.18.41:059][528]LogWorld: Bringing World /Game/Map/UEDPIE_0_Loading.Loading up for play (max tick rate 0) at 2016.04.21-19.18.41
+[2016.04.21-10.18.41:059][528]LogActor:Warning: GameSession /Game/Map/UEDPIE_0_Loading.Loading:PersistentLevel.GameSession_13 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-10.18.41:059][528]LogActor:Warning: GameNetworkManager /Game/Map/UEDPIE_0_Loading.Loading:PersistentLevel.GameNetworkManager_13 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-10.18.41:060][528]LogWorld: Bringing up level for play took: 0.001842
+[2016.04.21-10.18.41:062][528]PIE: 정보 /Game/Map/UEDPIE_0_Loading 에 대한 에디터에서 플레이 시작 시간: -0.665
+[2016.04.21-10.18.57:047][139]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000001A1B656E340
+[2016.04.21-10.18.58:570][268]LogD3D11RHI: InitD3DDevice
+[2016.04.21-10.18.58:622][268]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Map/Loading" FILE="../../../../../../Users/TheState/Desktop/Genie/src/unrealEngineProject/Content/Map/Loading.umap" SILENT=true AUTOSAVING=false KEEPDIRTY=false
+[2016.04.21-10.18.58:669][268]LogSavePackage: Save=19.927935ms
+[2016.04.21-10.18.58:669][268]LogSavePackage: Moving '../../../../../../Users/TheState/Desktop/Genie/src/unrealEngineProject/Saved/LoadingBAF2849E4142F2C85B5727B49D8D8D6B.tmp' to '../../../../../../Users/TheState/Desktop/Genie/src/unrealEngineProject/Content/Map/Loading.umap'
+[2016.04.21-10.18.58:691][268]LogFileHelpers: Saving map 'Loading' took 0.113
+[2016.04.21-10.18.59:723][360]LogPlayLevel: PIE:  No blueprints needed recompiling
+[2016.04.21-10.18.59:723][360]PIE: New page: PIE 세션: Loading (2016. 4. 22. 오전 4:18:59)
+[2016.04.21-10.18.59:723][360]LogPlayLevel: Creating play world package: /Game/Map/UEDPIE_0_Loading
+[2016.04.21-10.18.59:724][360]LogPlayLevel: PIE: StaticDuplicateObject took: (0.000890s)
+[2016.04.21-10.18.59:725][360]LogAIModule: Creating AISystem for world Loading
+[2016.04.21-10.18.59:725][360]LogPlayLevel: PIE: World Init took: (0.001020s)
+[2016.04.21-10.18.59:725][360]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Map/Loading.Loading to /Game/Map/UEDPIE_0_Loading.Loading (0.002068s)
+[2016.04.21-10.18.59:743][360]LogInit: XAudio2 using '디지털 오디오(S/PDIF)(High Definition Audio 장치)' : 2 channels at 44.1 kHz using 16 bits per sample (channel mask 0x3)
+[2016.04.21-10.18.59:748][360]LogInit: FAudioDevice initialized.
+[2016.04.21-10.18.59:780][360]LogWorld: Game class is 'GameMode'
+[2016.04.21-10.18.59:783][360]LogWorld: Bringing World /Game/Map/UEDPIE_0_Loading.Loading up for play (max tick rate 0) at 2016.04.21-19.18.59
+[2016.04.21-10.18.59:783][360]LogActor:Warning: GameSession /Game/Map/UEDPIE_0_Loading.Loading:PersistentLevel.GameSession_14 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-10.18.59:783][360]LogActor:Warning: GameNetworkManager /Game/Map/UEDPIE_0_Loading.Loading:PersistentLevel.GameNetworkManager_14 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-10.18.59:783][360]LogWorld: Bringing up level for play took: 0.001875
+[2016.04.21-10.18.59:785][360]PIE: 정보 /Game/Map/UEDPIE_0_Loading 에 대한 에디터에서 플레이 시작 시간: 0.058
+[2016.04.21-10.19.07:970][180]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000001A1B2C11D00
+[2016.04.21-10.19.11:350][472]LogD3D11RHI: InitD3DDevice
+[2016.04.21-10.19.11:377][472]Cmd: MAP LOAD FILE="../../../../../../Users/TheState/Desktop/Genie/src/unrealEngineProject/Content/Map/Loading.umap" TEMPLATE=0 SHOWPROGRESS=1 FEATURELEVEL=3
+[2016.04.21-10.19.11:378][472]LightingResults: New page: 라이팅 빌드
+[2016.04.21-10.19.11:407][472]LoadErrors: New page: 맵 로드중: Loading.umap
+[2016.04.21-10.19.11:407][472]MapCheck: New page: 맵 체크
+[2016.04.21-10.19.11:407][472]LightingResults: New page: 라이팅 빌드
+[2016.04.21-10.19.11:415][472]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000001A1B2F73060
+[2016.04.21-10.19.11:425][472]LogAIModule: Creating AISystem for world Loading
+[2016.04.21-10.19.11:429][472]LogEditorServer: Finished looking for orphan Actors (0.000 secs)
+[2016.04.21-10.19.11:441][472]Cmd: MAP CHECKDEP NOCLEARLOG
+[2016.04.21-10.19.11:483][472]MapCheck: 정보 맵 체크 완료: 오류 0 회, 경고 0 회, 소요 시간 42.14ms.
+[2016.04.21-10.19.11:484][472]LogFileHelpers: Loading map 'Loading' took 0.108
+[2016.04.21-10.19.16:133][877]LogD3D11RHI: InitD3DDevice
+[2016.04.21-10.19.16:249][877]LogVSAccessor:Warning: Couldn't goto line number '0' in 'C:/Users/TheState/Desktop/Genie/src/unrealEngineProject/Source/unrealEngineProject/LoadingFile.h'
+[2016.04.21-10.19.16:296][877]LogVSAccessor:Warning: Couldn't goto line number '0' in 'C:/Users/TheState/Desktop/Genie/src/unrealEngineProject/Source/unrealEngineProject/LoadingFile.cpp'
+[2016.04.21-10.22.29:792][ 69]LogD3D11RHI: InitD3DDevice
+[2016.04.21-10.22.29:793][ 69]Recompiling unrealEngineProject...
+[2016.04.21-10.22.29:793][ 69]Launching UnrealBuildTool... [C:/Program Files (x86)/Epic Games/4.8/Engine/Binaries/DotNET/UnrealBuildTool.exe unrealEngineProject -ModuleWithSuffix unrealEngineProject 5064 Win64 Development -editorrecompile -canskiplink "C:/Users/TheState/Desktop/Genie/src/unrealEngineProject/unrealEngineProject.uproject" -rocket  -rocket]
+[2016.04.21-10.22.29:794][ 69]Warning: Starting HotReload took  0.0s.
+[2016.04.21-10.22.55:001][169]CompilerResultsLog: New page: 컴파일 - 2016. 4. 22. 오전 4:22:55
+[2016.04.21-10.22.55:001][169]CompilerResultsLog: 정보 Compiling game modules for hot reload
+[2016.04.21-10.22.55:001][169]CompilerResultsLog: 정보 Parsing headers for unrealEngineProjectEditor
+[2016.04.21-10.22.55:001][169]CompilerResultsLog: 정보 Reflection code generated for unrealEngineProjectEditor
+[2016.04.21-10.22.55:001][169]CompilerResultsLog: 정보 Performing 3 actions (4 in parallel)
+[2016.04.21-10.22.55:001][169]CompilerResultsLog: 정보 LoadingFile.cpp
+[2016.04.21-10.22.55:001][169]CompilerResultsLog: 정보 unrealEngineProject.generated.cpp
+[2016.04.21-10.22.55:001][169]CompilerResultsLog:Error: 오류 C:\Users\TheState\Desktop\Genie\src\unrealEngineProject\Source\unrealEngineProject\LoadingFile.cpp(43)  : warning C4996: 'UTextRenderComponent::SetText': Passing text as FString is deprecated, please use FText instead (likely via a LOCTEXT). Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+[2016.04.21-10.22.55:001][169]CompilerResultsLog: 정보         C:\Program Files (x86)\Epic Games\4.8\Engine\Source\Runtime\Engine\Classes\Components/TextRenderComponent.h(96) : see declaration of 'UTextRenderComponent::SetText'
+[2016.04.21-10.22.55:001][169]CompilerResultsLog: 정보 [3/3] Link UE4Editor-unrealEngineProject-5064.dll
+[2016.04.21-10.22.55:001][169]CompilerResultsLog: 정보    Creating library C:\Users\TheState\Desktop\Genie\src\unrealEngineProject\Intermediate/Build/Win64\UE4Editor\Development\UE4Editor-unrealEngineProject-5064.lib and object C:\Users\TheState\Desktop\Genie\src\unrealEngineProject\Intermediate/Build/Win64\UE4Editor\Development\UE4Editor-unrealEngineProject-5064.exp
+[2016.04.21-10.22.55:001][169]CompilerResultsLog: 정보 -------- End Detailed Actions Stats -----------------------------------------------------------
+[2016.04.21-10.22.55:001][169]CompilerResultsLog: 정보 Total build time: 25.06 seconds
+[2016.04.21-10.22.55:001][169]LogMainFrame: MainFrame: Module compiling took 25.214 seconds
+[2016.04.21-10.22.55:060][169]LogClass: Could not find existing class LoadingFile in package /Script/unrealEngineProject for HotReload, assuming new class
+[2016.04.21-10.22.55:065][169]LogHotReload: Re-instancing LoadingFile after hot-reload.
+[2016.04.21-10.22.55:066][169]LogUObjectGlobals:Warning: Guid is in use by TextRenderComponent /Game/Map/Loading.Loading:PersistentLevel.LoadingFile_1.Genie and TextRenderComponent /Game/Map/Loading.Loading:PersistentLevel.LoadingFile_0.Genie, which should never happen in the editor but could happen at runtime with duplicate level loading or PIE
+[2016.04.21-10.22.55:097][169]LogContentBrowser: Native class hierarchy updated for 'unrealEngineProject' in 0.0018 seconds. Added 2 classes and 2 folders.
+[2016.04.21-10.22.55:098][169]Warning: HotReload successful (0 functions remapped  0 scriptstructs remapped)
+[2016.04.21-10.22.55:115][169]LogContentBrowser: Native class hierarchy populated in 0.0087 seconds. Added 1795 classes and 305 folders.
+[2016.04.21-10.22.55:135][169]LogSCSEditor:Warning: Calling UpdateTree() from Tick() more frequently than expected due to invalid tree node state. This might be a performance issue.
+[2016.04.21-10.23.19:147][967]LogD3D11RHI: InitD3DDevice
+[2016.04.21-10.23.32:635][107]LogPlayLevel: PIE:  No blueprints needed recompiling
+[2016.04.21-10.23.32:636][107]PIE: New page: PIE 세션: Loading (2016. 4. 22. 오전 4:23:32)
+[2016.04.21-10.23.32:636][107]LogPlayLevel: Creating play world package: /Game/Map/UEDPIE_0_Loading
+[2016.04.21-10.23.32:637][107]LogPlayLevel: PIE: StaticDuplicateObject took: (0.000959s)
+[2016.04.21-10.23.32:637][107]LogAIModule: Creating AISystem for world Loading
+[2016.04.21-10.23.32:638][107]LogPlayLevel: PIE: World Init took: (0.001101s)
+[2016.04.21-10.23.32:638][107]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Map/Loading.Loading to /Game/Map/UEDPIE_0_Loading.Loading (0.002230s)
+[2016.04.21-10.23.32:655][107]LogInit: XAudio2 using '디지털 오디오(S/PDIF)(High Definition Audio 장치)' : 2 channels at 44.1 kHz using 16 bits per sample (channel mask 0x3)
+[2016.04.21-10.23.32:661][107]LogInit: FAudioDevice initialized.
+[2016.04.21-10.23.32:693][107]LogWorld: Game class is 'GameMode'
+[2016.04.21-10.23.32:696][107]LogWorld: Bringing World /Game/Map/UEDPIE_0_Loading.Loading up for play (max tick rate 0) at 2016.04.21-19.23.32
+[2016.04.21-10.23.32:696][107]LogActor:Warning: GameSession /Game/Map/UEDPIE_0_Loading.Loading:PersistentLevel.GameSession_15 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-10.23.32:696][107]LogActor:Warning: GameNetworkManager /Game/Map/UEDPIE_0_Loading.Loading:PersistentLevel.GameNetworkManager_15 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-10.23.32:696][107]LogWorld: Bringing up level for play took: 0.001850
+[2016.04.21-10.23.32:698][107]PIE: 정보 /Game/Map/UEDPIE_0_Loading 에 대한 에디터에서 플레이 시작 시간: 0.971
+[2016.04.21-10.23.49:147][770]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000001A1A8208C20
+[2016.04.21-10.23.55:499][254]LogD3D11RHI: InitD3DDevice
+[2016.04.21-10.24.06:231][111]LogPlayLevel: PIE:  No blueprints needed recompiling
+[2016.04.21-10.24.06:231][111]PIE: New page: PIE 세션: Loading (2016. 4. 22. 오전 4:24:06)
+[2016.04.21-10.24.06:235][111]LogPlayLevel: Creating play world package: /Game/Map/UEDPIE_0_Loading
+[2016.04.21-10.24.06:236][111]LogPlayLevel: PIE: StaticDuplicateObject took: (0.000898s)
+[2016.04.21-10.24.06:237][111]LogAIModule: Creating AISystem for world Loading
+[2016.04.21-10.24.06:237][111]LogPlayLevel: PIE: World Init took: (0.000980s)
+[2016.04.21-10.24.06:237][111]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Map/Loading.Loading to /Game/Map/UEDPIE_0_Loading.Loading (0.002041s)
+[2016.04.21-10.24.06:255][111]LogInit: XAudio2 using '디지털 오디오(S/PDIF)(High Definition Audio 장치)' : 2 channels at 44.1 kHz using 16 bits per sample (channel mask 0x3)
+[2016.04.21-10.24.06:260][111]LogInit: FAudioDevice initialized.
+[2016.04.21-10.24.06:296][111]LogWorld: Game class is 'GameMode'
+[2016.04.21-10.24.06:299][111]LogWorld: Bringing World /Game/Map/UEDPIE_0_Loading.Loading up for play (max tick rate 0) at 2016.04.21-19.24.06
+[2016.04.21-10.24.06:299][111]LogActor:Warning: GameSession /Game/Map/UEDPIE_0_Loading.Loading:PersistentLevel.GameSession_16 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-10.24.06:299][111]LogActor:Warning: GameNetworkManager /Game/Map/UEDPIE_0_Loading.Loading:PersistentLevel.GameNetworkManager_16 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.21-10.24.06:299][111]LogWorld: Bringing up level for play took: 0.001896
+[2016.04.21-10.24.06:302][111]PIE: 정보 /Game/Map/UEDPIE_0_Loading 에 대한 에디터에서 플레이 시작 시간: 0.575
+[2016.04.21-10.24.16:284][112]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000001A1B2C11260
+[2016.04.21-10.24.20:844][499]LogD3D11RHI: InitD3DDevice
+[2016.04.21-10.24.20:904][499]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Map/Loading" FILE="../../../../../../Users/TheState/Desktop/Genie/src/unrealEngineProject/Content/Map/Loading.umap" SILENT=true AUTOSAVING=false KEEPDIRTY=false
+[2016.04.21-10.24.20:936][499]LogSavePackage: Save=11.541944ms
+[2016.04.21-10.24.20:936][499]LogSavePackage: Moving '../../../../../../Users/TheState/Desktop/Genie/src/unrealEngineProject/Saved/LoadingDE4378044DFCEF4531F50C92333268A4.tmp' to '../../../../../../Users/TheState/Desktop/Genie/src/unrealEngineProject/Content/Map/Loading.umap'
+[2016.04.21-10.24.20:956][499]LogFileHelpers: Saving map 'Loading' took 0.095
+[2016.04.21-10.50.07:505][909]LogWindowsTextInputMethodSystem:Display: IME system now activated using TSF (Microsoft 입력기).
+[2016.04.21-10.50.07:753][910]Cmd: QUIT_EDITOR
+[2016.04.21-10.50.08:920][910]LogExit: Preparing to exit.
+[2016.04.21-10.50.10:012][910]LogExit: Editor shut down
+[2016.04.21-10.50.10:013][910]LogExit: Transaction tracking system shut down
+[2016.04.21-10.50.10:014][910]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000001A1B30F1E40
+[2016.04.21-10.50.10:151][910]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000001A1C7C3D580
+[2016.04.21-10.50.10:151][910]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000001A1C7C3D800
+[2016.04.21-10.50.10:151][910]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000001A1B656FF60
+[2016.04.21-10.50.10:151][910]LogExit: Object subsystem successfully closed.
+[2016.04.21-10.50.10:168][910]LogD3D11RHI: Shutdown
+[2016.04.21-10.50.10:168][910]LogD3D11RHI: CleanupD3DDevice
+[2016.04.21-10.50.10:215][910]LogD3D11RHI: ~FD3D11DynamicRHI
+[2016.04.21-10.50.10:236][910]LogModuleManager: Shutting down and abandoning module CrashTracker (189)
+[2016.04.21-10.50.10:236][910]LogModuleManager: Shutting down and abandoning module SceneOutliner (188)
+[2016.04.21-10.50.10:236][910]LogModuleManager: Shutting down and abandoning module SuperSearch (187)
+[2016.04.21-10.50.10:236][910]LogModuleManager: Shutting down and abandoning module WidgetCarousel (186)
+[2016.04.21-10.50.10:236][910]LogModuleManager: Shutting down and abandoning module AddContentDialog (185)
+[2016.04.21-10.50.10:240][910]LogModuleManager: Shutting down and abandoning module EditorWidgets (184)
+[2016.04.21-10.50.10:240][910]LogModuleManager: Shutting down and abandoning module CollectionManager (183)
+[2016.04.21-10.50.10:240][910]LogModuleManager: Shutting down and abandoning module StatsViewer (182)
+[2016.04.21-10.50.10:240][910]LogModuleManager: Shutting down and abandoning module FoliageEdit (181)
+[2016.04.21-10.50.10:240][910]LogModuleManager: Shutting down and abandoning module LandscapeEditor (180)
+[2016.04.21-10.50.10:240][910]LogModuleManager: Shutting down and abandoning module ActorPickerMode (179)
+[2016.04.21-10.50.10:240][910]LogModuleManager: Shutting down and abandoning module GeometryMode (178)
+[2016.04.21-10.50.10:240][910]LogModuleManager: Shutting down and abandoning module TextureAlignMode (177)
+[2016.04.21-10.50.10:240][910]LogModuleManager: Shutting down and abandoning module BspMode (176)
+[2016.04.21-10.50.10:240][910]LogModuleManager: Shutting down and abandoning module PlacementMode (175)
+[2016.04.21-10.50.10:240][910]LogModuleManager: Shutting down and abandoning module AutomationWorker (174)
+[2016.04.21-10.50.10:241][910]LogModuleManager: Shutting down and abandoning module CharacterAI (173)
+[2016.04.21-10.50.10:241][910]LogModuleManager: Shutting down and abandoning module SmartSnapping (172)
+[2016.04.21-10.50.10:241][910]LogModuleManager: Shutting down and abandoning module ViewportSnapping (171)
+[2016.04.21-10.50.10:241][910]LogModuleManager: Shutting down and abandoning module LogVisualizer (170)
+[2016.04.21-10.50.10:241][910]LogModuleManager: Shutting down and abandoning module GameProjectGeneration (169)
+[2016.04.21-10.50.10:241][910]LogModuleManager: Shutting down and abandoning module IntroTutorials (168)
+[2016.04.21-10.50.10:241][910]LogModuleManager: Shutting down and abandoning module EditorLiveStreaming (167)
+[2016.04.21-10.50.10:241][910]LogModuleManager: Shutting down and abandoning module IOSPlatformEditor (166)
+[2016.04.21-10.50.10:241][910]LogModuleManager: Shutting down and abandoning module HTML5PlatformEditor (165)
+[2016.04.21-10.50.10:241][910]LogModuleManager: Shutting down and abandoning module AndroidDeviceDetection (164)
+[2016.04.21-10.50.10:969][910]LogModuleManager: Shutting down and abandoning module AndroidPlatformEditor (163)
+[2016.04.21-10.50.10:969][910]LogModuleManager: Shutting down and abandoning module IOSRuntimeSettings (162)
+[2016.04.21-10.50.10:969][910]LogModuleManager: Shutting down and abandoning module AndroidRuntimeSettings (161)
+[2016.04.21-10.50.10:969][910]LogModuleManager: Shutting down and abandoning module MergeActors (160)
+[2016.04.21-10.50.10:969][910]LogModuleManager: Shutting down and abandoning module SizeMap (159)
+[2016.04.21-10.50.10:969][910]LogModuleManager: Shutting down and abandoning module TreeMap (158)
+[2016.04.21-10.50.10:969][910]LogModuleManager: Shutting down and abandoning module ReferenceViewer (157)
+[2016.04.21-10.50.10:969][910]LogModuleManager: Shutting down and abandoning module LocalizationDashboard (156)
+[2016.04.21-10.50.10:969][910]LogModuleManager: Shutting down and abandoning module HardwareTargeting (155)
+[2016.04.21-10.50.10:969][910]LogModuleManager: Shutting down and abandoning module DeviceProfileEditor (154)
+[2016.04.21-10.50.10:969][910]LogModuleManager: Shutting down and abandoning module UndoHistory (153)
+[2016.04.21-10.50.10:969][910]LogModuleManager: Shutting down and abandoning module GameplayTagsEditor (152)
+[2016.04.21-10.50.10:969][910]LogModuleManager: Shutting down and abandoning module UserFeedback (151)
+[2016.04.21-10.50.10:969][910]LogModuleManager: Shutting down and abandoning module XmlParser (150)
+[2016.04.21-10.50.10:969][910]LogModuleManager: Shutting down and abandoning module Blutility (149)
+[2016.04.21-10.50.10:969][910]LogModuleManager: Shutting down and abandoning module ProjectTargetPlatformEditor (148)
+[2016.04.21-10.50.10:969][910]LogModuleManager: Shutting down and abandoning module ProjectSettingsViewer (147)
+[2016.04.21-10.50.10:969][910]LogModuleManager: Shutting down and abandoning module InputBindingEditor (146)
+[2016.04.21-10.50.10:970][910]LogModuleManager: Shutting down and abandoning module EditorSettingsViewer (145)
+[2016.04.21-10.50.10:970][910]LogModuleManager: Shutting down and abandoning module SettingsEditor (144)
+[2016.04.21-10.50.10:970][910]LogModuleManager: Shutting down and abandoning module ProjectLauncher (143)
+[2016.04.21-10.50.10:970][910]LogModuleManager: Shutting down and abandoning module SessionFrontend (142)
+[2016.04.21-10.50.10:970][910]LogModuleManager: Shutting down and abandoning module ProfilerClient (141)
+[2016.04.21-10.50.10:970][910]LogModuleManager: Shutting down and abandoning module TargetDeviceServices (140)
+[2016.04.21-10.50.10:970][910]LogModuleManager: Shutting down and abandoning module DeviceManager (139)
+[2016.04.21-10.50.10:970][910]LogModuleManager: Shutting down and abandoning module AutomationController (138)
+[2016.04.21-10.50.10:970][910]LogModuleManager: Shutting down and abandoning module AutomationWindow (137)
+[2016.04.21-10.50.10:970][910]LogModuleManager: Shutting down and abandoning module Layers (136)
+[2016.04.21-10.50.10:970][910]LogModuleManager: Shutting down and abandoning module ComponentVisualizers (135)
+[2016.04.21-10.50.10:970][910]LogModuleManager: Shutting down and abandoning module DetailCustomizations (134)
+[2016.04.21-10.50.10:970][910]LogModuleManager: Shutting down and abandoning module PackagesDialog (133)
+[2016.04.21-10.50.10:970][910]LogModuleManager: Shutting down and abandoning module AssetRegistry (132)
+[2016.04.21-10.50.11:068][910]LogModuleManager: Shutting down and abandoning module Persona (131)
+[2016.04.21-10.50.11:068][910]LogModuleManager: Shutting down and abandoning module Kismet (130)
+[2016.04.21-10.50.11:069][910]LogModuleManager: Shutting down and abandoning module GraphEditor (129)
+[2016.04.21-10.50.11:069][910]LogModuleManager: Shutting down and abandoning module ClassViewer (128)
+[2016.04.21-10.50.11:070][910]LogModuleManager: Shutting down and abandoning module Toolbox (127)
+[2016.04.21-10.50.11:070][910]LogModuleManager: Shutting down and abandoning module ModuleUI (126)
+[2016.04.21-10.50.11:070][910]LogModuleManager: Shutting down and abandoning module MovieSceneTools (125)
+[2016.04.21-10.50.11:070][910]LogModuleManager: Shutting down and abandoning module OutputLog (124)
+[2016.04.21-10.50.11:071][910]LogModuleManager: Shutting down and abandoning module GammaUI (123)
+[2016.04.21-10.50.11:071][910]LogModuleManager: Shutting down and abandoning module Documentation (122)
+[2016.04.21-10.50.11:071][910]LogModuleManager: Shutting down and abandoning module GameLiveStreaming (121)
+[2016.04.21-10.50.11:071][910]LogModuleManager: Shutting down and abandoning module StreamingPauseRendering (120)
+[2016.04.21-10.50.11:071][910]LogModuleManager: Shutting down and abandoning module AnalyticsET (119)
+[2016.04.21-10.50.11:071][910]LogModuleManager: Shutting down and abandoning module Analytics (118)
+[2016.04.21-10.50.11:071][910]LogModuleManager: Shutting down and abandoning module AITestSuite (117)
+[2016.04.21-10.50.11:071][910]LogModuleManager: Shutting down and abandoning module GameplayDebugger (116)
+[2016.04.21-10.50.11:071][910]LogModuleManager: Shutting down and abandoning module AIModule (115)
+[2016.04.21-10.50.11:071][910]LogModuleManager: Shutting down and abandoning module ProfilerService (114)
+[2016.04.21-10.50.11:244][910]LogModuleManager: Shutting down and abandoning module TaskGraph (113)
+[2016.04.21-10.50.11:244][910]LogModuleManager: Shutting down and abandoning module SlateRemote (112)
+[2016.04.21-10.50.11:244][910]LogModuleManager: Shutting down and abandoning module SteamVRController (111)
+[2016.04.21-10.50.11:244][910]LogModuleManager: Shutting down and abandoning module SteamVR (110)
+[2016.04.21-10.50.11:244][910]LogModuleManager: Shutting down and abandoning module ProceduralMeshComponent (109)
+[2016.04.21-10.50.11:244][910]LogModuleManager: Shutting down and abandoning module OculusRift (108)
+[2016.04.21-10.50.11:244][910]LogModuleManager: Shutting down and abandoning module LeapMotionController (107)
+[2016.04.21-10.50.11:252][910]LogModuleManager: Shutting down and abandoning module CustomMeshComponent (106)
+[2016.04.21-10.50.11:252][910]LogModuleManager: Shutting down and abandoning module CableComponent (105)
+[2016.04.21-10.50.11:252][910]LogModuleManager: Shutting down and abandoning module MessagingDebugger (104)
+[2016.04.21-10.50.11:252][910]LogModuleManager: Shutting down and abandoning module MediaPlayerEditor (103)
+[2016.04.21-10.50.11:252][910]LogModuleManager: Shutting down and abandoning module SpeedTreeImporter (102)
+[2016.04.21-10.50.11:253][910]LogModuleManager: Shutting down and abandoning module PluginBrowser (101)
+[2016.04.21-10.50.11:253][910]LogModuleManager: Shutting down and abandoning module EpicSurvey (100)
+[2016.04.21-10.50.11:253][910]LogModuleManager: Shutting down and abandoning module DesktopPlatform (99)
+[2016.04.21-10.50.11:253][910]LogModuleManager: Shutting down and abandoning module VisualStudioSourceCodeAccess (98)
+[2016.04.21-10.50.11:253][910]LogModuleManager: Shutting down and abandoning module UObjectPlugin (97)
+[2016.04.21-10.50.11:253][910]LogModuleManager: Shutting down and abandoning module SubversionSourceControl (96)
+[2016.04.21-10.50.11:253][910]LogModuleManager: Shutting down and abandoning module PerforceSourceControl (95)
+[2016.04.21-10.50.11:253][910]LogModuleManager: Shutting down and abandoning module SourceControl (94)
+[2016.04.21-10.50.11:253][910]LogModuleManager: Shutting down and abandoning module GitSourceControl (93)
+[2016.04.21-10.50.11:253][910]LogModuleManager: Shutting down and abandoning module BlankPlugin (92)
+[2016.04.21-10.50.11:253][910]LogModuleManager: Shutting down and abandoning module PaperTiledImporter (91)
+[2016.04.21-10.50.11:253][910]LogModuleManager: Shutting down and abandoning module PaperSpriteSheetImporter (90)
+[2016.04.21-10.50.11:253][910]LogModuleManager: Shutting down and abandoning module MeshPaint (89)
+[2016.04.21-10.50.11:253][910]LogModuleManager: Shutting down and abandoning module SlateReflector (88)
+[2016.04.21-10.50.11:253][910]LogModuleManager: Shutting down and abandoning module DirectoryWatcher (87)
+[2016.04.21-10.50.11:256][910]LogModuleManager: Shutting down and abandoning module HotReload (86)
+[2016.04.21-10.50.11:256][910]LogModuleManager: Shutting down and abandoning module MainFrame (85)
+[2016.04.21-10.50.11:256][910]LogModuleManager: Shutting down and abandoning module LevelEditor (84)
+[2016.04.21-10.50.11:258][910]LogModuleManager: Shutting down and abandoning module ContentBrowser (83)
+[2016.04.21-10.50.11:259][910]LogModuleManager: Shutting down and abandoning module Paper2DEditor (82)
+[2016.04.21-10.50.11:259][910]LogModuleManager: Shutting down and abandoning module unrealEngineProject (81)
+[2016.04.21-10.50.11:259][910]LogModuleManager: Shutting down and abandoning module UdpMessaging (80)
+[2016.04.21-10.50.11:360][910]LogModuleManager: Shutting down and abandoning module Paper2D (79)
+[2016.04.21-10.50.11:360][910]LogModuleManager: Shutting down and abandoning module WindowsMoviePlayer (78)
+[2016.04.21-10.50.11:363][910]LogModuleManager: Shutting down and abandoning module Media (77)
+[2016.04.21-10.50.11:363][910]LogModuleManager: Shutting down and abandoning module WmfMedia (76)
+[2016.04.21-10.50.11:363][910]LogModuleManager: Shutting down and abandoning module OnlineBlueprintSupport (75)
+[2016.04.21-10.50.11:363][910]LogModuleManager: Shutting down and abandoning module PropertyEditor (74)
+[2016.04.21-10.50.11:363][910]LogModuleManager: Shutting down and abandoning module BehaviorTreeEditor (73)
+[2016.04.21-10.50.11:363][910]LogModuleManager: Shutting down and abandoning module FunctionalTesting (72)
+[2016.04.21-10.50.11:363][910]LogModuleManager: Shutting down and abandoning module CollisionAnalyzer (71)
+[2016.04.21-10.50.11:363][910]LogModuleManager: Shutting down and abandoning module WorkspaceMenuStructure (70)
+[2016.04.21-10.50.11:363][910]LogModuleManager: Shutting down and abandoning module MessageLog (69)
+[2016.04.21-10.50.11:363][910]LogModuleManager: Shutting down and abandoning module Sequencer (68)
+[2016.04.21-10.50.11:363][910]LogModuleManager: Shutting down and abandoning module AssetTools (67)
+[2016.04.21-10.50.11:363][910]LogModuleManager: Shutting down and abandoning module UMGEditor (66)
+[2016.04.21-10.50.11:363][910]LogModuleManager: Shutting down and abandoning module UMG (65)
+[2016.04.21-10.50.11:363][910]LogModuleManager: Shutting down and abandoning module Slate (64)
+[2016.04.21-10.50.11:363][910]LogModuleManager: Shutting down and abandoning module EditorStyle (63)
+[2016.04.21-10.50.11:366][910]LogModuleManager: Shutting down and abandoning module SessionServices (62)
+[2016.04.21-10.50.11:366][910]LogModuleManager: Shutting down and abandoning module SourceCodeAccess (61)
+[2016.04.21-10.50.11:366][910]LogModuleManager: Shutting down and abandoning module HeadMountedDisplay (60)
+[2016.04.21-10.50.11:366][910]LogModuleManager: Shutting down and abandoning module XAudio2 (59)
+[2016.04.21-10.50.11:366][910]LogModuleManager: Shutting down and abandoning module Networking (57)
+[2016.04.21-10.50.11:366][910]LogModuleManager: Shutting down and abandoning module Core (56)
+[2016.04.21-10.50.11:366][910]LogModuleManager: Shutting down and abandoning module KismetCompiler (55)
+[2016.04.21-10.50.11:366][910]LogModuleManager: Shutting down and abandoning module PhysXFormats (54)
+[2016.04.21-10.50.11:366][910]LogModuleManager: Shutting down and abandoning module MeshUtilities (53)
+[2016.04.21-10.50.11:366][910]LogModuleManager: Shutting down and abandoning module DerivedDataCache (52)
+[2016.04.21-10.50.11:406][910]LogDerivedDataCache: Shutdown
+[2016.04.21-10.50.11:406][910]LogModuleManager: Shutting down and abandoning module ShaderFormatOpenGL (51)
+[2016.04.21-10.50.11:406][910]LogModuleManager: Shutting down and abandoning module ShaderFormatD3D (50)
+[2016.04.21-10.50.11:406][910]LogModuleManager: Shutting down and abandoning module MetalShaderFormat (49)
+[2016.04.21-10.50.11:406][910]LogModuleManager: Shutting down and abandoning module TextureFormatUncompressed (48)
+[2016.04.21-10.50.11:406][910]LogModuleManager: Shutting down and abandoning module TextureFormatPVR (47)
+[2016.04.21-10.50.11:406][910]LogModuleManager: Shutting down and abandoning module TextureFormatIntelISPCTexComp (46)
+[2016.04.21-10.50.11:406][910]LogModuleManager: Shutting down and abandoning module TextureFormatDXT (45)
+[2016.04.21-10.50.11:406][910]LogModuleManager: Shutting down and abandoning module ImageWrapper (44)
+[2016.04.21-10.50.11:406][910]LogModuleManager: Shutting down and abandoning module TextureFormatASTC (43)
+[2016.04.21-10.50.11:406][910]LogModuleManager: Shutting down and abandoning module TextureFormatAndroid (42)
+[2016.04.21-10.50.11:406][910]LogModuleManager: Shutting down and abandoning module AudioFormatOpus (41)
+[2016.04.21-10.50.11:406][910]LogModuleManager: Shutting down and abandoning module AudioFormatOgg (40)
+[2016.04.21-10.50.11:406][910]LogModuleManager: Shutting down and abandoning module AudioFormatADPCM (39)
+[2016.04.21-10.50.11:406][910]LogModuleManager: Shutting down and abandoning module LinuxTargetPlatform (38)
+[2016.04.21-10.50.11:406][910]LogModuleManager: Shutting down and abandoning module LinuxServerTargetPlatform (37)
+[2016.04.21-10.50.11:406][910]LogModuleManager: Shutting down and abandoning module LinuxNoEditorTargetPlatform (36)
+[2016.04.21-10.50.11:406][910]LogModuleManager: Shutting down and abandoning module Messaging (35)
+[2016.04.21-10.50.11:406][910]LogModuleManager: Shutting down and abandoning module IOSTargetPlatform (34)
+[2016.04.21-10.50.11:406][910]LogModuleManager: Shutting down and abandoning module HTML5TargetPlatform (33)
+[2016.04.21-10.50.11:407][910]LogModuleManager: Shutting down and abandoning module Android_PVRTCTargetPlatform (32)
+[2016.04.21-10.50.11:407][910]LogModuleManager: Shutting down and abandoning module Android_ETC2TargetPlatform (31)
+[2016.04.21-10.50.11:407][910]LogModuleManager: Shutting down and abandoning module Android_ETC1TargetPlatform (30)
+[2016.04.21-10.50.11:407][910]LogModuleManager: Shutting down and abandoning module Android_DXTTargetPlatform (29)
+[2016.04.21-10.50.11:407][910]LogModuleManager: Shutting down and abandoning module Android_ATCTargetPlatform (28)
+[2016.04.21-10.50.11:407][910]LogModuleManager: Shutting down and abandoning module Android_ASTCTargetPlatform (27)
+[2016.04.21-10.50.11:407][910]LogModuleManager: Shutting down and abandoning module AndroidTargetPlatform (26)
+[2016.04.21-10.50.11:407][910]LogModuleManager: Shutting down and abandoning module WindowsTargetPlatform (25)
+[2016.04.21-10.50.11:407][910]LogModuleManager: Shutting down and abandoning module WindowsServerTargetPlatform (24)
+[2016.04.21-10.50.11:407][910]LogModuleManager: Shutting down and abandoning module WindowsNoEditorTargetPlatform (23)
+[2016.04.21-10.50.11:407][910]LogModuleManager: Shutting down and abandoning module WindowsClientTargetPlatform (22)
+[2016.04.21-10.50.11:407][910]LogModuleManager: Shutting down and abandoning module DesktopTargetPlatform (21)
+[2016.04.21-10.50.11:407][910]LogModuleManager: Shutting down and abandoning module TargetPlatform (20)
+[2016.04.21-10.50.11:407][910]LogModuleManager: Shutting down and abandoning module InputCore (19)
+[2016.04.21-10.50.11:407][910]LogModuleManager: Shutting down and abandoning module Settings (18)
+[2016.04.21-10.50.11:407][910]LogModuleManager: Shutting down and abandoning module OnlineSubsystem (16)
+[2016.04.21-10.50.11:407][910]LogModuleManager: Shutting down and abandoning module HTTP (15)
+[2016.04.21-10.50.11:407][910]LogModuleManager: Shutting down and abandoning module ExampleDeviceProfileSelector (14)
+[2016.04.21-10.50.11:407][910]LogModuleManager: Shutting down and abandoning module TextureCompressor (13)
+[2016.04.21-10.50.11:407][910]LogModuleManager: Shutting down and abandoning module ShaderCore (12)
+[2016.04.21-10.50.11:407][910]LogModuleManager: Shutting down and abandoning module Landscape (11)
+[2016.04.21-10.50.11:407][910]LogModuleManager: Shutting down and abandoning module SlateRHIRenderer (10)
+[2016.04.21-10.50.11:419][910]LogModuleManager: Shutting down and abandoning module OpenGLDrv (9)
+[2016.04.21-10.50.11:419][910]LogModuleManager: Shutting down and abandoning module D3D11RHI (8)
+[2016.04.21-10.50.11:419][910]LogModuleManager: Shutting down and abandoning module Renderer (7)
+[2016.04.21-10.50.11:419][910]LogModuleManager: Shutting down and abandoning module Engine (6)
+[2016.04.21-10.50.11:419][910]LogModuleManager: Shutting down and abandoning module CoreUObject (5)
+[2016.04.21-10.50.11:419][910]LogModuleManager: Shutting down and abandoning module NetworkFile (4)
+[2016.04.21-10.50.11:419][910]LogModuleManager: Shutting down and abandoning module StreamingFile (3)
+[2016.04.21-10.50.11:419][910]LogModuleManager: Shutting down and abandoning module SandboxFile (2)
+[2016.04.21-10.50.11:419][910]LogModuleManager: Shutting down and abandoning module PakFile (1)
+[2016.04.21-10.50.11:420][910]LogExit: Exiting.
+[2016.04.21-10.50.11:435][910]Log file closed, 04/21/16 19:50:11
