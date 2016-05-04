@@ -35,7 +35,7 @@ ALboolean LoadOAL10Library(char *szOALFullPathName, LPOPENALFNTABLE lpOALFnTable
 	if (szOALFullPathName)
 		g_hOpenALDLL = LoadLibrary(szOALFullPathName);
 	else
-		g_hOpenALDLL = LoadLibrary("openal32.dll");
+		g_hOpenALDLL = LoadLibrary("soft_oal.dll");
 	
 	if (!g_hOpenALDLL)
 		return AL_FALSE;

@@ -25,7 +25,7 @@ void Genie_Datamanagement::setFriendly(const int num) {
 }
 
 void Genie_Datamanagement::upFriendly(const int num = 1) {
-	firendly += num;
+	friendly += num;
 }
 
 void Genie_Datamanagement::downFriendly(const int num = 1) {

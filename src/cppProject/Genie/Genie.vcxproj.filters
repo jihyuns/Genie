@@ -15,13 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ClCompile Include="main.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Genie_Capture.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="src\Genie_Convenience.cpp">
@@ -30,16 +24,10 @@
     <ClCompile Include="src\Genie_Datamanagement.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="src\Genie_Display.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="src\Genie_Emotion.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="src\Genie_Speech.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Genie_Userinterface.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="src\Libcurl_Wrapper.cpp">
@@ -59,16 +47,10 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="header\Genie_Capture.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="header\Genie_Convenience.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="header\Genie_Datamanagement.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="header\Genie_Display.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="header\Genie_Emotion.h">
@@ -80,11 +62,11 @@
     <ClInclude Include="header\Genie_Speech.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="header\Genie_Userinterface.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="header\Libcurl_Wrapper.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>

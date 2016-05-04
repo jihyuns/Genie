@@ -4,7 +4,7 @@ using namespace std;
 	edit by DongDongJu
 	emotion detector for realsense r200
 */
-~Genie_Emotion::Genie_Emotion()
+Genie_Emotion::~Genie_Emotion()
 {
 	if (senseManager != 0){
 		senseManager->Release();
@@ -69,7 +69,7 @@ int* Genie_Emotion::getEmotionData()
 	int* result = NULL;
 
 	for (i = 0; i<FRAME_FOR_CHECK_EMOTIONS; i++)
-		updateFrame();
+		updateFrame(&Genie_Emotion::updateFaceFrame);
 
 	result = getResult();
 
@@ -98,7 +98,7 @@ void Genie_Emotion::updateFaceFrameFN()
 	PXCEmotion::EmotionData arrData[NUM_TOTAL_EMOTIONS];
 	emotionDet = senseManager->QueryEmotion();
 	if (emotionDet == 0) {
-		std::cout << "7\n" << std::endl;
+		throw std::runtime_error("7");
 		return;
 	}
 	faceData->Update();
@@ -113,7 +113,7 @@ void Genie_Emotion::updateFaceFrame(){
 	PXCEmotion::EmotionData arrData[NUM_TOTAL_EMOTIONS];
 	emotionDet = senseManager->QueryEmotion();
 	if (emotionDet == 0) {
-		std::cout << "7\n" << std::endl;
+		throw std::runtime_error("7");
 		return;
 	}
 	const char *EmotionLabels[NUM_PRIMARY_EMOTIONS] = {

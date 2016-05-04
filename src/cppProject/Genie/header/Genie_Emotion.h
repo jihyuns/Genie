@@ -8,8 +8,6 @@
 #include "pxcsensemanager.h"
 #include "PXCFaceConfiguration.h"
 
-#include <opencv2\opencv.hpp>
-
 class Genie_Emotion
 {
 	typedef void (Genie_Emotion::*func)();
@@ -25,8 +23,9 @@ private:
 	void updateColorImage(PXCImage* colorFrame);
 	void resetNums();
 	int* getResult();
+	void printNums();
 	void updateFaceFrameFN();
-private:
+protected:
 	PXCSenseManager* senseManager = 0;
 	PXCFaceData* faceData = 0;
 	PXCEmotion* emotionDet = 0;

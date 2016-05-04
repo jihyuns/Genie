@@ -1,8 +1,0 @@
-rmt_libssh2.overlay-v140_Win32_Release_static
-rmt_libssh2.overlay-v140_Win32_Debug_dynamic
-rmt_libssh2.overlay-v140_x64_Debug_dynamic
-rmt_libssh2.overlay-v140_x64_Release_static
-rmt_libssh2.overlay-v140_x64_Release_dynamic
-rmt_libssh2.overlay-v140_Win32_Debug_static
-rmt_libssh2.overlay-v140_Win32_Release_dynamic
-rmt_libssh2.overlay-v140_x64_Debug_static

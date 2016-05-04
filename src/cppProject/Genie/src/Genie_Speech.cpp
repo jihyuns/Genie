@@ -1,15 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include "../header/Genie_Speech.h"
-/*
-add on
-
-ex)
-
-void Genie_Genie_Speech::Init()
-{
-
-}
-*/
 #define _key_stt_ "<key>"
 #define _key_simsimi_ "<key>"
 

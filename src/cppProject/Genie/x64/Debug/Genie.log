@@ -1,7 +1,22 @@
-﻿  Genie_Emotion.cpp
-c:\users\choo\documents\github\genie\src\cppproject\genie\src\genie_emotion.cpp : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
-c:\users\choo\documents\github\genie\src\cppproject\genie\header\genie_emotion.h(8): fatal error C1083: 포함 파일을 열 수 없습니다. 'pxcsensemanager.h': No such file or directory
-  코드를 생성하고 있습니다...
-  컴파일하고 있습니다...
-  Genie_Datamanagement.cpp
-  코드를 생성하고 있습니다...
+﻿Build started 2016-05-04 오후 8:08:02.
+     1>Project "C:\Users\gclab\Desktop\Genie\Genie\src\cppProject\Genie\Genie.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         D:\visual studio 2013\VC\bin\x86_amd64\CL.exe /c /IC:\Users\gclab\Desktop\Genie\Genie\src\cppProject\packages\curl.7.30.0.2\build\native\../..//build/native/include/ /IC:\Users\gclab\Desktop\Genie\Genie\src\cppProject\packages\libssh2.1.4.3.1\build\native\..\..\build\native\include\ /IC:\Users\gclab\Desktop\Genie\Genie\src\cppProject\packages\openssl.1.0.1.21\build\native\..\..\build\native\include\ /IC:\Users\gclab\Desktop\Genie\Genie\src\cppProject\packages\zlib.1.2.8.1\build\native\..\..\build\native\include\ /Ilib\openal\include /Zi /nologo /W3 /WX- /sdl /Od /D HAS_LIBCURL /D ZLIB_DLL /D HAS_ZLIB /D _DEBUG /D _CONSOLE /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Debug\\" /Fd"x64\Debug\vc120.pdb" /Gd /TP /errorReport:prompt lib\record\LoadOAL.cpp
+         LoadOAL.cpp
+       Link:
+         D:\visual studio 2013\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\gclab\Desktop\Genie\Genie\src\cppProject\x64\Debug\Genie.exe" /INCREMENTAL /NOLOGO lib\openal\OpenAL32.lib lib\libcurl.lib libpxcmd_d.lib libpxcutilsmd_d.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\gclab\Desktop\Genie\Genie\src\cppProject\x64\Debug\Genie.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\gclab\Desktop\Genie\Genie\src\cppProject\x64\Debug\Genie.lib" /MACHINE:X64 x64\Debug\aldlist.obj
+         x64\Debug\CWaves.obj
+         x64\Debug\Framework.obj
+         x64\Debug\LoadOAL.obj
+         x64\Debug\main.obj
+         x64\Debug\Genie_Convenience.obj
+         x64\Debug\Genie_Datamanagement.obj
+         x64\Debug\Genie_Emotion.obj
+         x64\Debug\Genie_Speech.obj
+         x64\Debug\Libcurl_Wrapper.obj
+         Genie.vcxproj -> C:\Users\gclab\Desktop\Genie\Genie\src\cppProject\x64\Debug\Genie.exe
+     1>Done Building Project "C:\Users\gclab\Desktop\Genie\Genie\src\cppProject\Genie\Genie.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:05.00
