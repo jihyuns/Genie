@@ -29,10 +29,14 @@ import android.util.Log;
 import android.util.Xml;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.text.TextWatcher;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 import android.widget.Spinner;
 import java.io.InputStreamReader;
@@ -61,8 +65,9 @@ import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathFactory;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ListView;
+import android.support.v7.app.ActionBarActivity;
 
-public class MainActivity extends Activity /*implements OnItemSelectedListener*/{
+public class MainActivity extends Activity {
     private final static int DEVICES_DIALOG = 1;
     private final static int ERROR_DIALOG = 2;
 
@@ -95,14 +100,18 @@ public class MainActivity extends Activity /*implements OnItemSelectedListener*/
 
         editTextName = (EditText) findViewById(R.id.editName);//editTextName이 사용자의 이름을 받는다.
         editTextAge = (EditText) findViewById(R.id.editAge);//editTextAge는 사용자의 나이를 받아온다
-        editTextGender = (EditText) findViewById(R.id.editGender);//editTextGender는 사용자의 성별을 받아온다.
+        //editTextGender = (EditText) findViewById(R.id.editGender);//editTextGender는 사용자의 성별을 받아온다.
         myLocation = (Button) findViewById(R.id.locationAddress);//자기 위치정보 받아오기 위도 경도
         busLocation = (EditText) findViewById(R.id.editBus);
-
+        final RadioGroup rg = (RadioGroup) findViewById(R.id.radioGender);
         myLocation.setOnClickListener(new View.OnClickListener() {//버스정보 위치정보 받아오는 버튼
+
             @Override
             public void onClick(View view) {
+                InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+                imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
                 try {
+
                     new Bus().getBusInformation();
                 }catch (Exception e){
                     e.printStackTrace();
@@ -117,9 +126,11 @@ public class MainActivity extends Activity /*implements OnItemSelectedListener*/
         sendBtn.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
+                int id = rg.getCheckedRadioButtonId();
+                RadioButton rb =(RadioButton)findViewById(id);
                 String msg = editTextName.getText().toString();
                 String msgAge = editTextAge.getText().toString();
-                String msgGender = editTextGender.getText().toString();
+                String msgGender = rb.getText().toString();
                 String msgBus = busLocation.getText().toString();
                 String newL = msg + "\n" + msgAge + "\n" + msgGender;
                 bluetoothTask.doSend(newL+"\n"+msgBus);
@@ -140,9 +151,9 @@ public class MainActivity extends Activity /*implements OnItemSelectedListener*/
     @Override
     public void onResume() {
         super.onResume();
-        // Bluetooth初期化
+
         bluetoothTask.init();
-        // ペアリング済みデバイスの一覧を表示してユーザに選ばせる。
+
         showDialog(DEVICES_DIALOG);
     }
 
@@ -159,7 +170,7 @@ public class MainActivity extends Activity /*implements OnItemSelectedListener*/
     }
 
     //----------------------------------------------------------------
-    // 以下、ダイアログ関連
+
     @Override
     protected Dialog onCreateDialog(int id) {
         if (id == DEVICES_DIALOG) return createDevicesDialog();
@@ -180,7 +191,7 @@ public class MainActivity extends Activity /*implements OnItemSelectedListener*/
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
         alertDialogBuilder.setTitle("Select device");
 
-        // ペアリング済みデバイスをダイアログのリストに設定する。
+
         Set<BluetoothDevice> pairedDevices = bluetoothTask.getPairedDevices();
         final BluetoothDevice[] devices = pairedDevices.toArray(new BluetoothDevice[0]);
         String[] items = new String[devices.length];
@@ -192,7 +203,7 @@ public class MainActivity extends Activity /*implements OnItemSelectedListener*/
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();
-                // 選択されたデバイスを通知する。そのまま接続開始。
+
                 bluetoothTask.doConnect(devices[which]);
             }
         });
@@ -216,7 +227,7 @@ public class MainActivity extends Activity /*implements OnItemSelectedListener*/
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();
                 startActivity(new Intent(MainActivity.this, MainActivity.class));
-                //finish();
+              
             }
         });
         return alertDialogBuilder.create();
@@ -235,36 +246,6 @@ public class MainActivity extends Activity /*implements OnItemSelectedListener*/
         waitDialog.dismiss();
     }
 
-    //네트워크로 나의 정보 받아오기
-    public void startLocationService() {
-        LocationManager manager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-
-        GPSListener gpsListener = new GPSListener();
-        long minTime = 1000;
-        float minDistance = 0;
-
-        manager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, minTime, minDistance, gpsListener);
-
-        Toast.makeText(getApplicationContext(), "위치를 받아오기 시작합니다.\n잠시만 기다려주세요.", Toast.LENGTH_SHORT).show();
-    }
-
-    private class GPSListener implements LocationListener {
-
-        public void onLocationChanged(Location location) {
-
-        }
-
-        public void onProviderDisabled(String provider) {
-        }
-
-        public void onProviderEnabled(String provider) {
-        }
-
-        public void onStatusChanged(String provider, int status, Bundle extras) {
-        }
-
-    }
-
     //버스정보 받아오는 클래스
     private class Bus {
         public void getBusInformation() throws Exception {
@@ -280,7 +261,7 @@ public class MainActivity extends Activity /*implements OnItemSelectedListener*/
             //System.out.println(Double.toString(longitude)+" "+Double.toString(latitude));
             urlBuilder.append("&" + URLEncoder.encode("tmX", "UTF-8") + "=" + URLEncoder.encode(Double.toString(longitude), "UTF-8")); /*기준위치 X(WGS84)*/
             urlBuilder.append("&" + URLEncoder.encode("tmY", "UTF-8") + "=" + URLEncoder.encode(Double.toString(latitude), "UTF-8")); /*기준위치 Y(WGS84)*/
-            urlBuilder.append("&" + URLEncoder.encode("radius", "UTF-8") + "=" + URLEncoder.encode("300", "UTF-8")); /*검색반경(0~1500m)*/
+            urlBuilder.append("&" + URLEncoder.encode("radius", "UTF-8") + "=" + URLEncoder.encode("500", "UTF-8")); /*검색반경(0~1500m)*/
             urlBuilder.append("&" + URLEncoder.encode("numOfRows", "UTF-8") + "=" + URLEncoder.encode("999", "UTF-8")); /*검색건수*/
             urlBuilder.append("&" + URLEncoder.encode("pageNo", "UTF-8") + "=" + URLEncoder.encode("1", "UTF-8")); /*페이지 번호*/
             URL url = new URL(urlBuilder.toString());

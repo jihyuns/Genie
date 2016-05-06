@@ -45,7 +45,7 @@ public class BluetoothTask {
             return;
         }
         if (!bluetoothAdapter.isEnabled()) {
-            // TODO: ユーザに許可を求める処理。
+
             activity.errorDialog("This device is disabled Bluetooth.");
             return;
         }
@@ -152,12 +152,12 @@ public class BluetoothTask {
         @Override
         protected Object doInBackground(String... params) {
             try {
-                btOut.write(params[0].getBytes("UTF-8"));
+                btOut.write(params[0].getBytes("euc-kr"));
 
                 btOut.flush();
 
                 byte[] buff = new byte[512];
-                int len = btIn.read(buff); // TODO:ループして読み込み
+                int len = btIn.read(buff);
 
                 return new String(buff, 0, len);
             } catch (Throwable t) {
@@ -173,7 +173,6 @@ public class BluetoothTask {
                 Log.e(TAG,result.toString(),(Throwable)result);
                 activity.errorDialog(result.toString());
             } else {
-                // 結果を画面に反映。
                 //activity.doSetResultText(result.toString());
             }
         }

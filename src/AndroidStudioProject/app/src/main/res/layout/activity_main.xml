@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#19BDC4"
-    >
+    android:background="#19BDC4">
 
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -14,6 +18,11 @@
         android:hint="이름을 입력하세요"
         android:textColorHint="#FFF6EE"
         android:textColor = "#FFF6EE"/>
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_birthDay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -22,14 +31,38 @@
         android:hint="생 년 월 일을 입력하세요 (ex: 910101)"
         android:textColorHint="#FFF6EE"
         android:textColor = "#FFF6EE"/>
-    <EditText
-        android:layout_width="match_parent"
+    </android.support.design.widget.TextInputLayout>
+    <RadioGroup
+        android:id="@+id/radioGender"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editGender"
-        android:inputType="textCapWords"
-        android:hint="성별을 입력하세요 (ex : 남자 or 여자)"
-        android:textColorHint="#FFF6EE"
-        android:textColor = "#FFF6EE"/>
+        android:orientation="horizontal"
+        android:layout_margin="0dp"
+        >
+        <RadioButton
+            android:id="@+id/radioMan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="남성"
+            android:textColor="#fff6ee"
+            android:textStyle="bold"
+            android:textSize="17dp"
+            />
+        <RadioButton
+            android:id="@+id/radioWoman"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="여성"
+            android:textColor="#fff6ee"
+            android:textStyle="bold"
+            android:textSize="17dp"
+            />
+    </RadioGroup>
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_busStation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -52,6 +85,7 @@
             android:layout_gravity="center"
             android:id="@+id/locationAddress"/>
     </LinearLayout>
+    </android.support.design.widget.TextInputLayout>
     <ListView
         android:id="@+id/busList"
         android:layout_width="match_parent"
