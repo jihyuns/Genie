@@ -5,6 +5,9 @@
 	DO NOT modify this manually! Edit the corresponding .h files instead!
 ===========================================================================*/
 
+#ifndef UNREALENGINEPROJECT_GenieCharacter_generated_h
+	#include "GenieCharacter.h"
+#endif
 #ifndef UNREALENGINEPROJECT_LoadingFile_generated_h
 	#include "LoadingFile.h"
 #endif

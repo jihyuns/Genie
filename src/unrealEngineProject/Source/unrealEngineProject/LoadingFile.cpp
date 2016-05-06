@@ -47,7 +47,7 @@ void ALoadingFile::LoadingTimer()
 {
 	LoadingDisplay();
 
-	if (FPaths::FileExists("C:\\Users\\TheState\\Desktop\\data.txt"))
+	if (FPaths::FileExists("C:\\Users\\gclab\\Desktop\\data.txt"))
 	{
 		GetWorldTimerManager().ClearTimer(LoadingHandle);
 		LoadingFinished();
@@ -56,6 +56,6 @@ void ALoadingFile::LoadingTimer()
 
 void ALoadingFile::LoadingFinished()
 {
-	UGameplayStatics::OpenLevel(GetWorld(), "Genie");
+	UGameplayStatics::OpenLevel(GetWorld(), "GenieStart");
 }
 

@@ -9,6 +9,10 @@
 #include "unrealEngineProject.generated.dep.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeunrealEngineProject() {}
+	void AGenieCharacter::StaticRegisterNativesAGenieCharacter()
+	{
+	}
+	IMPLEMENT_CLASS(AGenieCharacter, 285265966);
 	void ALoadingFile::StaticRegisterNativesALoadingFile()
 	{
 	}
@@ -19,15 +23,62 @@ void EmptyLinkFunctionForGeneratedCodeunrealEngineProject() {}
 	IMPLEMENT_CLASS(AunrealEngineProjectGameMode, 3604007941);
 #if USE_COMPILED_IN_NATIVES
 // Cross Module References
+	ENGINE_API class UClass* Z_Construct_UClass_APawn();
+	ENGINE_API class UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
+	ENGINE_API class UClass* Z_Construct_UClass_USceneComponent_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_AActor();
 	ENGINE_API class UClass* Z_Construct_UClass_UTextRenderComponent_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_AGameMode();
 
+	UNREALENGINEPROJECT_API class UClass* Z_Construct_UClass_AGenieCharacter_NoRegister();
+	UNREALENGINEPROJECT_API class UClass* Z_Construct_UClass_AGenieCharacter();
 	UNREALENGINEPROJECT_API class UClass* Z_Construct_UClass_ALoadingFile_NoRegister();
 	UNREALENGINEPROJECT_API class UClass* Z_Construct_UClass_ALoadingFile();
 	UNREALENGINEPROJECT_API class UClass* Z_Construct_UClass_AunrealEngineProjectGameMode_NoRegister();
 	UNREALENGINEPROJECT_API class UClass* Z_Construct_UClass_AunrealEngineProjectGameMode();
 	UNREALENGINEPROJECT_API class UPackage* Z_Construct_UPackage_unrealEngineProject();
+	UClass* Z_Construct_UClass_AGenieCharacter_NoRegister()
+	{
+		return AGenieCharacter::StaticClass();
+	}
+	UClass* Z_Construct_UClass_AGenieCharacter()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_APawn();
+			Z_Construct_UPackage_unrealEngineProject();
+			OuterClass = AGenieCharacter::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900080;
+
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+				UProperty* NewProp_OurCamera = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("OurCamera"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(OurCamera, AGenieCharacter), 0x0000000000080009, Z_Construct_UClass_UCameraComponent_NoRegister());
+				UProperty* NewProp_OurVisibleComponent = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("OurVisibleComponent"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(OurVisibleComponent, AGenieCharacter), 0x0000000000080009, Z_Construct_UClass_USceneComponent_NoRegister());
+PRAGMA_POP
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Navigation"));
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("GenieCharacter.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("GenieCharacter.h"));
+				MetaData->SetValue(NewProp_OurCamera, TEXT("Category"), TEXT("GenieCharacter"));
+				MetaData->SetValue(NewProp_OurCamera, TEXT("EditInline"), TEXT("true"));
+				MetaData->SetValue(NewProp_OurCamera, TEXT("ModuleRelativePath"), TEXT("GenieCharacter.h"));
+				MetaData->SetValue(NewProp_OurVisibleComponent, TEXT("Category"), TEXT("GenieCharacter"));
+				MetaData->SetValue(NewProp_OurVisibleComponent, TEXT("EditInline"), TEXT("true"));
+				MetaData->SetValue(NewProp_OurVisibleComponent, TEXT("ModuleRelativePath"), TEXT("GenieCharacter.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_AGenieCharacter(Z_Construct_UClass_AGenieCharacter, TEXT("AGenieCharacter"));
+	DEFINE_VTABLE_PTR_HELPER_CTOR(AGenieCharacter);
 	UClass* Z_Construct_UClass_ALoadingFile_NoRegister()
 	{
 		return ALoadingFile::StaticClass();
@@ -107,8 +158,8 @@ PRAGMA_POP
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/unrealEngineProject")), false, false));
 			ReturnPackage->PackageFlags |= PKG_CompiledIn | 0x00000000;
 			FGuid Guid;
-			Guid.A = 0x60D54259;
-			Guid.B = 0xCD009517;
+			Guid.A = 0xDFCA7ABF;
+			Guid.B = 0xD9C15B9A;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);
