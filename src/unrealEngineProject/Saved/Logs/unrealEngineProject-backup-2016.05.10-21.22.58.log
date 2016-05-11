@@ -1,0 +1,22 @@
+﻿[2016.05.10-12.21.47:670][  0]Log file open, 05/10/16 21:21:47
+[2016.05.10-12.21.47:670][  0]LogInit:Display: Running engine for game: unrealEngineProject
+[2016.05.10-12.21.47:670][  0]LogInit:Display: RandInit(516628709) SRandInit(516628710).
+[2016.05.10-12.21.47:670][  0]LogTaskGraph: Started task graph with 4 named threads and 5 total threads.
+[2016.05.10-12.21.47:670][  0]LogStats: Stats thread started
+[2016.05.10-12.21.47:670][  0]LogInit:Warning: Incompatible or missing module: UE4Editor-unrealEngineProject.dll
+[2016.05.10-12.21.54:180][  0]LogExit: Preparing to exit.
+[2016.05.10-12.21.54:180][  0]LogModuleManager: Shutting down and abandoning module TextureCompressor (13)
+[2016.05.10-12.21.54:180][  0]LogModuleManager: Shutting down and abandoning module ShaderCore (12)
+[2016.05.10-12.21.54:180][  0]LogModuleManager: Shutting down and abandoning module Landscape (11)
+[2016.05.10-12.21.54:180][  0]LogModuleManager: Shutting down and abandoning module SlateRHIRenderer (10)
+[2016.05.10-12.21.54:180][  0]LogModuleManager: Shutting down and abandoning module OpenGLDrv (9)
+[2016.05.10-12.21.54:180][  0]LogModuleManager: Shutting down and abandoning module D3D11RHI (8)
+[2016.05.10-12.21.54:180][  0]LogModuleManager: Shutting down and abandoning module Renderer (7)
+[2016.05.10-12.21.54:180][  0]LogModuleManager: Shutting down and abandoning module Engine (6)
+[2016.05.10-12.21.54:180][  0]LogModuleManager: Shutting down and abandoning module CoreUObject (5)
+[2016.05.10-12.21.54:180][  0]LogModuleManager: Shutting down and abandoning module NetworkFile (4)
+[2016.05.10-12.21.54:180][  0]LogModuleManager: Shutting down and abandoning module StreamingFile (3)
+[2016.05.10-12.21.54:180][  0]LogModuleManager: Shutting down and abandoning module SandboxFile (2)
+[2016.05.10-12.21.54:180][  0]LogModuleManager: Shutting down and abandoning module PakFile (1)
+[2016.05.10-12.21.54:181][  0]LogExit: Exiting.
+[2016.05.10-12.21.54:182][  0]Log file closed, 05/10/16 21:21:54

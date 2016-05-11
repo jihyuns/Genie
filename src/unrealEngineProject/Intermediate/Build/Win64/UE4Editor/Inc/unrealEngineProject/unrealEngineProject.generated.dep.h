@@ -5,6 +5,12 @@
 	DO NOT modify this manually! Edit the corresponding .h files instead!
 ===========================================================================*/
 
+#ifndef UNREALENGINEPROJECT_CameraDirector_generated_h
+	#include "CameraDirector.h"
+#endif
+#ifndef UNREALENGINEPROJECT_GenieAnimInstance_generated_h
+	#include "GenieAnimInstance.h"
+#endif
 #ifndef UNREALENGINEPROJECT_GenieCharacter_generated_h
 	#include "GenieCharacter.h"
 #endif

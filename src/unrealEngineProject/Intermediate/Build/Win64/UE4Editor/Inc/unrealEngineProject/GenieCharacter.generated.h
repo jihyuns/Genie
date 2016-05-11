@@ -13,31 +13,49 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define UNREALENGINEPROJECT_GenieCharacter_generated_h
 
-#define unrealEngineProject_Source_unrealEngineProject_GenieCharacter_h_11_RPC_WRAPPERS
-#define unrealEngineProject_Source_unrealEngineProject_GenieCharacter_h_11_RPC_WRAPPERS_NO_PURE_DECLS
-#define unrealEngineProject_Source_unrealEngineProject_GenieCharacter_h_11_INCLASS_NO_PURE_DECLS \
+#define unrealEngineProject_Source_unrealEngineProject_GenieCharacter_h_18_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execIsHappy) \
+	{ \
+		P_GET_PROPERTY_REF(UByteProperty,Z_Param_Out_Branches); \
+		P_FINISH; \
+		this->IsHappy((EHappyEnum&)(Z_Param_Out_Branches)); \
+	}
+
+
+#define unrealEngineProject_Source_unrealEngineProject_GenieCharacter_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execIsHappy) \
+	{ \
+		P_GET_PROPERTY_REF(UByteProperty,Z_Param_Out_Branches); \
+		P_FINISH; \
+		this->IsHappy((EHappyEnum&)(Z_Param_Out_Branches)); \
+	}
+
+
+#define unrealEngineProject_Source_unrealEngineProject_GenieCharacter_h_18_INCLASS_NO_PURE_DECLS \
 	private: \
 	static void StaticRegisterNativesAGenieCharacter(); \
 	friend UNREALENGINEPROJECT_API class UClass* Z_Construct_UClass_AGenieCharacter(); \
 	public: \
-	DECLARE_CLASS(AGenieCharacter, APawn, COMPILED_IN_FLAGS(0), 0, unrealEngineProject, NO_API) \
+	DECLARE_CLASS(AGenieCharacter, ACharacter, COMPILED_IN_FLAGS(0), 0, unrealEngineProject, NO_API) \
 	DECLARE_SERIALIZER(AGenieCharacter) \
 	/** Indicates whether the class is compiled into the engine */    enum {IsIntrinsic=COMPILED_IN_INTRINSIC}; \
 	virtual UObject* _getUObject() const override { return const_cast<AGenieCharacter*>(this); }
 
 
-#define unrealEngineProject_Source_unrealEngineProject_GenieCharacter_h_11_INCLASS \
+#define unrealEngineProject_Source_unrealEngineProject_GenieCharacter_h_18_INCLASS \
 	private: \
 	static void StaticRegisterNativesAGenieCharacter(); \
 	friend UNREALENGINEPROJECT_API class UClass* Z_Construct_UClass_AGenieCharacter(); \
 	public: \
-	DECLARE_CLASS(AGenieCharacter, APawn, COMPILED_IN_FLAGS(0), 0, unrealEngineProject, NO_API) \
+	DECLARE_CLASS(AGenieCharacter, ACharacter, COMPILED_IN_FLAGS(0), 0, unrealEngineProject, NO_API) \
 	DECLARE_SERIALIZER(AGenieCharacter) \
 	/** Indicates whether the class is compiled into the engine */    enum {IsIntrinsic=COMPILED_IN_INTRINSIC}; \
 	virtual UObject* _getUObject() const override { return const_cast<AGenieCharacter*>(this); }
 
 
-#define unrealEngineProject_Source_unrealEngineProject_GenieCharacter_h_11_STANDARD_CONSTRUCTORS \
+#define unrealEngineProject_Source_unrealEngineProject_GenieCharacter_h_18_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API AGenieCharacter(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AGenieCharacter) \
@@ -49,7 +67,7 @@ private: \
 public:
 
 
-#define unrealEngineProject_Source_unrealEngineProject_GenieCharacter_h_11_ENHANCED_CONSTRUCTORS \
+#define unrealEngineProject_Source_unrealEngineProject_GenieCharacter_h_18_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private copy-constructor, should never be used */ \
 	NO_API AGenieCharacter(const AGenieCharacter& InCopy); \
@@ -59,23 +77,23 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AGenieCharacter); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AGenieCharacter)
 
 
-#define unrealEngineProject_Source_unrealEngineProject_GenieCharacter_h_8_PROLOG
-#define unrealEngineProject_Source_unrealEngineProject_GenieCharacter_h_11_GENERATED_BODY_LEGACY \
+#define unrealEngineProject_Source_unrealEngineProject_GenieCharacter_h_15_PROLOG
+#define unrealEngineProject_Source_unrealEngineProject_GenieCharacter_h_18_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	unrealEngineProject_Source_unrealEngineProject_GenieCharacter_h_11_RPC_WRAPPERS \
-	unrealEngineProject_Source_unrealEngineProject_GenieCharacter_h_11_INCLASS \
-	unrealEngineProject_Source_unrealEngineProject_GenieCharacter_h_11_STANDARD_CONSTRUCTORS \
+	unrealEngineProject_Source_unrealEngineProject_GenieCharacter_h_18_RPC_WRAPPERS \
+	unrealEngineProject_Source_unrealEngineProject_GenieCharacter_h_18_INCLASS \
+	unrealEngineProject_Source_unrealEngineProject_GenieCharacter_h_18_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_POP
 
 
-#define unrealEngineProject_Source_unrealEngineProject_GenieCharacter_h_11_GENERATED_BODY \
+#define unrealEngineProject_Source_unrealEngineProject_GenieCharacter_h_18_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	unrealEngineProject_Source_unrealEngineProject_GenieCharacter_h_11_RPC_WRAPPERS_NO_PURE_DECLS \
-	unrealEngineProject_Source_unrealEngineProject_GenieCharacter_h_11_INCLASS_NO_PURE_DECLS \
-	unrealEngineProject_Source_unrealEngineProject_GenieCharacter_h_11_ENHANCED_CONSTRUCTORS \
+	unrealEngineProject_Source_unrealEngineProject_GenieCharacter_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
+	unrealEngineProject_Source_unrealEngineProject_GenieCharacter_h_18_INCLASS_NO_PURE_DECLS \
+	unrealEngineProject_Source_unrealEngineProject_GenieCharacter_h_18_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_POP
 
@@ -84,4 +102,6 @@ PRAGMA_POP
 #define CURRENT_FILE_ID unrealEngineProject_Source_unrealEngineProject_GenieCharacter_h
 
 
+#define FOREACH_ENUM_EHAPPYENUM(op) \
+	op(EHappyEnum::Happy) 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

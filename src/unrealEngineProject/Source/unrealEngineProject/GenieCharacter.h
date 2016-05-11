@@ -2,16 +2,23 @@
 
 #pragma once
 
-#include "GameFramework/Pawn.h"
+#include "GameFramework/Character.h"
 #include "GenieCharacter.generated.h"
 
+// Create Enum Class
+UENUM(BlueprintType)
+enum class EHappyEnum : uint8
+{
+	Happy
+};
+
 UCLASS()
-class UNREALENGINEPROJECT_API AGenieCharacter : public APawn
+class UNREALENGINEPROJECT_API AGenieCharacter : public ACharacter
 {
 	GENERATED_BODY()
 
 public:
-	// Sets default values for this pawn's properties
+	// Sets default values for this character's properties
 	AGenieCharacter();
 
 	// Called when the game starts or when spawned
@@ -23,9 +30,20 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* InputComponent) override;
 
+	// Create SpringArm Component
 	UPROPERTY(EditAnywhere)
-		USceneComponent* OurVisibleComponent;
+		USpringArmComponent* SpringArm;
+
+	// Create Camera Component
+	//UPROPERTY(EditAnywhere)
+		//UCameraComponent* OurCamera;
+
+	// Create HappyMovement Variable
+	UPROPERTY(BlueprintReadWrite, Category = Components)
+		bool HappyMovement;
+
+	// Create IsHappy Function
+	UFUNCTION(BlueprintCallable, Category = Functions, Meta = (ExpandEnumAsExecs = "Branches"))
+		void IsHappy(EHappyEnum& Branches);
 	
-	UPROPERTY(EditAnywhere)
-		UCameraComponent *OurCamera;
 };

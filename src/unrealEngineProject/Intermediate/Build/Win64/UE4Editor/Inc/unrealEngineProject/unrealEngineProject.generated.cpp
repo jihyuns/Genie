@@ -9,10 +9,31 @@
 #include "unrealEngineProject.generated.dep.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeunrealEngineProject() {}
-	void AGenieCharacter::StaticRegisterNativesAGenieCharacter()
+	void ACameraDirector::StaticRegisterNativesACameraDirector()
 	{
 	}
-	IMPLEMENT_CLASS(AGenieCharacter, 285265966);
+	IMPLEMENT_CLASS(ACameraDirector, 3635457294);
+	void UGenieAnimInstance::StaticRegisterNativesUGenieAnimInstance()
+	{
+	}
+	IMPLEMENT_CLASS(UGenieAnimInstance, 3451800214);
+static class UEnum* EHappyEnum_StaticEnum()
+{
+	static class UEnum* Singleton = NULL;
+	if (!Singleton)
+	{
+		extern UNREALENGINEPROJECT_API class UEnum* Z_Construct_UEnum_unrealEngineProject_EHappyEnum();
+		extern UNREALENGINEPROJECT_API class UPackage* Z_Construct_UPackage_unrealEngineProject();
+		Singleton = GetStaticEnum(Z_Construct_UEnum_unrealEngineProject_EHappyEnum, Z_Construct_UPackage_unrealEngineProject(), TEXT("EHappyEnum"));
+	}
+	return Singleton;
+}
+static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_EHappyEnum(EHappyEnum_StaticEnum, TEXT("/Script/unrealEngineProject"));
+	void AGenieCharacter::StaticRegisterNativesAGenieCharacter()
+	{
+		FNativeFunctionRegistrar::RegisterFunction(AGenieCharacter::StaticClass(),"IsHappy",(Native)&AGenieCharacter::execIsHappy);
+	}
+	IMPLEMENT_CLASS(AGenieCharacter, 3067179668);
 	void ALoadingFile::StaticRegisterNativesALoadingFile()
 	{
 	}
@@ -23,13 +44,20 @@ void EmptyLinkFunctionForGeneratedCodeunrealEngineProject() {}
 	IMPLEMENT_CLASS(AunrealEngineProjectGameMode, 3604007941);
 #if USE_COMPILED_IN_NATIVES
 // Cross Module References
-	ENGINE_API class UClass* Z_Construct_UClass_APawn();
-	ENGINE_API class UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
-	ENGINE_API class UClass* Z_Construct_UClass_USceneComponent_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_AActor();
+	ENGINE_API class UClass* Z_Construct_UClass_AActor_NoRegister();
+	ENGINE_API class UClass* Z_Construct_UClass_UAnimInstance();
+	ENGINE_API class UClass* Z_Construct_UClass_ACharacter();
+	ENGINE_API class UClass* Z_Construct_UClass_USpringArmComponent_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_UTextRenderComponent_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_AGameMode();
 
+	UNREALENGINEPROJECT_API class UClass* Z_Construct_UClass_ACameraDirector_NoRegister();
+	UNREALENGINEPROJECT_API class UClass* Z_Construct_UClass_ACameraDirector();
+	UNREALENGINEPROJECT_API class UClass* Z_Construct_UClass_UGenieAnimInstance_NoRegister();
+	UNREALENGINEPROJECT_API class UClass* Z_Construct_UClass_UGenieAnimInstance();
+	UNREALENGINEPROJECT_API class UEnum* Z_Construct_UEnum_unrealEngineProject_EHappyEnum();
+	UNREALENGINEPROJECT_API class UFunction* Z_Construct_UFunction_AGenieCharacter_IsHappy();
 	UNREALENGINEPROJECT_API class UClass* Z_Construct_UClass_AGenieCharacter_NoRegister();
 	UNREALENGINEPROJECT_API class UClass* Z_Construct_UClass_AGenieCharacter();
 	UNREALENGINEPROJECT_API class UClass* Z_Construct_UClass_ALoadingFile_NoRegister();
@@ -37,6 +65,125 @@ void EmptyLinkFunctionForGeneratedCodeunrealEngineProject() {}
 	UNREALENGINEPROJECT_API class UClass* Z_Construct_UClass_AunrealEngineProjectGameMode_NoRegister();
 	UNREALENGINEPROJECT_API class UClass* Z_Construct_UClass_AunrealEngineProjectGameMode();
 	UNREALENGINEPROJECT_API class UPackage* Z_Construct_UPackage_unrealEngineProject();
+	UClass* Z_Construct_UClass_ACameraDirector_NoRegister()
+	{
+		return ACameraDirector::StaticClass();
+	}
+	UClass* Z_Construct_UClass_ACameraDirector()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_AActor();
+			Z_Construct_UPackage_unrealEngineProject();
+			OuterClass = ACameraDirector::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900080;
+
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+				UProperty* NewProp_CameraOne = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("CameraOne"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(CameraOne, ACameraDirector), 0x0000000000000001, Z_Construct_UClass_AActor_NoRegister());
+PRAGMA_POP
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("CameraDirector.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("CameraDirector.h"));
+				MetaData->SetValue(NewProp_CameraOne, TEXT("Category"), TEXT("CameraDirector"));
+				MetaData->SetValue(NewProp_CameraOne, TEXT("ModuleRelativePath"), TEXT("CameraDirector.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_ACameraDirector(Z_Construct_UClass_ACameraDirector, TEXT("ACameraDirector"));
+	DEFINE_VTABLE_PTR_HELPER_CTOR(ACameraDirector);
+	UClass* Z_Construct_UClass_UGenieAnimInstance_NoRegister()
+	{
+		return UGenieAnimInstance::StaticClass();
+	}
+	UClass* Z_Construct_UClass_UGenieAnimInstance()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_UAnimInstance();
+			Z_Construct_UPackage_unrealEngineProject();
+			OuterClass = UGenieAnimInstance::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900088;
+
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+				CPP_BOOL_PROPERTY_BITMASK_STRUCT(GenieIsHappy, UGenieAnimInstance, bool);
+				UProperty* NewProp_GenieIsHappy = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("GenieIsHappy"), RF_Public|RF_Transient|RF_Native) UBoolProperty(FObjectInitializer(), EC_CppProperty, CPP_BOOL_PROPERTY_OFFSET(GenieIsHappy, UGenieAnimInstance), 0x0000000000000004, CPP_BOOL_PROPERTY_BITMASK(GenieIsHappy, UGenieAnimInstance), sizeof(bool), true);
+PRAGMA_POP
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("AnimInstance"));
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("GenieAnimInstance.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("GenieAnimInstance.h"));
+				MetaData->SetValue(NewProp_GenieIsHappy, TEXT("Category"), TEXT("Components"));
+				MetaData->SetValue(NewProp_GenieIsHappy, TEXT("ModuleRelativePath"), TEXT("GenieAnimInstance.h"));
+				MetaData->SetValue(NewProp_GenieIsHappy, TEXT("ToolTip"), TEXT("Create GenieIsHappy variable"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_UGenieAnimInstance(Z_Construct_UClass_UGenieAnimInstance, TEXT("UGenieAnimInstance"));
+	DEFINE_VTABLE_PTR_HELPER_CTOR(UGenieAnimInstance);
+	UEnum* Z_Construct_UEnum_unrealEngineProject_EHappyEnum()
+	{
+		UPackage* Outer=Z_Construct_UPackage_unrealEngineProject();
+		static UEnum* ReturnEnum = NULL;
+		if (!ReturnEnum)
+		{
+			ReturnEnum = new(EC_InternalUseOnlyConstructor, Outer, TEXT("EHappyEnum"), RF_Public|RF_Transient|RF_Native) UEnum(FObjectInitializer());
+			TArray<FName> EnumNames;
+			EnumNames.Add(FName(TEXT("EHappyEnum::Happy")));
+			EnumNames.Add(FName(TEXT("EHappyEnum::EHappyEnum_MAX")));
+			ReturnEnum->SetEnums(EnumNames, UEnum::ECppForm::EnumClass);
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnEnum->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnEnum, TEXT("BlueprintType"), TEXT("true"));
+			MetaData->SetValue(ReturnEnum, TEXT("ModuleRelativePath"), TEXT("GenieCharacter.h"));
+			MetaData->SetValue(ReturnEnum, TEXT("ToolTip"), TEXT("Create Enum Class"));
+#endif
+		}
+		return ReturnEnum;
+	}
+	UFunction* Z_Construct_UFunction_AGenieCharacter_IsHappy()
+	{
+		struct GenieCharacter_eventIsHappy_Parms
+		{
+			TEnumAsByte<EHappyEnum> Branches;
+		};
+		UObject* Outer=Z_Construct_UClass_AGenieCharacter();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("IsHappy"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x04420401, 65535, sizeof(GenieCharacter_eventIsHappy_Parms));
+			UProperty* NewProp_Branches = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("Branches"), RF_Public|RF_Transient|RF_Native) UByteProperty(CPP_PROPERTY_BASE(Branches, GenieCharacter_eventIsHappy_Parms), 0x0000000000000180, Z_Construct_UEnum_unrealEngineProject_EHappyEnum());
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("Functions"));
+			MetaData->SetValue(ReturnFunction, TEXT("ExpandEnumAsExecs"), TEXT("Branches"));
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("GenieCharacter.h"));
+			MetaData->SetValue(ReturnFunction, TEXT("ToolTip"), TEXT("Create IsHappy Function"));
+#endif
+		}
+		return ReturnFunction;
+	}
 	UClass* Z_Construct_UClass_AGenieCharacter_NoRegister()
 	{
 		return AGenieCharacter::StaticClass();
@@ -46,7 +193,7 @@ void EmptyLinkFunctionForGeneratedCodeunrealEngineProject() {}
 		static UClass* OuterClass = NULL;
 		if (!OuterClass)
 		{
-			Z_Construct_UClass_APawn();
+			Z_Construct_UClass_ACharacter();
 			Z_Construct_UPackage_unrealEngineProject();
 			OuterClass = AGenieCharacter::StaticClass();
 			if (!(OuterClass->ClassFlags & CLASS_Constructed))
@@ -54,23 +201,27 @@ void EmptyLinkFunctionForGeneratedCodeunrealEngineProject() {}
 				UObjectForceRegistration(OuterClass);
 				OuterClass->ClassFlags |= 0x20900080;
 
+				OuterClass->LinkChild(Z_Construct_UFunction_AGenieCharacter_IsHappy());
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
-				UProperty* NewProp_OurCamera = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("OurCamera"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(OurCamera, AGenieCharacter), 0x0000000000080009, Z_Construct_UClass_UCameraComponent_NoRegister());
-				UProperty* NewProp_OurVisibleComponent = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("OurVisibleComponent"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(OurVisibleComponent, AGenieCharacter), 0x0000000000080009, Z_Construct_UClass_USceneComponent_NoRegister());
+				CPP_BOOL_PROPERTY_BITMASK_STRUCT(HappyMovement, AGenieCharacter, bool);
+				UProperty* NewProp_HappyMovement = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("HappyMovement"), RF_Public|RF_Transient|RF_Native) UBoolProperty(FObjectInitializer(), EC_CppProperty, CPP_BOOL_PROPERTY_OFFSET(HappyMovement, AGenieCharacter), 0x0000000000000004, CPP_BOOL_PROPERTY_BITMASK(HappyMovement, AGenieCharacter), sizeof(bool), true);
+				UProperty* NewProp_SpringArm = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("SpringArm"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(SpringArm, AGenieCharacter), 0x0000000000080009, Z_Construct_UClass_USpringArmComponent_NoRegister());
 PRAGMA_POP
+				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AGenieCharacter_IsHappy()); // 2241142803
 				OuterClass->StaticLink();
 #if WITH_METADATA
 				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
-				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Navigation"));
+				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Pawn|Character|InternalEvents Navigation"));
 				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("GenieCharacter.h"));
 				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("GenieCharacter.h"));
-				MetaData->SetValue(NewProp_OurCamera, TEXT("Category"), TEXT("GenieCharacter"));
-				MetaData->SetValue(NewProp_OurCamera, TEXT("EditInline"), TEXT("true"));
-				MetaData->SetValue(NewProp_OurCamera, TEXT("ModuleRelativePath"), TEXT("GenieCharacter.h"));
-				MetaData->SetValue(NewProp_OurVisibleComponent, TEXT("Category"), TEXT("GenieCharacter"));
-				MetaData->SetValue(NewProp_OurVisibleComponent, TEXT("EditInline"), TEXT("true"));
-				MetaData->SetValue(NewProp_OurVisibleComponent, TEXT("ModuleRelativePath"), TEXT("GenieCharacter.h"));
+				MetaData->SetValue(NewProp_HappyMovement, TEXT("Category"), TEXT("Components"));
+				MetaData->SetValue(NewProp_HappyMovement, TEXT("ModuleRelativePath"), TEXT("GenieCharacter.h"));
+				MetaData->SetValue(NewProp_HappyMovement, TEXT("ToolTip"), TEXT("Create HappyMovement Variable"));
+				MetaData->SetValue(NewProp_SpringArm, TEXT("Category"), TEXT("GenieCharacter"));
+				MetaData->SetValue(NewProp_SpringArm, TEXT("EditInline"), TEXT("true"));
+				MetaData->SetValue(NewProp_SpringArm, TEXT("ModuleRelativePath"), TEXT("GenieCharacter.h"));
+				MetaData->SetValue(NewProp_SpringArm, TEXT("ToolTip"), TEXT("Create SpringArm Component"));
 #endif
 			}
 		}
@@ -158,8 +309,8 @@ PRAGMA_POP
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/unrealEngineProject")), false, false));
 			ReturnPackage->PackageFlags |= PKG_CompiledIn | 0x00000000;
 			FGuid Guid;
-			Guid.A = 0xDFCA7ABF;
-			Guid.B = 0xD9C15B9A;
+			Guid.A = 0x881A188D;
+			Guid.B = 0xD64B738C;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);

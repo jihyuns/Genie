@@ -7,19 +7,22 @@
 // Sets default values
 AGenieCharacter::AGenieCharacter()
 {
- 	// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+ 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
+	/***	Create Our Components	***/
 	RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("RootComponent"));
 
-	OurCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("OurCamera"));
-	OurVisibleComponent = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("OurVisibleComponent"));
+	// Create SpringArm Component
+	SpringArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("SpringArm"));
+	SpringArm->AttachTo(RootComponent);
+	SpringArm->SetRelativeLocation(FVector(0.0f, 0.0f, 0.0f));
+	SpringArm->bUsePawnControlRotation = true;
 
-	OurCamera->AttachTo(RootComponent);
-	OurCamera->SetRelativeLocation(FVector(-250.0f, 0.0f, 250.0f));
-	OurCamera->SetRelativeRotation(FRotator(-45.0f, 0.0f, 0.0f));
-	OurVisibleComponent->AttachTo(RootComponent);
-	
+	// Create Camera Component
+	//OurCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("OurCamera"));
+	//OurCamera->AttachTo(SpringArm);
+	//OurCamera->SetRelativeLocationAndRotation(FVector(0.0f, 0.0f, 0.0f), FRotator(0.0f, 0.0f, 0.0f));
 }
 
 // Called when the game starts or when spawned
@@ -41,5 +44,14 @@ void AGenieCharacter::SetupPlayerInputComponent(class UInputComponent* InputComp
 {
 	Super::SetupPlayerInputComponent(InputComponent);
 
+}
+
+// Check Genie's Emotion is Happy
+void AGenieCharacter::IsHappy(EHappyEnum& Branches)
+{
+	if (FPaths::FileExists("C:\\Users\\gclab\\Desktop\\happy.txt"))
+	{
+		Branches = EHappyEnum::Happy;
+	}
 }
 

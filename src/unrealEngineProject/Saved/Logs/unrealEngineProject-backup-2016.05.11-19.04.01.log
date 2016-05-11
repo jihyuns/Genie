@@ -1,0 +1,456 @@
+﻿[2016.05.11-09.45.23:496][  0]Log file open, 05/11/16 18:45:23
+[2016.05.11-09.45.23:496][  0]LogInit:Display: Running engine for game: unrealEngineProject
+[2016.05.11-09.45.23:496][  0]LogInit:Display: RandInit(-1961166199) SRandInit(-1961166199).
+[2016.05.11-09.45.23:496][  0]LogTaskGraph: Started task graph with 4 named threads and 5 total threads.
+[2016.05.11-09.45.23:496][  0]LogStats: Stats thread started
+[2016.05.11-09.45.23:496][  0]LogInit: Version: 4.8.3-2634408+++depot+UE4-Releases+4.8
+[2016.05.11-09.45.23:496][  0]LogInit: API Version: 2579680
+[2016.05.11-09.45.23:496][  0]LogInit: Compiled (64-bit): Jul 27 2015 16:24:33
+[2016.05.11-09.45.23:496][  0]LogInit: Compiled with Visual C++: 18.00.21005.01
+[2016.05.11-09.45.23:496][  0]LogInit: Build Configuration: Development
+[2016.05.11-09.45.23:496][  0]LogInit: Branch Name: ++depot+UE4-Releases+4.8
+[2016.05.11-09.45.23:496][  0]LogInit: Command line:  
+[2016.05.11-09.45.23:496][  0]LogInit: Base directory: C:/Program Files (x86)/Epic Games/4.8/Engine/Binaries/Win64/
+[2016.05.11-09.45.23:496][  0]LogInit: Rocket: 1
+[2016.05.11-09.45.23:657][  0]LogInit: Using libcurl 7.41.0
+[2016.05.11-09.45.23:657][  0]LogInit:  - built for x86_64-pc-win32
+[2016.05.11-09.45.23:657][  0]LogInit:  - supports SSL with WinSSL
+[2016.05.11-09.45.23:657][  0]LogInit:  - other features:
+[2016.05.11-09.45.23:657][  0]LogInit:      CURL_VERSION_SSL
+[2016.05.11-09.45.23:657][  0]LogInit:      CURL_VERSION_IPV6
+[2016.05.11-09.45.23:657][  0]LogInit:      CURL_VERSION_ASYNCHDNS
+[2016.05.11-09.45.23:657][  0]LogInit:      CURL_VERSION_LARGEFILE
+[2016.05.11-09.45.23:657][  0]LogInit:      CURL_VERSION_IDN
+[2016.05.11-09.45.23:657][  0]LogInit:  CurlRequestOptions (configurable via config and command line):
+[2016.05.11-09.45.23:657][  0]LogInit:  - bVerifyPeer = true  - Libcurl will verify peer certificate
+[2016.05.11-09.45.23:657][  0]LogInit:  - bUseHttpProxy = false  - Libcurl will NOT use HTTP proxy
+[2016.05.11-09.45.23:657][  0]LogInit:  - bDontReuseConnections = false  - Libcurl will reuse connections
+[2016.05.11-09.45.23:657][  0]LogInit:  - CertBundlePath = nullptr  - Libcurl will use whatever was configured at build time.
+[2016.05.11-09.45.23:673][  0]LogOnline:Warning: No default platform service specified for OnlineSubsystem
+[2016.05.11-09.45.23:691][  0]LogInit: Presizing for 0 objects not considered by GC, pre-allocating 0 bytes.
+[2016.05.11-09.45.23:698][  0]LogInit: Object subsystem initialized
+[2016.05.11-09.45.23:699][  0]LogConsoleResponse:Warning: Skipping Unknown console variable: 'TranslucentSortAxis = (X=0.000000,Y=-1.000000,Z=0.000000)'
+[2016.05.11-09.45.23:699][  0]LogConsoleResponse:Warning:   Found in ini file 'C:/Users/jjudy/Desktop/Genie/src/unrealEngineProject/Saved/Config/Windows/Engine.ini', in section '[/Script/Engine.RendererSettings]'
+[2016.05.11-09.45.23:699][  0]LogConsoleResponse:Warning: Skipping Unknown console variable: 'UIScaleRule = ShortestSide'
+[2016.05.11-09.45.23:699][  0]LogConsoleResponse:Warning:   Found in ini file 'C:/Users/jjudy/Desktop/Genie/src/unrealEngineProject/Saved/Config/Windows/Engine.ini', in section '[/Script/Engine.RendererSettings]'
+[2016.05.11-09.45.23:699][  0]LogConsoleResponse:Warning: Skipping Unknown console variable: 'UIScaleCurve = (EditorCurveData=(Keys=),ExternalCurve=None)'
+[2016.05.11-09.45.23:699][  0]LogConsoleResponse:Warning:   Found in ini file 'C:/Users/jjudy/Desktop/Genie/src/unrealEngineProject/Saved/Config/Windows/Engine.ini', in section '[/Script/Engine.RendererSettings]'
+[2016.05.11-09.45.23:699][  0]LogInit: Selected Device Profile: [Windows]
+[2016.05.11-09.45.23:699][  0]LogInit: Applying CVar settings loaded from the selected device profile: [Windows]
+[2016.05.11-09.45.24:094][  0]LogInit: Computer: JUDY
+[2016.05.11-09.45.24:094][  0]LogInit: User: jjudy
+[2016.05.11-09.45.24:094][  0]LogInit: CPU Page size=4096, Cores=2
+[2016.05.11-09.45.24:094][  0]LogInit: High frequency timer resolution =2.533196 MHz
+[2016.05.11-09.45.24:094][  0]LogMemory: Memory total: Physical=3.7GB (4GB approx)
+[2016.05.11-09.45.24:095][  0]LogMemory: Platform Memory Stats for Windows
+[2016.05.11-09.45.24:095][  0]LogMemory: Process Physical Memory: 50.29 MB used, 50.29 MB peak
+[2016.05.11-09.45.24:095][  0]LogMemory: Process Virtual Memory: 21.49 MB used, 22.21 MB peak
+[2016.05.11-09.45.24:095][  0]LogMemory: Physical Memory: 2754.48 MB used, 3799.78 MB total
+[2016.05.11-09.45.24:095][  0]LogMemory: Virtual Memory: 317.00 MB used, 134217728.00 MB total
+[2016.05.11-09.45.24:186][  0]LogTextLocalizationManager: The requested culture ('ko_KR') has no localization data; parent culture's ('ko') localization data will be used.
+[2016.05.11-09.45.24:246][  0]LogTextLocalizationManager:Warning: Loaded localization resources contain conflicting entries for (Namespace:ContentBrowser, Key:ImportAssetToolTip):
+Localization Resource: (C:/Program Files (x86)/Epic Games/4.8/Engine/Content/Localization/Editor/ko/Editor.locres) Source String Hash: (-630476809) Localized String: ({0} 에 임포트...)
+Localization Resource: (C:/Program Files (x86)/Epic Games/4.8/Engine/Content/Localization/Editor/ko/Editor.locres) Source String Hash: (1271782899) Localized String: (파일에서 이 폴더로 애셋을 임포트합니다.)
+[2016.05.11-09.45.24:712][  0]LogD3D11RHI: Found D3D11 adapter 0: NVIDIA GeForce GT 720M  (Feature Level 11_0)
+[2016.05.11-09.45.24:712][  0]LogD3D11RHI: Adapter has 973MB of dedicated video memory, 0MB of dedicated system memory, and 1899MB of shared system memory, 2 output[s]
+[2016.05.11-09.45.24:721][  0]LogD3D11RHI: Found D3D11 adapter 1: Intel(R) HD Graphics Family (Feature Level 11_0)
+[2016.05.11-09.45.24:721][  0]LogD3D11RHI: Adapter has 112MB of dedicated video memory, 0MB of dedicated system memory, and 1899MB of shared system memory, 0 output[s]
+[2016.05.11-09.45.24:725][  0]LogD3D11RHI: Found D3D11 adapter 2: Microsoft Basic Render Driver (Feature Level 11_0)
+[2016.05.11-09.45.24:725][  0]LogD3D11RHI: Adapter has 0MB of dedicated video memory, 0MB of dedicated system memory, and 1899MB of shared system memory, 0 output[s]
+[2016.05.11-09.45.24:725][  0]LogD3D11RHI: Chosen D3D11 Adapter Id = 0
+[2016.05.11-09.45.24:730][  0]LogD3D11RHI: InitD3DDevice
+[2016.05.11-09.45.24:730][  0]LogD3D11RHI: !Direct3DDevice
+[2016.05.11-09.45.24:730][  0]LogRHI: Texture pool is 681 MB (70% of 973 MB)
+[2016.05.11-09.45.24:742][  0]LogD3D11RHI: Async texture creation enabled
+[2016.05.11-09.45.24:763][  0]LogShaderCompilers:Display: Using Local Shader Compiler.
+[2016.05.11-09.45.26:757][  0]LogTemp:Display: Loaded TP DesktopTargetPlatform
+[2016.05.11-09.45.26:776][  0]LogTemp:Display: Loaded TP WindowsClientTargetPlatform
+[2016.05.11-09.45.26:797][  0]LogTemp:Display: Loaded TP WindowsNoEditorTargetPlatform
+[2016.05.11-09.45.26:817][  0]LogTemp:Display: Loaded TP WindowsServerTargetPlatform
+[2016.05.11-09.45.26:837][  0]LogTemp:Display: Loaded TP WindowsTargetPlatform
+[2016.05.11-09.45.26:855][  0]LogTemp:Display: Loaded TP AndroidTargetPlatform
+[2016.05.11-09.45.26:871][  0]LogTemp:Display: Loaded TP Android_ASTCTargetPlatform
+[2016.05.11-09.45.26:889][  0]LogTemp:Display: Loaded TP Android_ATCTargetPlatform
+[2016.05.11-09.45.26:905][  0]LogTemp:Display: Loaded TP Android_DXTTargetPlatform
+[2016.05.11-09.45.26:923][  0]LogTemp:Display: Loaded TP Android_ETC1TargetPlatform
+[2016.05.11-09.45.26:939][  0]LogTemp:Display: Loaded TP Android_ETC2TargetPlatform
+[2016.05.11-09.45.26:957][  0]LogTemp:Display: Loaded TP Android_PVRTCTargetPlatform
+[2016.05.11-09.45.27:019][  0]LogTemp:Display: Loaded TP IOSTargetPlatform
+[2016.05.11-09.45.27:035][  0]LogTemp:Display: Loaded TP LinuxNoEditorTargetPlatform
+[2016.05.11-09.45.27:054][  0]LogTemp:Display: Loaded TP LinuxServerTargetPlatform
+[2016.05.11-09.45.27:072][  0]LogTemp:Display: Loaded TP LinuxTargetPlatform
+[2016.05.11-09.45.27:072][  0]LogTargetPlatformManager:Display: Building Assets For Windows
+[2016.05.11-09.45.27:352][  0]LogDerivedDataCache:Display: Max Cache Size: 512 MB
+[2016.05.11-09.45.27:718][  0]LogDerivedDataCache: Loaded boot cache 0.37s 53MB C:/Users/jjudy/AppData/Local/UnrealEngine/4.8/DerivedDataCache/Boot.ddc.
+[2016.05.11-09.45.27:718][  0]LogDerivedDataCache:Display: Loaded Boot cache: C:/Users/jjudy/AppData/Local/UnrealEngine/4.8/DerivedDataCache/Boot.ddc
+[2016.05.11-09.45.27:719][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  Pak pak cache file ../../../../../../Users/jjudy/Desktop/Genie/src/unrealEngineProject/DerivedDataCache/DDC.ddp not found, will not use a pak cache.
+[2016.05.11-09.45.27:719][  0]LogDerivedDataCache: Unable to find inner node Pak for hierarchical cache Hierarchy.
+[2016.05.11-09.45.27:719][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  CompressedPak pak cache file ../../../../../../Users/jjudy/Desktop/Genie/src/unrealEngineProject/DerivedDataCache/Compressed.ddp not found, will not use a pak cache.
+[2016.05.11-09.45.27:719][  0]LogDerivedDataCache: Unable to find inner node CompressedPak for hierarchical cache Hierarchy.
+[2016.05.11-09.45.27:927][  0]LogDerivedDataCache:Display: Pak cache opened for reading ../../../Engine/DerivedDataCache/Compressed.ddp.
+[2016.05.11-09.45.27:947][  0]LogDerivedDataCache: Using Local data cache path C:/Users/jjudy/AppData/Local/UnrealEngine/Common/DerivedDataCache: Writable
+[2016.05.11-09.45.30:293][  0]LogInit: Selected Device Profile: [Windows]
+[2016.05.11-09.45.30:409][  0]ImportText (ComponentSweepMultiTests): Missing closing parenthesis: (RootShapeAsset="/Engine/BasicShapes/Cube.Cube",ShapeType="TriggerCapsule",HitResult=(Time=0.50,Location=(X=-100.000015,Y=0.0,Z=100.000015),ImpactPoint=(X=-50.0,Y=0.0,Z=50.0),Normal=(X=-1.0,Y=-0.0,Z=0.0),ImpactNormal=(X=0.0,Y=0.0,Z=1.0),TraceStart=(X=-200.0,Y=0.0,Z=200.0),TraceEnd=(X=0.0,Y=0.0,Z=0.0))
+[2016.05.11-09.45.30:410][  0]ImportText (LineTraceSingleByChannelTests): Missing closing parenthesis: (RootShapeAsset="/Engine/BasicShapes/Cube.Cube",HitResult=(Time=0.50,Location=(X=-100.000015,Y=0.0,Z=100.000015),ImpactPoint=(X=-50.0,Y=0.0,Z=50.0),Normal=(X=-1.0,Y=-0.0,Z=0.0),ImpactNormal=(X=0.0,Y=0.0,Z=1.0),TraceStart=(X=-200.0,Y=0.0,Z=200.0),TraceEnd=(X=0.0,Y=0.0,Z=0.0))
+[2016.05.11-09.45.30:480][  0]LogMeshUtilities: No automatic mesh reduction module available
+[2016.05.11-09.45.30:480][  0]LogMeshUtilities: No automatic mesh merging module available
+[2016.05.11-09.45.31:003][  0]LogInit: WinSock: version 1.1 (2.2), MaxSocks=32767, MaxUdp=65467
+[2016.05.11-09.45.36:256][  0]UdpMessaging: Initializing bridge on interface 0.0.0.0:0 to multicast group 230.0.0.1:6666.
+[2016.05.11-09.45.37:653][  0]SourceControl: 정보 소스 콘트롤이 꺼졌습니다.
+[2016.05.11-09.45.37:684][  0]SourceControl: 정보 소스 콘트롤이 꺼졌습니다.
+[2016.05.11-09.45.37:737][  0]SourceControl: 정보 소스 콘트롤이 꺼졌습니다.
+[2016.05.11-09.45.37:778][  0]SourceControl: 정보 소스 콘트롤이 꺼졌습니다.
+[2016.05.11-09.45.38:640][  0]LogObj: 26299 objects as part of root set at end of initial load.
+[2016.05.11-09.45.38:640][  0]LogUObjectAllocator: 5426944 out of 0 bytes used by permanent object pool.
+[2016.05.11-09.45.38:848][  0]LogEngine: Initializing Engine...
+[2016.05.11-09.45.38:860][  0]LogHMD: Can't find Oculus library dev build: is proper Runtime installed? Version: 0.6.0.0
+[2016.05.11-09.45.38:924][  0]LogHMD:Warning: SteamVR failed to initialize.  Error: 110
+[2016.05.11-09.45.39:236][  0]LogAIModule: Creating AISystem for world NewWorld
+[2016.05.11-09.45.39:260][  0]LogInit: XAudio2 using '스피커/헤드폰(Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2016.05.11-09.45.39:352][  0]LogInit: FAudioDevice initialized.
+[2016.05.11-09.45.39:419][  0]LogDerivedDataCache: Saved boot cache 0.07s 53MB C:/Users/jjudy/AppData/Local/UnrealEngine/4.8/DerivedDataCache/Boot.ddc.
+[2016.05.11-09.45.39:426][  0]LogInit: Texture streaming: Disabled
+[2016.05.11-09.45.39:481][  0]LogAnalytics: Creating configured Analytics provider AnalyticsET
+[2016.05.11-09.45.39:481][  0]LogAnalytics: [UEEditor.Rocket.Release] APIServer = http://et2.epicgames.com/ET2/. AppVersion = 4.8.3-2634408+++depot+UE4-Releases+4.8
+[2016.05.11-09.45.39:482][  0]LogAnalytics: [UEEditor.Rocket.Release] SetUserId f1732f304bfe0c511e505491d9dc7863|42e094618d374ae48b60eaacf8489ca6|5a9a5a05-d2f7-4f14-8a0b-a00ba482fbc2
+[2016.05.11-09.45.39:482][  0]LogAnalytics: [UEEditor.Rocket.Release] AnalyticsET::StartSession
+[2016.05.11-09.45.39:574][  0]LogInit: Transaction tracking system initialized
+[2016.05.11-09.45.39:980][  0]BlueprintLog: New page: 에디터 로드
+[2016.05.11-09.45.40:049][  0]LogAssetRegistry: FAssetRegistry took 0.0114 seconds to start up
+[2016.05.11-09.45.40:050][  0]LogDirectoryWatcher:Warning: Failed to begin reading directory changes for ../../../Engine/Plugins/Experimental/CharacterAI/Content/. Error: 0
+[2016.05.11-09.45.45:360][  0]LogConsoleManager:Warning: Console variable 'r.VSync' wasn't set ('GameSetting' has a lower priority than 'SystemSettingsIni')
+[2016.05.11-09.45.45:360][  0]LogConsoleResponse:Display: 
+[2016.05.11-09.45.46:055][  0]LogCook:Display: Done creating registry. It took  0.00s.
+[2016.05.11-09.45.46:658][  0]SourceControl: 정보 소스 콘트롤이 꺼졌습니다.
+[2016.05.11-09.45.46:658][  0]Cmd: MAP LOAD FILE="../../../Engine/Content/Maps/Templates/Template_Default.umap" TEMPLATE=1 SHOWPROGRESS=1 FEATURELEVEL=3
+[2016.05.11-09.45.46:710][  0]LightingResults: New page: 라이팅 빌드
+[2016.05.11-09.45.46:738][  0]MapCheck: New page: 맵 체크
+[2016.05.11-09.45.46:738][  0]LightingResults: New page: 라이팅 빌드
+[2016.05.11-09.45.46:763][  0]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000002DD4D1E5940
+[2016.05.11-09.45.47:848][  0]LogAIModule: Creating AISystem for world Untitled_1
+[2016.05.11-09.45.47:857][  0]LogEditorServer: Finished looking for orphan Actors (0.000 secs)
+[2016.05.11-09.45.47:868][  0]Cmd: MAP CHECKDEP NOCLEARLOG
+[2016.05.11-09.45.47:924][  0]MapCheck: 정보 맵 체크 완료: 오류 0 회, 경고 0 회, 소요 시간 55.888ms.
+[2016.05.11-09.45.47:924][  0]LogFileHelpers: Loading map 'Template_Default' took 1.266
+[2016.05.11-09.45.48:280][  0]LogCollectionManager: Loaded 0 collections in 0.003121 seconds
+[2016.05.11-09.45.48:288][  0]LogContentBrowser: Native class hierarchy populated in 0.0082 seconds. Added 1796 classes and 303 folders.
+[2016.05.11-09.45.48:480][  0]LogContentBrowser: Native class hierarchy updated for 'WidgetCarousel' in 0.0019 seconds. Added 0 classes and 0 folders.
+[2016.05.11-09.45.48:927][  0]LogContentBrowser: Native class hierarchy updated for 'AddContentDialog' in 0.0019 seconds. Added 0 classes and 0 folders.
+[2016.05.11-09.45.48:965][  0]LogContentBrowser: Native class hierarchy updated for 'SceneOutliner' in 0.0014 seconds. Added 1 classes and 2 folders.
+[2016.05.11-09.45.49:087][  0]LogCrashTracker: Crashtracker disabled due to settings.
+[2016.05.11-09.45.49:088][  0]LogD3D11RHI: InitD3DDevice
+[2016.05.11-09.45.49:093][  0]LogUObjectGlobals:Warning: 'Class 없음.' 오브젝트를 찾는 데 실패했습니다.
+[2016.05.11-09.45.49:117][  0]LogLoad: Full Startup: 37.12 seconds (BP compile: 0.22 seconds)
+[2016.05.11-09.45.49:151][  0]LogWindowsTextInputMethodSystem:Display: IME system now activated using TSF (Microsoft 입력기).
+[2016.05.11-09.45.49:322][  0]LogContentStreaming: Texture pool size is 0.000000MB
+[2016.05.11-09.45.49:393][  0]LogContentStreaming: Texture pool size now 400 MB
+[2016.05.11-09.45.49:643][  0]LogRenderer: Reallocating scene render targets to support 1056x560 (Frame:2).
+[2016.05.11-09.45.50:601][  6]LogAssetRegistry: Asset discovery search completed in 10.5621 seconds
+[2016.05.11-09.46.36:703][760]LogD3D11RHI: InitD3DDevice
+[2016.05.11-09.46.39:656][933]LogD3D11RHI: InitD3DDevice
+[2016.05.11-09.46.42:338][ 18]LogD3D11RHI: InitD3DDevice
+[2016.05.11-09.46.52:858][577]LogD3D11RHI: InitD3DDevice
+[2016.05.11-09.46.53:956][641]LogD3D11RHI: InitD3DDevice
+[2016.05.11-09.46.54:017][641]LogD3D11RHI: InitD3DDevice
+[2016.05.11-09.47.16:193][848]LogD3D11RHI: InitD3DDevice
+[2016.05.11-09.47.16:352][848]Running C:/Program Files (x86)/Epic Games/4.8/Engine/Binaries/DotNET/UnrealBuildTool.exe  -projectfiles -project="C:/Users/jjudy/Desktop/Genie/src/unrealEngineProject/unrealEngineProject.uproject" -game -rocket -progress
+[2016.05.11-09.47.16:756][848]Discovering modules, targets and source code for game...
+[2016.05.11-09.47.30:115][848]LogVSAccessor:Warning: Couldn't access Visual Studio
+[2016.05.11-09.47.30:126][848]LogD3D11RHI: InitD3DDevice
+[2016.05.11-09.47.30:128][848]Recompiling unrealEngineProject...
+[2016.05.11-09.47.30:128][848]Launching UnrealBuildTool... [C:/Program Files (x86)/Epic Games/4.8/Engine/Binaries/DotNET/UnrealBuildTool.exe unrealEngineProject -ModuleWithSuffix unrealEngineProject 973 Win64 Development -editorrecompile -canskiplink "C:/Users/jjudy/Desktop/Genie/src/unrealEngineProject/unrealEngineProject.uproject" -rocket  -rocket]
+[2016.05.11-09.49.32:118][848]CompilerResultsLog: New page: 컴파일 - 2016. 5. 12. 오전 3:49:32
+[2016.05.11-09.49.32:118][848]CompilerResultsLog: 정보 Compiling game modules for hot reload
+[2016.05.11-09.49.32:118][848]CompilerResultsLog: 정보 Parsing headers for unrealEngineProjectEditor
+[2016.05.11-09.49.32:118][848]CompilerResultsLog: 정보 Reflection code generated for unrealEngineProjectEditor
+[2016.05.11-09.49.32:118][848]CompilerResultsLog: 정보 Performing 3 actions (2 in parallel)
+[2016.05.11-09.49.32:118][848]CompilerResultsLog: 정보 GenieCamera.cpp
+[2016.05.11-09.49.32:118][848]CompilerResultsLog: 정보 unrealEngineProject.generated.cpp
+[2016.05.11-09.49.32:118][848]CompilerResultsLog: 정보 [3/3] Link UE4Editor-unrealEngineProject-973.dll
+[2016.05.11-09.49.32:118][848]CompilerResultsLog: 정보    Creating library C:\Users\jjudy\Desktop\Genie\src\unrealEngineProject\Intermediate/Build/Win64\UE4Editor\Development\UE4Editor-unrealEngineProject-973.lib and object C:\Users\jjudy\Desktop\Genie\src\unrealEngineProject\Intermediate/Build/Win64\UE4Editor\Development\UE4Editor-unrealEngineProject-973.exp
+[2016.05.11-09.49.32:119][848]CompilerResultsLog: 정보 -------- End Detailed Actions Stats -----------------------------------------------------------
+[2016.05.11-09.49.32:119][848]CompilerResultsLog: 정보 Total build time: 121.74 seconds
+[2016.05.11-09.49.32:119][848]LogMainFrame: MainFrame: Module compiling took 122.004 seconds
+[2016.05.11-09.49.32:119][848]LogActorComponent: UnregisterComponent: (/Engine/Transient.CharMoveComp) Not registered. Aborting.
+[2016.05.11-09.49.33:522][848]LogClass: Could not find existing class GenieCamera in package /Script/unrealEngineProject for HotReload, assuming new class
+[2016.05.11-09.49.33:551][848]LogClass: EHappyEnum HotReload.
+[2016.05.11-09.49.33:563][848]LogContentBrowser: Native class hierarchy updated for 'unrealEngineProject' in 0.0054 seconds. Added 5 classes and 2 folders.
+[2016.05.11-09.49.33:566][848]Warning: HotReload successful (1 functions remapped  0 scriptstructs remapped)
+[2016.05.11-09.49.33:607][848]LogContentBrowser: Native class hierarchy populated in 0.0145 seconds. Added 1798 classes and 305 folders.
+[2016.05.11-09.49.33:609][848]Warning: HotReload operation took 123.5s.
+[2016.05.11-09.49.33:623][848]LogD3D11RHI: InitD3DDevice
+[2016.05.11-09.49.33:645][848]LogD3D11RHI: InitD3DDevice
+[2016.05.11-09.49.33:683][848]LogHotReload: New module detected: UE4Editor-unrealEngineProject-973.dll
+[2016.05.11-09.49.33:718][849]LogHotReload: Starting Hot-Reload from IDE
+[2016.05.11-09.49.33:725][849]LogD3D11RHI: InitD3DDevice
+[2016.05.11-09.49.33:975][849]LogContentBrowser: Native class hierarchy updated for 'unrealEngineProject' in 0.0015 seconds. Added 5 classes and 2 folders.
+[2016.05.11-09.49.33:976][849]Warning: HotReload successful (0 functions remapped  0 scriptstructs remapped)
+[2016.05.11-09.49.34:221][849]LogContentBrowser: Native class hierarchy populated in 0.0102 seconds. Added 1798 classes and 305 folders.
+[2016.05.11-09.49.34:228][849]LogD3D11RHI: InitD3DDevice
+[2016.05.11-09.49.42:197][188]LogVSAccessor:Warning: Visual Studio is open but could not be queried - it may be blocked by a modal operation
+[2016.05.11-09.49.46:398][189]LogVSAccessor:Warning: Visual Studio is open but could not be queried - it may be blocked by a modal operation
+[2016.05.11-09.49.54:732][190]LogVSAccessor:Warning: Visual Studio is open but could not be queried - it may be blocked by a modal operation
+[2016.05.11-09.49.54:759][191]LogVSAccessor:Warning: Visual Studio is open but could not be queried - it may be blocked by a modal operation
+[2016.05.11-09.50.02:408][192]LogVSAccessor:Warning: Couldn't goto line number '0' in 'C:/Users/jjudy/Desktop/Genie/src/unrealEngineProject/Source/unrealEngineProject/GenieCamera.h'
+[2016.05.11-09.50.02:742][192]LogVSAccessor:Warning: Couldn't goto line number '0' in 'C:/Users/jjudy/Desktop/Genie/src/unrealEngineProject/Source/unrealEngineProject/GenieCamera.cpp'
+[2016.05.11-09.52.06:164][743]LogD3D11RHI: InitD3DDevice
+[2016.05.11-09.52.06:165][743]Recompiling unrealEngineProject...
+[2016.05.11-09.52.06:166][743]Launching UnrealBuildTool... [C:/Program Files (x86)/Epic Games/4.8/Engine/Binaries/DotNET/UnrealBuildTool.exe unrealEngineProject -ModuleWithSuffix unrealEngineProject 1982 Win64 Development -editorrecompile -canskiplink "C:/Users/jjudy/Desktop/Genie/src/unrealEngineProject/unrealEngineProject.uproject" -rocket  -rocket]
+[2016.05.11-09.52.06:200][743]Warning: Starting HotReload took  0.1s.
+[2016.05.11-09.55.55:117][ 90]CompilerResultsLog: New page: 컴파일 - 2016. 5. 12. 오전 3:55:55
+[2016.05.11-09.55.55:119][ 90]CompilerResultsLog: 정보 Compiling game modules for hot reload
+[2016.05.11-09.55.55:119][ 90]CompilerResultsLog: 정보 Parsing headers for unrealEngineProjectEditor
+[2016.05.11-09.55.55:119][ 90]CompilerResultsLog: 정보 Reflection code generated for unrealEngineProjectEditor
+[2016.05.11-09.55.55:119][ 90]CompilerResultsLog: 정보 Performing 3 actions (2 in parallel)
+[2016.05.11-09.55.55:119][ 90]CompilerResultsLog: 정보 unrealEngineProject.generated.cpp
+[2016.05.11-09.55.55:119][ 90]CompilerResultsLog: 정보 GenieCamera.cpp
+[2016.05.11-09.55.55:119][ 90]CompilerResultsLog:Error: 오류 c:\users\jjudy\desktop\genie\src\unrealengineproject\source\unrealengineproject\GenieCamera.h(23)  : error C2061: syntax error : identifier 'EditAnywhere'
+[2016.05.11-09.55.55:156][ 90]CompilerResultsLog:Error: 오류 c:\users\jjudy\desktop\genie\src\unrealengineproject\source\unrealengineproject\GenieCamera.h(24)  : error C3646: 'AActor' : unknown override specifier
+[2016.05.11-09.55.55:156][ 90]CompilerResultsLog:Error: 오류 c:\users\jjudy\desktop\genie\src\unrealengineproject\source\unrealengineproject\GenieCamera.h(24)  : error C2143: syntax error : missing ';' before '*'
+[2016.05.11-09.55.55:156][ 90]CompilerResultsLog:Error: 오류 c:\users\jjudy\desktop\genie\src\unrealengineproject\source\unrealengineproject\GenieCamera.h(24)  : error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+[2016.05.11-09.55.55:156][ 90]CompilerResultsLog:Error: 오류 c:\users\jjudy\desktop\genie\src\unrealengineproject\source\unrealengineproject\GenieCamera.h(24)  : error C4183: 'URPOPERTY': missing return type; assumed to be a member function returning 'int'
+[2016.05.11-09.55.55:157][ 90]CompilerResultsLog:Error: 오류 C:\Users\jjudy\Desktop\Genie\src\unrealEngineProject\Source\unrealEngineProject\GenieCamera.cpp(31)  : error C2065: 'CameraOne' : undeclared identifier
+[2016.05.11-09.55.55:157][ 90]CompilerResultsLog:Error: 오류 C:\Users\jjudy\Desktop\Genie\src\unrealEngineProject\Source\unrealEngineProject\GenieCamera.cpp(33)  : error C2065: 'CameraOne' : undeclared identifier
+[2016.05.11-09.55.55:157][ 90]CompilerResultsLog:Error: 오류 C:\Users\jjudy\Desktop\Genie\src\unrealEngineProject\Source\unrealEngineProject\GenieCamera.h(23)  : error C2061: syntax error : identifier 'EditAnywhere'
+[2016.05.11-09.55.55:157][ 90]CompilerResultsLog:Error: 오류 C:\Users\jjudy\Desktop\Genie\src\unrealEngineProject\Source\unrealEngineProject\GenieCamera.h(24)  : error C3646: 'AActor' : unknown override specifier
+[2016.05.11-09.55.55:157][ 90]CompilerResultsLog:Error: 오류 C:\Users\jjudy\Desktop\Genie\src\unrealEngineProject\Source\unrealEngineProject\GenieCamera.h(24)  : error C2143: syntax error : missing ';' before '*'
+[2016.05.11-09.55.55:157][ 90]CompilerResultsLog:Error: 오류 C:\Users\jjudy\Desktop\Genie\src\unrealEngineProject\Source\unrealEngineProject\GenieCamera.h(24)  : error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+[2016.05.11-09.55.55:157][ 90]CompilerResultsLog:Error: 오류 C:\Users\jjudy\Desktop\Genie\src\unrealEngineProject\Source\unrealEngineProject\GenieCamera.h(24)  : error C4183: 'URPOPERTY': missing return type; assumed to be a member function returning 'int'
+[2016.05.11-09.55.55:157][ 90]CompilerResultsLog: 정보 -------- End Detailed Actions Stats -----------------------------------------------------------
+[2016.05.11-09.55.55:157][ 90]CompilerResultsLog: 정보 ERROR: UBT ERROR: Failed to produce item: C:\Users\jjudy\Desktop\Genie\src\unrealEngineProject\Binaries\Win64\UE4Editor-unrealEngineProject-1982.dll
+[2016.05.11-09.55.55:157][ 90]CompilerResultsLog: 정보 Total build time: 226.95 seconds
+[2016.05.11-09.55.55:157][ 90]LogMainFrame: MainFrame: Module compiling took 229.005 seconds
+[2016.05.11-09.55.55:157][ 90]Warning: HotReload failed, recompile failed
+[2016.05.11-09.59.34:416][394]LogD3D11RHI: InitD3DDevice
+[2016.05.11-09.59.34:418][394]Recompiling unrealEngineProject...
+[2016.05.11-09.59.34:418][394]Launching UnrealBuildTool... [C:/Program Files (x86)/Epic Games/4.8/Engine/Binaries/DotNET/UnrealBuildTool.exe unrealEngineProject -ModuleWithSuffix unrealEngineProject 9237 Win64 Development -editorrecompile -canskiplink "C:/Users/jjudy/Desktop/Genie/src/unrealEngineProject/unrealEngineProject.uproject" -rocket  -rocket]
+[2016.05.11-09.59.34:454][394]Warning: Starting HotReload took  0.1s.
+[2016.05.11-10.02.32:144][539]CompilerResultsLog: New page: 컴파일 - 2016. 5. 12. 오전 4:02:32
+[2016.05.11-10.02.32:145][539]CompilerResultsLog: 정보 Compiling game modules for hot reload
+[2016.05.11-10.02.32:145][539]CompilerResultsLog: 정보 Parsing headers for unrealEngineProjectEditor
+[2016.05.11-10.02.32:145][539]CompilerResultsLog: 정보 Reflection code generated for unrealEngineProjectEditor
+[2016.05.11-10.02.32:145][539]CompilerResultsLog: 정보 Performing 3 actions (2 in parallel)
+[2016.05.11-10.02.32:145][539]CompilerResultsLog: 정보 GenieCamera.cpp
+[2016.05.11-10.02.32:145][539]CompilerResultsLog: 정보 unrealEngineProject.generated.cpp
+[2016.05.11-10.02.32:145][539]CompilerResultsLog:Error: 오류 c:\users\jjudy\desktop\genie\src\unrealengineproject\source\unrealengineproject\GenieCamera.h(23)  : error C2061: syntax error : identifier 'EditAnywhere'
+[2016.05.11-10.02.32:145][539]CompilerResultsLog:Error: 오류 c:\users\jjudy\desktop\genie\src\unrealengineproject\source\unrealengineproject\GenieCamera.h(24)  : error C3646: 'AActor' : unknown override specifier
+[2016.05.11-10.02.32:145][539]CompilerResultsLog:Error: 오류 c:\users\jjudy\desktop\genie\src\unrealengineproject\source\unrealengineproject\GenieCamera.h(24)  : error C2143: syntax error : missing ';' before '*'
+[2016.05.11-10.02.32:145][539]CompilerResultsLog:Error: 오류 c:\users\jjudy\desktop\genie\src\unrealengineproject\source\unrealengineproject\GenieCamera.h(24)  : error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+[2016.05.11-10.02.32:145][539]CompilerResultsLog:Error: 오류 c:\users\jjudy\desktop\genie\src\unrealengineproject\source\unrealengineproject\GenieCamera.h(24)  : error C4183: 'URPOPERTY': missing return type; assumed to be a member function returning 'int'
+[2016.05.11-10.02.32:145][539]CompilerResultsLog:Error: 오류 C:\Users\jjudy\Desktop\Genie\src\unrealEngineProject\Source\unrealEngineProject\GenieCamera.cpp(32)  : error C2065: 'CameraOne' : undeclared identifier
+[2016.05.11-10.02.32:145][539]CompilerResultsLog:Error: 오류 C:\Users\jjudy\Desktop\Genie\src\unrealEngineProject\Source\unrealEngineProject\GenieCamera.cpp(34)  : error C2065: 'CameraOne' : undeclared identifier
+[2016.05.11-10.02.32:145][539]CompilerResultsLog:Error: 오류 C:\Users\jjudy\Desktop\Genie\src\unrealEngineProject\Source\unrealEngineProject\GenieCamera.h(23)  : error C2061: syntax error : identifier 'EditAnywhere'
+[2016.05.11-10.02.32:145][539]CompilerResultsLog:Error: 오류 C:\Users\jjudy\Desktop\Genie\src\unrealEngineProject\Source\unrealEngineProject\GenieCamera.h(24)  : error C3646: 'AActor' : unknown override specifier
+[2016.05.11-10.02.32:145][539]CompilerResultsLog:Error: 오류 C:\Users\jjudy\Desktop\Genie\src\unrealEngineProject\Source\unrealEngineProject\GenieCamera.h(24)  : error C2143: syntax error : missing ';' before '*'
+[2016.05.11-10.02.32:146][539]CompilerResultsLog:Error: 오류 C:\Users\jjudy\Desktop\Genie\src\unrealEngineProject\Source\unrealEngineProject\GenieCamera.h(24)  : error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+[2016.05.11-10.02.32:146][539]CompilerResultsLog:Error: 오류 C:\Users\jjudy\Desktop\Genie\src\unrealEngineProject\Source\unrealEngineProject\GenieCamera.h(24)  : error C4183: 'URPOPERTY': missing return type; assumed to be a member function returning 'int'
+[2016.05.11-10.02.32:146][539]CompilerResultsLog: 정보 -------- End Detailed Actions Stats -----------------------------------------------------------
+[2016.05.11-10.02.32:146][539]CompilerResultsLog: 정보 ERROR: UBT ERROR: Failed to produce item: C:\Users\jjudy\Desktop\Genie\src\unrealEngineProject\Binaries\Win64\UE4Editor-unrealEngineProject-9237.dll
+[2016.05.11-10.02.32:146][539]CompilerResultsLog: 정보 Total build time: 175.61 seconds
+[2016.05.11-10.02.32:146][539]LogMainFrame: MainFrame: Module compiling took 177.739 seconds
+[2016.05.11-10.02.32:146][539]Warning: HotReload failed, recompile failed
+[2016.05.11-10.02.35:680][737]LogD3D11RHI: InitD3DDevice
+[2016.05.11-10.02.48:970][319]LogActorComponent: UnregisterComponent: (/Engine/Transient.CharMoveComp) Not registered. Aborting.
+[2016.05.11-10.02.51:231][319]LogWindowsTextInputMethodSystem:Display: IME system now activated using TSF (Microsoft 입력기).
+[2016.05.11-10.02.53:452][320]Cmd: QUIT_EDITOR
+[2016.05.11-10.02.54:900][320]LogExit: Preparing to exit.
+[2016.05.11-10.03.01:018][320]LogExit: Editor shut down
+[2016.05.11-10.03.01:069][320]LogExit: Transaction tracking system shut down
+[2016.05.11-10.03.01:359][320]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000002DD54ACE2A0
+[2016.05.11-10.03.01:378][320]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000002DD55A598A0
+[2016.05.11-10.03.08:578][320]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000002DD57946A20
+[2016.05.11-10.03.08:578][320]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000002DD579465C0
+[2016.05.11-10.03.08:578][320]LogExit: Object subsystem successfully closed.
+[2016.05.11-10.03.10:010][320]LogD3D11RHI: Shutdown
+[2016.05.11-10.03.10:010][320]LogD3D11RHI: CleanupD3DDevice
+[2016.05.11-10.03.10:275][320]LogD3D11RHI: ~FD3D11DynamicRHI
+[2016.05.11-10.03.10:478][320]LogModuleManager: Shutting down and abandoning module CrashTracker (189)
+[2016.05.11-10.03.10:478][320]LogModuleManager: Shutting down and abandoning module SceneOutliner (188)
+[2016.05.11-10.03.10:503][320]LogModuleManager: Shutting down and abandoning module SuperSearch (187)
+[2016.05.11-10.03.10:503][320]LogModuleManager: Shutting down and abandoning module WidgetCarousel (186)
+[2016.05.11-10.03.10:518][320]LogModuleManager: Shutting down and abandoning module AddContentDialog (185)
+[2016.05.11-10.03.10:852][320]LogModuleManager: Shutting down and abandoning module EditorWidgets (184)
+[2016.05.11-10.03.10:852][320]LogModuleManager: Shutting down and abandoning module CollectionManager (183)
+[2016.05.11-10.03.10:880][320]LogModuleManager: Shutting down and abandoning module StatsViewer (182)
+[2016.05.11-10.03.10:921][320]LogModuleManager: Shutting down and abandoning module FoliageEdit (181)
+[2016.05.11-10.03.10:967][320]LogModuleManager: Shutting down and abandoning module LandscapeEditor (180)
+[2016.05.11-10.03.10:997][320]LogModuleManager: Shutting down and abandoning module ActorPickerMode (179)
+[2016.05.11-10.03.10:997][320]LogModuleManager: Shutting down and abandoning module GeometryMode (178)
+[2016.05.11-10.03.10:997][320]LogModuleManager: Shutting down and abandoning module TextureAlignMode (177)
+[2016.05.11-10.03.10:997][320]LogModuleManager: Shutting down and abandoning module BspMode (176)
+[2016.05.11-10.03.10:997][320]LogModuleManager: Shutting down and abandoning module PlacementMode (175)
+[2016.05.11-10.03.11:024][320]LogModuleManager: Shutting down and abandoning module AutomationWorker (174)
+[2016.05.11-10.03.11:024][320]LogModuleManager: Shutting down and abandoning module CharacterAI (173)
+[2016.05.11-10.03.11:024][320]LogModuleManager: Shutting down and abandoning module SmartSnapping (172)
+[2016.05.11-10.03.11:024][320]LogModuleManager: Shutting down and abandoning module ViewportSnapping (171)
+[2016.05.11-10.03.11:025][320]LogModuleManager: Shutting down and abandoning module LogVisualizer (170)
+[2016.05.11-10.03.11:074][320]LogModuleManager: Shutting down and abandoning module GameProjectGeneration (169)
+[2016.05.11-10.03.11:074][320]LogModuleManager: Shutting down and abandoning module IntroTutorials (168)
+[2016.05.11-10.03.11:142][320]LogModuleManager: Shutting down and abandoning module EditorLiveStreaming (167)
+[2016.05.11-10.03.11:142][320]LogModuleManager: Shutting down and abandoning module IOSPlatformEditor (166)
+[2016.05.11-10.03.11:168][320]LogModuleManager: Shutting down and abandoning module HTML5PlatformEditor (165)
+[2016.05.11-10.03.11:169][320]LogModuleManager: Shutting down and abandoning module AndroidDeviceDetection (164)
+[2016.05.11-10.03.11:468][320]LogModuleManager: Shutting down and abandoning module AndroidPlatformEditor (163)
+[2016.05.11-10.03.11:468][320]LogModuleManager: Shutting down and abandoning module IOSRuntimeSettings (162)
+[2016.05.11-10.03.11:468][320]LogModuleManager: Shutting down and abandoning module AndroidRuntimeSettings (161)
+[2016.05.11-10.03.11:468][320]LogModuleManager: Shutting down and abandoning module MergeActors (160)
+[2016.05.11-10.03.11:505][320]LogModuleManager: Shutting down and abandoning module SizeMap (159)
+[2016.05.11-10.03.11:505][320]LogModuleManager: Shutting down and abandoning module TreeMap (158)
+[2016.05.11-10.03.11:548][320]LogModuleManager: Shutting down and abandoning module ReferenceViewer (157)
+[2016.05.11-10.03.11:548][320]LogModuleManager: Shutting down and abandoning module LocalizationDashboard (156)
+[2016.05.11-10.03.11:599][320]LogModuleManager: Shutting down and abandoning module HardwareTargeting (155)
+[2016.05.11-10.03.11:600][320]LogModuleManager: Shutting down and abandoning module DeviceProfileEditor (154)
+[2016.05.11-10.03.11:609][320]LogModuleManager: Shutting down and abandoning module UndoHistory (153)
+[2016.05.11-10.03.11:616][320]LogModuleManager: Shutting down and abandoning module GameplayTagsEditor (152)
+[2016.05.11-10.03.11:625][320]LogModuleManager: Shutting down and abandoning module UserFeedback (151)
+[2016.05.11-10.03.11:625][320]LogModuleManager: Shutting down and abandoning module XmlParser (150)
+[2016.05.11-10.03.11:631][320]LogModuleManager: Shutting down and abandoning module Blutility (149)
+[2016.05.11-10.03.11:631][320]LogModuleManager: Shutting down and abandoning module ProjectTargetPlatformEditor (148)
+[2016.05.11-10.03.11:631][320]LogModuleManager: Shutting down and abandoning module ProjectSettingsViewer (147)
+[2016.05.11-10.03.11:632][320]LogModuleManager: Shutting down and abandoning module InputBindingEditor (146)
+[2016.05.11-10.03.11:716][320]LogModuleManager: Shutting down and abandoning module EditorSettingsViewer (145)
+[2016.05.11-10.03.11:717][320]LogModuleManager: Shutting down and abandoning module SettingsEditor (144)
+[2016.05.11-10.03.11:748][320]LogModuleManager: Shutting down and abandoning module ProjectLauncher (143)
+[2016.05.11-10.03.11:778][320]LogModuleManager: Shutting down and abandoning module SessionFrontend (142)
+[2016.05.11-10.03.11:783][320]LogModuleManager: Shutting down and abandoning module ProfilerClient (141)
+[2016.05.11-10.03.11:789][320]LogModuleManager: Shutting down and abandoning module TargetDeviceServices (140)
+[2016.05.11-10.03.11:789][320]LogModuleManager: Shutting down and abandoning module DeviceManager (139)
+[2016.05.11-10.03.11:891][320]LogModuleManager: Shutting down and abandoning module AutomationController (138)
+[2016.05.11-10.03.11:917][320]LogModuleManager: Shutting down and abandoning module AutomationWindow (137)
+[2016.05.11-10.03.11:934][320]LogModuleManager: Shutting down and abandoning module Layers (136)
+[2016.05.11-10.03.12:108][320]LogModuleManager: Shutting down and abandoning module ComponentVisualizers (135)
+[2016.05.11-10.03.12:108][320]LogModuleManager: Shutting down and abandoning module DetailCustomizations (134)
+[2016.05.11-10.03.12:195][320]LogModuleManager: Shutting down and abandoning module PackagesDialog (133)
+[2016.05.11-10.03.12:197][320]LogModuleManager: Shutting down and abandoning module AssetRegistry (132)
+[2016.05.11-10.03.14:007][320]LogModuleManager: Shutting down and abandoning module Persona (131)
+[2016.05.11-10.03.14:075][320]LogModuleManager: Shutting down and abandoning module Kismet (130)
+[2016.05.11-10.03.14:149][320]LogModuleManager: Shutting down and abandoning module GraphEditor (129)
+[2016.05.11-10.03.14:254][320]LogModuleManager: Shutting down and abandoning module ClassViewer (128)
+[2016.05.11-10.03.14:263][320]LogModuleManager: Shutting down and abandoning module Toolbox (127)
+[2016.05.11-10.03.14:263][320]LogModuleManager: Shutting down and abandoning module ModuleUI (126)
+[2016.05.11-10.03.14:271][320]LogModuleManager: Shutting down and abandoning module MovieSceneTools (125)
+[2016.05.11-10.03.14:293][320]LogModuleManager: Shutting down and abandoning module OutputLog (124)
+[2016.05.11-10.03.14:293][320]LogModuleManager: Shutting down and abandoning module GammaUI (123)
+[2016.05.11-10.03.14:319][320]LogModuleManager: Shutting down and abandoning module Documentation (122)
+[2016.05.11-10.03.14:319][320]LogModuleManager: Shutting down and abandoning module GameLiveStreaming (121)
+[2016.05.11-10.03.14:336][320]LogModuleManager: Shutting down and abandoning module StreamingPauseRendering (120)
+[2016.05.11-10.03.14:336][320]LogModuleManager: Shutting down and abandoning module AnalyticsET (119)
+[2016.05.11-10.03.14:336][320]LogModuleManager: Shutting down and abandoning module Analytics (118)
+[2016.05.11-10.03.14:336][320]LogModuleManager: Shutting down and abandoning module AITestSuite (117)
+[2016.05.11-10.03.14:359][320]LogModuleManager: Shutting down and abandoning module GameplayDebugger (116)
+[2016.05.11-10.03.14:368][320]LogModuleManager: Shutting down and abandoning module AIModule (115)
+[2016.05.11-10.03.14:373][320]LogModuleManager: Shutting down and abandoning module ProfilerService (114)
+[2016.05.11-10.03.14:512][320]LogModuleManager: Shutting down and abandoning module TaskGraph (113)
+[2016.05.11-10.03.14:530][320]LogModuleManager: Shutting down and abandoning module SlateRemote (112)
+[2016.05.11-10.03.14:530][320]LogModuleManager: Shutting down and abandoning module SteamVRController (111)
+[2016.05.11-10.03.14:530][320]LogModuleManager: Shutting down and abandoning module SteamVR (110)
+[2016.05.11-10.03.14:530][320]LogModuleManager: Shutting down and abandoning module ProceduralMeshComponent (109)
+[2016.05.11-10.03.14:530][320]LogModuleManager: Shutting down and abandoning module OculusRift (108)
+[2016.05.11-10.03.14:530][320]LogModuleManager: Shutting down and abandoning module LeapMotionController (107)
+[2016.05.11-10.03.14:620][320]LogModuleManager: Shutting down and abandoning module CustomMeshComponent (106)
+[2016.05.11-10.03.14:620][320]LogModuleManager: Shutting down and abandoning module CableComponent (105)
+[2016.05.11-10.03.14:627][320]LogModuleManager: Shutting down and abandoning module MessagingDebugger (104)
+[2016.05.11-10.03.14:651][320]LogModuleManager: Shutting down and abandoning module MediaPlayerEditor (103)
+[2016.05.11-10.03.14:681][320]LogModuleManager: Shutting down and abandoning module SpeedTreeImporter (102)
+[2016.05.11-10.03.14:681][320]LogModuleManager: Shutting down and abandoning module PluginBrowser (101)
+[2016.05.11-10.03.14:725][320]LogModuleManager: Shutting down and abandoning module EpicSurvey (100)
+[2016.05.11-10.03.14:731][320]LogModuleManager: Shutting down and abandoning module DesktopPlatform (99)
+[2016.05.11-10.03.14:759][320]LogModuleManager: Shutting down and abandoning module VisualStudioSourceCodeAccess (98)
+[2016.05.11-10.03.14:759][320]LogModuleManager: Shutting down and abandoning module UObjectPlugin (97)
+[2016.05.11-10.03.14:759][320]LogModuleManager: Shutting down and abandoning module SubversionSourceControl (96)
+[2016.05.11-10.03.14:799][320]LogModuleManager: Shutting down and abandoning module PerforceSourceControl (95)
+[2016.05.11-10.03.14:852][320]LogModuleManager: Shutting down and abandoning module SourceControl (94)
+[2016.05.11-10.03.14:882][320]LogModuleManager: Shutting down and abandoning module GitSourceControl (93)
+[2016.05.11-10.03.14:904][320]LogModuleManager: Shutting down and abandoning module BlankPlugin (92)
+[2016.05.11-10.03.14:904][320]LogModuleManager: Shutting down and abandoning module PaperTiledImporter (91)
+[2016.05.11-10.03.14:904][320]LogModuleManager: Shutting down and abandoning module PaperSpriteSheetImporter (90)
+[2016.05.11-10.03.14:912][320]LogModuleManager: Shutting down and abandoning module MeshPaint (89)
+[2016.05.11-10.03.14:917][320]LogModuleManager: Shutting down and abandoning module SlateReflector (88)
+[2016.05.11-10.03.14:944][320]LogModuleManager: Shutting down and abandoning module DirectoryWatcher (87)
+[2016.05.11-10.03.14:960][320]LogModuleManager: Shutting down and abandoning module HotReload (86)
+[2016.05.11-10.03.14:960][320]LogModuleManager: Shutting down and abandoning module MainFrame (85)
+[2016.05.11-10.03.14:975][320]LogModuleManager: Shutting down and abandoning module LevelEditor (84)
+[2016.05.11-10.03.15:053][320]LogModuleManager: Shutting down and abandoning module ContentBrowser (83)
+[2016.05.11-10.03.15:056][320]LogModuleManager: Shutting down and abandoning module Paper2DEditor (82)
+[2016.05.11-10.03.15:105][320]LogModuleManager: Shutting down and abandoning module unrealEngineProject (81)
+[2016.05.11-10.03.15:105][320]LogModuleManager: Shutting down and abandoning module UdpMessaging (80)
+[2016.05.11-10.03.15:223][320]LogModuleManager: Shutting down and abandoning module Paper2D (79)
+[2016.05.11-10.03.15:243][320]LogModuleManager: Shutting down and abandoning module WindowsMoviePlayer (78)
+[2016.05.11-10.03.15:268][320]LogModuleManager: Shutting down and abandoning module Media (77)
+[2016.05.11-10.03.15:268][320]LogModuleManager: Shutting down and abandoning module WmfMedia (76)
+[2016.05.11-10.03.15:283][320]LogModuleManager: Shutting down and abandoning module OnlineBlueprintSupport (75)
+[2016.05.11-10.03.15:283][320]LogModuleManager: Shutting down and abandoning module PropertyEditor (74)
+[2016.05.11-10.03.15:288][320]LogModuleManager: Shutting down and abandoning module BehaviorTreeEditor (73)
+[2016.05.11-10.03.15:355][320]LogModuleManager: Shutting down and abandoning module FunctionalTesting (72)
+[2016.05.11-10.03.15:364][320]LogModuleManager: Shutting down and abandoning module CollisionAnalyzer (71)
+[2016.05.11-10.03.15:384][320]LogModuleManager: Shutting down and abandoning module WorkspaceMenuStructure (70)
+[2016.05.11-10.03.15:398][320]LogModuleManager: Shutting down and abandoning module MessageLog (69)
+[2016.05.11-10.03.15:398][320]LogModuleManager: Shutting down and abandoning module Sequencer (68)
+[2016.05.11-10.03.15:426][320]LogModuleManager: Shutting down and abandoning module AssetTools (67)
+[2016.05.11-10.03.15:431][320]LogModuleManager: Shutting down and abandoning module UMGEditor (66)
+[2016.05.11-10.03.15:496][320]LogModuleManager: Shutting down and abandoning module UMG (65)
+[2016.05.11-10.03.15:544][320]LogModuleManager: Shutting down and abandoning module Slate (64)
+[2016.05.11-10.03.15:544][320]LogModuleManager: Shutting down and abandoning module EditorStyle (63)
+[2016.05.11-10.03.15:585][320]LogModuleManager: Shutting down and abandoning module SessionServices (62)
+[2016.05.11-10.03.15:586][320]LogModuleManager: Shutting down and abandoning module SourceCodeAccess (61)
+[2016.05.11-10.03.15:586][320]LogModuleManager: Shutting down and abandoning module HeadMountedDisplay (60)
+[2016.05.11-10.03.15:586][320]LogModuleManager: Shutting down and abandoning module XAudio2 (59)
+[2016.05.11-10.03.15:586][320]LogModuleManager: Shutting down and abandoning module Networking (57)
+[2016.05.11-10.03.15:586][320]LogModuleManager: Shutting down and abandoning module Core (56)
+[2016.05.11-10.03.15:586][320]LogModuleManager: Shutting down and abandoning module KismetCompiler (55)
+[2016.05.11-10.03.15:602][320]LogModuleManager: Shutting down and abandoning module PhysXFormats (54)
+[2016.05.11-10.03.15:623][320]LogModuleManager: Shutting down and abandoning module MeshUtilities (53)
+[2016.05.11-10.03.15:666][320]LogModuleManager: Shutting down and abandoning module DerivedDataCache (52)
+[2016.05.11-10.03.15:830][320]LogDerivedDataCache: Shutdown
+[2016.05.11-10.03.15:830][320]LogModuleManager: Shutting down and abandoning module ShaderFormatOpenGL (51)
+[2016.05.11-10.03.15:847][320]LogModuleManager: Shutting down and abandoning module ShaderFormatD3D (50)
+[2016.05.11-10.03.15:879][320]LogModuleManager: Shutting down and abandoning module MetalShaderFormat (49)
+[2016.05.11-10.03.15:911][320]LogModuleManager: Shutting down and abandoning module TextureFormatUncompressed (48)
+[2016.05.11-10.03.15:911][320]LogModuleManager: Shutting down and abandoning module TextureFormatPVR (47)
+[2016.05.11-10.03.15:937][320]LogModuleManager: Shutting down and abandoning module TextureFormatIntelISPCTexComp (46)
+[2016.05.11-10.03.15:938][320]LogModuleManager: Shutting down and abandoning module TextureFormatDXT (45)
+[2016.05.11-10.03.15:957][320]LogModuleManager: Shutting down and abandoning module ImageWrapper (44)
+[2016.05.11-10.03.15:957][320]LogModuleManager: Shutting down and abandoning module TextureFormatASTC (43)
+[2016.05.11-10.03.15:957][320]LogModuleManager: Shutting down and abandoning module TextureFormatAndroid (42)
+[2016.05.11-10.03.15:957][320]LogModuleManager: Shutting down and abandoning module AudioFormatOpus (41)
+[2016.05.11-10.03.15:978][320]LogModuleManager: Shutting down and abandoning module AudioFormatOgg (40)
+[2016.05.11-10.03.15:985][320]LogModuleManager: Shutting down and abandoning module AudioFormatADPCM (39)
+[2016.05.11-10.03.15:985][320]LogModuleManager: Shutting down and abandoning module LinuxTargetPlatform (38)
+[2016.05.11-10.03.16:025][320]LogModuleManager: Shutting down and abandoning module LinuxServerTargetPlatform (37)
+[2016.05.11-10.03.16:075][320]LogModuleManager: Shutting down and abandoning module LinuxNoEditorTargetPlatform (36)
+[2016.05.11-10.03.16:084][320]LogModuleManager: Shutting down and abandoning module Messaging (35)
+[2016.05.11-10.03.16:084][320]LogModuleManager: Shutting down and abandoning module IOSTargetPlatform (34)
+[2016.05.11-10.03.16:084][320]LogModuleManager: Shutting down and abandoning module HTML5TargetPlatform (33)
+[2016.05.11-10.03.16:085][320]LogModuleManager: Shutting down and abandoning module Android_PVRTCTargetPlatform (32)
+[2016.05.11-10.03.16:108][320]LogModuleManager: Shutting down and abandoning module Android_ETC2TargetPlatform (31)
+[2016.05.11-10.03.16:108][320]LogModuleManager: Shutting down and abandoning module Android_ETC1TargetPlatform (30)
+[2016.05.11-10.03.16:108][320]LogModuleManager: Shutting down and abandoning module Android_DXTTargetPlatform (29)
+[2016.05.11-10.03.16:108][320]LogModuleManager: Shutting down and abandoning module Android_ATCTargetPlatform (28)
+[2016.05.11-10.03.16:108][320]LogModuleManager: Shutting down and abandoning module Android_ASTCTargetPlatform (27)
+[2016.05.11-10.03.16:108][320]LogModuleManager: Shutting down and abandoning module AndroidTargetPlatform (26)
+[2016.05.11-10.03.16:108][320]LogModuleManager: Shutting down and abandoning module WindowsTargetPlatform (25)
+[2016.05.11-10.03.16:155][320]LogModuleManager: Shutting down and abandoning module WindowsServerTargetPlatform (24)
+[2016.05.11-10.03.16:176][320]LogModuleManager: Shutting down and abandoning module WindowsNoEditorTargetPlatform (23)
+[2016.05.11-10.03.16:185][320]LogModuleManager: Shutting down and abandoning module WindowsClientTargetPlatform (22)
+[2016.05.11-10.03.16:192][320]LogModuleManager: Shutting down and abandoning module DesktopTargetPlatform (21)
+[2016.05.11-10.03.16:193][320]LogModuleManager: Shutting down and abandoning module TargetPlatform (20)
+[2016.05.11-10.03.16:202][320]LogModuleManager: Shutting down and abandoning module InputCore (19)
+[2016.05.11-10.03.16:202][320]LogModuleManager: Shutting down and abandoning module Settings (18)
+[2016.05.11-10.03.16:203][320]LogModuleManager: Shutting down and abandoning module OnlineSubsystem (16)
+[2016.05.11-10.03.16:203][320]LogModuleManager: Shutting down and abandoning module HTTP (15)
+[2016.05.11-10.03.16:204][320]LogModuleManager: Shutting down and abandoning module ExampleDeviceProfileSelector (14)
+[2016.05.11-10.03.16:204][320]LogModuleManager: Shutting down and abandoning module TextureCompressor (13)
+[2016.05.11-10.03.16:227][320]LogModuleManager: Shutting down and abandoning module ShaderCore (12)
+[2016.05.11-10.03.16:227][320]LogModuleManager: Shutting down and abandoning module Landscape (11)
+[2016.05.11-10.03.16:227][320]LogModuleManager: Shutting down and abandoning module SlateRHIRenderer (10)
+[2016.05.11-10.03.17:155][320]LogModuleManager: Shutting down and abandoning module OpenGLDrv (9)
+[2016.05.11-10.03.17:173][320]LogModuleManager: Shutting down and abandoning module D3D11RHI (8)
+[2016.05.11-10.03.17:173][320]LogModuleManager: Shutting down and abandoning module Renderer (7)
+[2016.05.11-10.03.17:173][320]LogModuleManager: Shutting down and abandoning module Engine (6)
+[2016.05.11-10.03.17:173][320]LogModuleManager: Shutting down and abandoning module CoreUObject (5)
+[2016.05.11-10.03.17:173][320]LogModuleManager: Shutting down and abandoning module NetworkFile (4)
+[2016.05.11-10.03.17:182][320]LogModuleManager: Shutting down and abandoning module StreamingFile (3)
+[2016.05.11-10.03.17:216][320]LogModuleManager: Shutting down and abandoning module SandboxFile (2)
+[2016.05.11-10.03.17:227][320]LogModuleManager: Shutting down and abandoning module PakFile (1)
+[2016.05.11-10.03.17:323][320]LogExit: Exiting.
+[2016.05.11-10.03.17:467][320]Log file closed, 05/11/16 19:03:17
