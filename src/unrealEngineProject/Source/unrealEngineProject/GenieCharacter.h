@@ -34,10 +34,6 @@ public:
 	UPROPERTY(EditAnywhere)
 		USpringArmComponent* SpringArm;
 
-	// Create Camera Component
-	//UPROPERTY(EditAnywhere)
-		//UCameraComponent* OurCamera;
-
 	// Create HappyMovement Variable
 	UPROPERTY(BlueprintReadWrite, Category = Components)
 		bool HappyMovement;

@@ -19,10 +19,6 @@ AGenieCharacter::AGenieCharacter()
 	SpringArm->SetRelativeLocation(FVector(0.0f, 0.0f, 0.0f));
 	SpringArm->bUsePawnControlRotation = true;
 
-	// Create Camera Component
-	//OurCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("OurCamera"));
-	//OurCamera->AttachTo(SpringArm);
-	//OurCamera->SetRelativeLocationAndRotation(FVector(0.0f, 0.0f, 0.0f), FRotator(0.0f, 0.0f, 0.0f));
 }
 
 // Called when the game starts or when spawned

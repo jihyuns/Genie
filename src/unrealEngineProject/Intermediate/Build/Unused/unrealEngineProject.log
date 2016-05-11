@@ -1,20 +1,11 @@
-﻿Build started 2016-05-11 오전 2:24:10.
-     1>Project "C:\Users\jjudy\Desktop\Genie\src\unrealEngineProject\Intermediate\ProjectFiles\unrealEngineProject.vcxproj" on node 2 (Build target(s)).
-     1>Build:
-         "C:\Program Files (x86)\Epic Games\4.8\Engine\Build\BatchFiles\Build.bat" unrealEngineProjectEditor Win64 Development "C:\Users\jjudy\Desktop\Genie\src\unrealEngineProject\unrealEngineProject.uproject" -rocket
-         Deleting old hot reload file: "C:\Users\jjudy\Desktop\Genie\src\unrealEngineProject\Binaries\Win64\UE4Editor-unrealEngineProject-3787.dll".
-         Deleting old hot reload file: "C:\Users\jjudy\Desktop\Genie\src\unrealEngineProject\Binaries\Win64\UE4Editor-unrealEngineProject-3787.pdb".
-         Deleting old hot reload file: "C:\Users\jjudy\Desktop\Genie\src\unrealEngineProject\Binaries\Win64\UE4Editor-unrealEngineProject-4112.dll".
-         Deleting old hot reload file: "C:\Users\jjudy\Desktop\Genie\src\unrealEngineProject\Binaries\Win64\UE4Editor-unrealEngineProject-4112.pdb".
-         Deleting old hot reload file: "C:\Users\jjudy\Desktop\Genie\src\unrealEngineProject\Binaries\Win64\UE4Editor-unrealEngineProject-5620.dll".
-         Deleting old hot reload file: "C:\Users\jjudy\Desktop\Genie\src\unrealEngineProject\Binaries\Win64\UE4Editor-unrealEngineProject-5620.pdb".
-         Performing 1 actions (2 in parallel)
-         [1/1] Link UE4Editor-unrealEngineProject.dll
-            Creating library C:\Users\jjudy\Desktop\Genie\src\unrealEngineProject\Intermediate/Build/Win64\UE4Editor\Development\UE4Editor-unrealEngineProject.lib and object C:\Users\jjudy\Desktop\Genie\src\unrealEngineProject\Intermediate/Build/Win64\UE4Editor\Development\UE4Editor-unrealEngineProject.exp
-         -------- End Detailed Actions Stats -----------------------------------------------------------
-         Total build time: 25.97 seconds
-     1>Done Building Project "C:\Users\jjudy\Desktop\Genie\src\unrealEngineProject\Intermediate\ProjectFiles\unrealEngineProject.vcxproj" (Build target(s)).
+﻿Build started 2016-05-11 오후 8:06:18.
+     1>Project "C:\Users\jjudy\Desktop\Genie\src\unrealEngineProject\Intermediate\ProjectFiles\unrealEngineProject.vcxproj" on node 2 (Clean target(s)).
+     1>CoreClean:
+         "C:\Program Files (x86)\Epic Games\4.8\Engine\Build\BatchFiles\Clean.bat" unrealEngineProjectEditor Win64 Development "C:\Users\jjudy\Desktop\Genie\src\unrealEngineProject\unrealEngineProject.uproject" -rocket
+         Cleaning unrealEngineProjectEditor Binaries...
+         Compiling game modules for hot reload
+     1>Done Building Project "C:\Users\jjudy\Desktop\Genie\src\unrealEngineProject\Intermediate\ProjectFiles\unrealEngineProject.vcxproj" (Clean target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:34.07
+Time Elapsed 00:04:20.72

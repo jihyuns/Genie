@@ -1,79 +1,70 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
+
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <ItemGroup>
-    <None Include="..\..\unrealEngineProject.uproject" />
-    <Filter Include="Source">
-      <UniqueIdentifier>{75C9FE2C-43EA-4C51-9FE3-98B2B02C9BA7}</UniqueIdentifier>
-    </Filter>
-    <None Include="..\..\Source\unrealEngineProject.Target.cs">
-      <Filter>Source</Filter>
-    </None>
-    <None Include="..\..\Source\unrealEngineProjectEditor.Target.cs">
-      <Filter>Source</Filter>
-    </None>
-    <Filter Include="Config">
-      <UniqueIdentifier>{23353074-5DEE-49D4-9923-106854515478}</UniqueIdentifier>
-    </Filter>
-    <None Include="..\..\Config\DefaultEditor.ini">
-      <Filter>Config</Filter>
-    </None>
-    <None Include="..\..\Config\DefaultEngine.ini">
-      <Filter>Config</Filter>
-    </None>
-    <None Include="..\..\Config\DefaultGame.ini">
-      <Filter>Config</Filter>
-    </None>
-    <Filter Include="Source\unrealEngineProject">
-      <UniqueIdentifier>{4083EE04-FD9B-467C-A9E4-03E706B9A55A}</UniqueIdentifier>
-    </Filter>
-    <ClCompile Include="..\..\Source\unrealEngineProject\GenieAnimInstance.cpp">
-      <Filter>Source\unrealEngineProject</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\unrealEngineProject\GenieAnimInstance.h">
-      <Filter>Source\unrealEngineProject</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\unrealEngineProject\GenieCamera.cpp">
-      <Filter>Source\unrealEngineProject</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\unrealEngineProject\GenieCamera.h">
-      <Filter>Source\unrealEngineProject</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\unrealEngineProject\GenieCharacter.cpp">
-      <Filter>Source\unrealEngineProject</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\unrealEngineProject\GenieCharacter.h">
-      <Filter>Source\unrealEngineProject</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\unrealEngineProject\LoadingFile.cpp">
-      <Filter>Source\unrealEngineProject</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\unrealEngineProject\LoadingFile.h">
-      <Filter>Source\unrealEngineProject</Filter>
-    </ClInclude>
-    <None Include="..\..\Source\unrealEngineProject\unrealEngineProject.Build.cs">
-      <Filter>Source\unrealEngineProject</Filter>
-    </None>
-    <ClCompile Include="..\..\Source\unrealEngineProject\unrealEngineProject.cpp">
-      <Filter>Source\unrealEngineProject</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\unrealEngineProject\unrealEngineProject.h">
-      <Filter>Source\unrealEngineProject</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\unrealEngineProject\unrealEngineProjectGameMode.cpp">
-      <Filter>Source\unrealEngineProject</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\unrealEngineProject\unrealEngineProjectGameMode.h">
-      <Filter>Source\unrealEngineProject</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\Source\unrealEngineProject\CameraDirector.h">
-      <Filter>Source\unrealEngineProject</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\Source\unrealEngineProject\CameraDirector.cpp">
-      <Filter>Source\unrealEngineProject</Filter>
-    </ClCompile>
-  </ItemGroup>
+	<ItemGroup>
+		<None Include="..\..\unrealEngineProject.uproject" />
+		<Filter Include="Source">
+			<UniqueIdentifier>{E5C556B5-39CB-459B-AB85-23F95128BD1A}</UniqueIdentifier>
+		</Filter>
+		<None Include="..\..\Source\unrealEngineProject.Target.cs">
+			<Filter>Source</Filter>
+		</None >
+		<None Include="..\..\Source\unrealEngineProjectEditor.Target.cs">
+			<Filter>Source</Filter>
+		</None >
+		<Filter Include="Config">
+			<UniqueIdentifier>{52D4686B-CB82-45B3-99FE-172390FA98B1}</UniqueIdentifier>
+		</Filter>
+		<None Include="..\..\Config\DefaultEditor.ini">
+			<Filter>Config</Filter>
+		</None >
+		<None Include="..\..\Config\DefaultEngine.ini">
+			<Filter>Config</Filter>
+		</None >
+		<None Include="..\..\Config\DefaultGame.ini">
+			<Filter>Config</Filter>
+		</None >
+		<Filter Include="Source\unrealEngineProject">
+			<UniqueIdentifier>{5A4F807D-31C9-4DAA-B7DA-697C3A286781}</UniqueIdentifier>
+		</Filter>
+		<ClCompile Include="..\..\Source\unrealEngineProject\CameraDirector.cpp">
+			<Filter>Source\unrealEngineProject</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\unrealEngineProject\CameraDirector.h">
+			<Filter>Source\unrealEngineProject</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\Source\unrealEngineProject\GenieAnimInstance.cpp">
+			<Filter>Source\unrealEngineProject</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\unrealEngineProject\GenieAnimInstance.h">
+			<Filter>Source\unrealEngineProject</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\Source\unrealEngineProject\GenieCharacter.cpp">
+			<Filter>Source\unrealEngineProject</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\unrealEngineProject\GenieCharacter.h">
+			<Filter>Source\unrealEngineProject</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\Source\unrealEngineProject\LoadingFile.cpp">
+			<Filter>Source\unrealEngineProject</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\unrealEngineProject\LoadingFile.h">
+			<Filter>Source\unrealEngineProject</Filter>
+		</ClInclude >
+		<None Include="..\..\Source\unrealEngineProject\unrealEngineProject.Build.cs">
+			<Filter>Source\unrealEngineProject</Filter>
+		</None >
+		<ClCompile Include="..\..\Source\unrealEngineProject\unrealEngineProject.cpp">
+			<Filter>Source\unrealEngineProject</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\unrealEngineProject\unrealEngineProject.h">
+			<Filter>Source\unrealEngineProject</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\Source\unrealEngineProject\unrealEngineProjectGameMode.cpp">
+			<Filter>Source\unrealEngineProject</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\unrealEngineProject\unrealEngineProjectGameMode.h">
+			<Filter>Source\unrealEngineProject</Filter>
+		</ClInclude >
+	</ItemGroup>
 </Project>
